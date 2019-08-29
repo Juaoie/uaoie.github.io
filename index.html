@@ -48,8 +48,26 @@
  	  <script src="/lib/clickLove.js"></script>
   
   
+  
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
+
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -204,6 +222,13 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <script src="/lib/oauthcallback.browser.js"></script>
+  
+  <script>
+    Oauthcallback();
+  </script>
+
 
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -372,23 +397,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     

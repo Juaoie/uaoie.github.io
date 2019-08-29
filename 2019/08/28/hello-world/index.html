@@ -46,8 +46,26 @@
  	  <script src="/lib/clickLove.js"></script>
   
   
+  
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
+
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -384,30 +402,31 @@
 
 
 
-
+  <div id="giteement-ctn"></div>
   
-  <div id="gitment-ctn"></div>
-  
-    <!-- 中文 -->
-    <link rel="stylesheet" href="/lib/gitment.css">
-    <script src="/lib/gitment.js"></script>
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
   <script>
-    <!-- id: "Hello World" -->
-    var gitment = new Gitment({
-      id: "20190828151756",
-      owner: 'Juaoie',
-      repo: 'juaoie',
-      oauth: {
-        client_id: '84311a88e712a5254730',
-        client_secret: 'd917f9547084357a622676f594e9d2cf39af07d9',
-      },
-    })
-    gitment.render('gitment-ctn')
+  <!-- id: "Hello World" -->
+  var giteement = new Giteement({
+    id: '20190828151756',
+    owner: 'Juaoie',
+    repo: 'juaoie',
+    backcall_uri: 'http://uaoie.top',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '91404d56f98ccbc1e7229035145a03f9f4e741cbd9a768bead5fd05369461b51',
+      client_secret: '585f5d5ac0e254875e66ce14b8136c8c715e307eec2bf0f8d2d78d9471e55a6b'
+    },
+  })
+  giteement.render('giteement-ctn')
   </script>
 
 
-  
+
+
+
 
 
 
@@ -466,23 +485,6 @@
 
 
 <!--  -->
-
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
 
 
     
