@@ -6,21 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>css_transition_animation | 老虎の博客</title>
+  <title>css_transition_animation（内含贝赛尔曲线详解） | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现）。例如加载中的持续动画效果等等。   一、transition （过渡动画）">
+  <meta name="description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css_transition_animation">
+<meta property="og:title" content="css_transition_animation（内含贝赛尔曲线详解）">
 <meta property="og:url" content="http://uaoie.top/2019/09/02/css_transition_animation/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现）。例如加载中的持续动画效果等等。   一、transition （过渡动画）">
+<meta property="og:description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T06:45:47.134Z">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/03.png">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/04.gif">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/05.gif">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/06.gif">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/07.gif">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/08.gif">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/09.png">
+<meta property="og:image" content="http://uaoie.top/2019/09/02/css_transition_animation/10.png">
+<meta property="og:updated_time" content="2019-09-02T13:37:38.312Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css_transition_animation">
-<meta name="twitter:description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现）。例如加载中的持续动画效果等等。   一、transition （过渡动画）">
+<meta name="twitter:title" content="css_transition_animation（内含贝赛尔曲线详解）">
+<meta name="twitter:description" content="区别： transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。 animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。">
+<meta name="twitter:image" content="http://uaoie.top/2019/09/02/css_transition_animation/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -220,7 +231,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      css_transition_animation
+      css_transition_animation（内含贝赛尔曲线详解）
     </h1>
   
 
@@ -246,7 +257,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">114字</span>
+      <span class="post-count">2.4k字</span>
     </span>
   </span>
 
@@ -255,7 +266,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">10分</span>
     </span>
   </span>
 </div>
@@ -267,12 +278,153 @@
   <div class="article-entry" itemprop="articleBody">
     
     <b style="color:red;">
-区别：
-transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。
-animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现）。例如加载中的持续动画效果等等。
+区别：<br>
+transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。<br>
+animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。
 </b>
+<br>
+<a id="more"></a>
 
-<h1 id="一、transition-（过渡动画）"><a href="#一、transition-（过渡动画）" class="headerlink" title="一、transition （过渡动画）"></a>一、transition （过渡动画）</h1>
+<p>在学习这两种动画之前要最好是先了解一下 transition-timing-function（过渡效果时间曲线）；<br>举个栗子：<br><b style="color:blue"><br>比如一辆小汽车从a点到b点的运动过程是一个动画，那么过渡效果时间曲线就是这辆小汽车到底是匀速过去呢还是一直加速冲过去，又或者说一会加速冲一会减速慢行。<br></b><br>这个属性有<b style="color:red">五种</b>可供选择的属性值和一种可以<b style="color:red">自定义</b>的属性值<br>自定义属性值：cubic-bezier(n,n,n,n)<br>在了解这个自定义属性值之前我们再来深入了解一下<b style="color:red">贝塞尔曲线</b>。<br>为什么要了解贝塞尔曲线？因为这个自定义时间过渡曲线就是用贝塞尔曲线表示的。（这是一个三阶的贝塞尔曲线）<br>贝塞尔曲线应用场景有哪些？贝塞尔曲线不仅仅在描述速度、时间上会起作用，在ps中的色彩调节和一些建筑工程学上面都会有涉及。<br>那我们先来画一个二阶的贝塞尔曲线吧。<br><b>首先打开ps，在一个平面内随便画三个点a、b、c然后连接起来，如下图。</b><br><img src="/2019/09/02/css_transition_animation/01.png" alt><br><b>然后在a、b中找到一点d，在b、c中找到一点e，满足公式：ad/ab = be/bc</b><br><img src="/2019/09/02/css_transition_animation/02.png" alt><br><b>然后呢，连接d、e，在de线上找到一点f，满足公式：df/de = ad/ab = be/bc</b><br><img src="/2019/09/02/css_transition_animation/03.png" alt><br><b>然后就没有然后了，因为这个二阶贝塞尔曲线已经画完了，这个曲线就是所有可能的f点。</b><br>然后我用谷歌浏览器调试工具再演示一下二阶贝塞尔曲线图（本来是想用火狐演示的，但是火狐浏览器调试曲线的时候层级有点高，还很敏感，无法用gif工具录制，所以就放弃了，但实际上我更喜欢火狐的调试动画调试工具一点。）<br>1、上面的球代表动画执行的过程，球越快，颜色越浅，反之越深。<br>2、两个固定点的坐标是（0，0）和（1，1）<br>3、可调试点的坐标是随意拉动的，x轴要在0-1之间，y轴随意。<br>4、x轴代表的时间，y轴代表的是路程（因为很多动画并不是简单的左右移动，所以以后要理解成动画执行的过程），<b style="color:red">注意：y轴不是速度，更不是加速度哦。</b><br>5、最下面的是cubic-bezier属性具体取到的值（后面再讲里面4个值得具体含义）<br><img src="/2019/09/02/css_transition_animation/04.gif" alt><br>但实际开发过程中我们用到的大部分都是三阶贝塞尔曲线（当然也有用多阶贝塞尔曲线的），也就是用两个点去控制曲线的弧度，具体原理和上面的类似，如图：<br><img src="/2019/09/02/css_transition_animation/05.gif" alt><br>现在就可以解释cubic-bezier为什么有四个值，就是这个两个坐标点。<br><b style="color:red">再次声明一下，y轴是距离，不是速度和加速度</b></p>
+<p>cubic-bezier属性还有五个可供选择的值：（其实就是几种写死的过渡效果曲线）</p>
+<pre><code>·linear      规定以相同速度开始至结束的过渡效果（等于 cubic-bezier(0,0,1,1)）。
+·ease       规定慢速开始，然后变快，然后慢速结束的过渡效果（cubic-bezier(0.25,0.1,0.25,1)）。
+·ease-in        规定以慢速开始的过渡效果（等于 cubic-bezier(0.42,0,1,1)）。
+·ease-out       规定以慢速结束的过渡效果（等于 cubic-bezier(0,0,0.58,1)）。
+·ease-in-out        规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。</code></pre><h1 id="一、transition-（过渡动画）"><a href="#一、transition-（过渡动画）" class="headerlink" title="一、transition （过渡动画）"></a>一、transition （过渡动画）</h1><table>
+<tbody><tr>
+<th style="width:30%;">属性</th>
+<th>描述</th>
+<th style="width:5%;">CSS</th>
+</tr>
+<tr>
+<td><p title="CSS3 transition 属性">transition</p></td>
+<td>简写属性，用于在一个属性中设置四个过渡属性。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p title="CSS3 transition-property 属性">transition-property</p></td>
+<td>规定应用过渡的 CSS 属性的名称。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p title="CSS3 transition-duration 属性">transition-duration</p></td>
+<td>定义过渡效果花费的时间。默认是 0。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p title="CSS3 transition-timing-function 属性">transition-timing-function</p></td>
+<td>规定过渡效果的时间曲线。默认是 "ease"。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p title="CSS3 transition-delay 属性">transition-delay</p></td>
+<td>规定过渡效果何时开始。默认是 0。</td>
+<td>3</td>
+</tr>
+</tbody></table>
+实例：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt; </span><br><span class="line">div&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    background:yellow;</span><br><span class="line">    transition-property:width;</span><br><span class="line">    transition-duration:1s;</span><br><span class="line">    transition-timing-function:cubic-bezier(0,0,1,1);</span><br><span class="line">    transition-delay:0s;</span><br><span class="line">&#125;</span><br><span class="line">div:hover&#123;</span><br><span class="line">    width:500px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;注释：&lt;/b&gt;本例在 Internet Explorer 中无效。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;注释：&lt;/b&gt;这个过渡效果会在开始之前等待两秒。&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h2><p><img src="/2019/09/02/css_transition_animation/06.gif" alt><br>transition简化属性写法：<br><b style="color:red">transition: property duration timing-function delay;</b><br>默认值是transition：all 0 ease 0；</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在移动开发中直接使用transition动画会让页面变得非常卡顿（亲测），所以我们常用transform:translate3D(0,0,0)或者transform:translateZ(0)来开启移动端动画的gpu加速，使动画过程更流畅。<br><b style="color:red">translate3D(0,0,0)是指电仪3D转换<b><br><b style="color:red">translateZ(0)是指定义3D转换，只用Z轴<b></b></b></b></b></p>
+<h1 id="二、animation（动画效果）"><a href="#二、animation（动画效果）" class="headerlink" title="二、animation（动画效果）"></a>二、animation（动画效果）</h1><p>因为animation动画是一段持续且循环的动画效果，所以不像transition过渡动画那样简洁，可能会涉及到很复杂的动画效果，所以我们要先学习一下@keyframes规则<br>该规则是用来创建动画的，说直白点就是告诉元素按哪种动画效果执行</p>
+<h2 id="keyframes语法"><a href="#keyframes语法" class="headerlink" title="@keyframes语法"></a>@keyframes语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@keyframes animationname &#123;keyframes-selector &#123;css-styles;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<tbody><tr>
+<th style="width:25%;">值</th>
+<th>描述</th>
+</tr>
+<tr>
+<td><i>animationname</i></td>
+<td>必需。定义动画的名称。</td>
+</tr>
+<tr>
+<td><i>keyframes-selector</i></td>
+<td>
+    <p>必需。动画时长的百分比。</p>
+    <p>合法的值：</p>
+    <ul class="listintable">
+    <li>0-100%</li>
+    <li>from（与 0% 相同）</li>
+    <li>to（与 100% 相同）</li>
+    </ul>
+</td>
+</tr>
+<tr>
+<td><i>css-styles</i></td>
+<td>必需。一个或多个合法的 CSS 样式属性。</td>
+</tr>
+</tbody></table>
+
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt; </span><br><span class="line">div&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    background:red;</span><br><span class="line">    position:relative;</span><br><span class="line">    animation:mymove 5s infinite;</span><br><span class="line">    -moz-animation:mymove 5s infinite; /* Firefox */</span><br><span class="line">    -webkit-animation:mymove 5s infinite; /*Safari and Chrome */</span><br><span class="line">    -o-animation:mymove 5s infinite; /* Opera */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes mymove&#123;</span><br><span class="line">    0%   &#123;top:0px;&#125;</span><br><span class="line">    25%  &#123;top:200px;&#125;</span><br><span class="line">    75%  &#123;top:50px&#125;</span><br><span class="line">    100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes mymove /* Firefox */&#123;</span><br><span class="line">    0%   &#123;top:0px;&#125;</span><br><span class="line">    25%  &#123;top:200px;&#125;</span><br><span class="line">    75%  &#123;top:50px&#125;</span><br><span class="line">    100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes mymove /* Safari and Chrome */&#123;</span><br><span class="line">    0%   &#123;top:0px;&#125;</span><br><span class="line">    25%  &#123;top:200px;&#125;</span><br><span class="line">    75%  &#123;top:50px&#125;</span><br><span class="line">    100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes mymove /* Opera */&#123;</span><br><span class="line">    0%   &#123;top:0px;&#125;</span><br><span class="line">    25%  &#123;top:200px;&#125;</span><br><span class="line">    75%  &#123;top:50px&#125;</span><br><span class="line">    100% &#123;top:100px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;注释：&lt;/b&gt;本例在 Internet Explorer 中无效。&lt;/p&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果如下："><a href="#效果如下：" class="headerlink" title="效果如下："></a>效果如下：</h2><p><img src="/2019/09/02/css_transition_animation/07.gif" alt></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>也就是说keyframes允许你设置在不同的时间段执行不同的动画效果</p>
+<p>##css3 动画属性</p>
+<table>
+<tbody><tr>
+<th style="width:30%;">属性</th>
+<th>描述</th>
+<th style="width:5%;">CSS</th>
+</tr>
+<tr>
+<td><p>@keyframes</p></td>
+<td>规定动画。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation</p></td>
+<td>所有动画属性的简写属性，除了 animation-play-state 属性。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-name</p></td>
+<td>规定 @keyframes 动画的名称。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-duration</p></td>
+<td>规定动画完成一个周期所花费的秒或毫秒。默认是 0。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-timing-function</p></td>
+<td>规定动画的速度曲线。默认是 "ease"。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-delay</p></td>
+<td>规定动画何时开始。默认是 0。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-iteration-count</p></td>
+<td>规定动画被播放的次数。默认是 1。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-direction</p></td>
+<td>规定动画是否在下一周期逆向地播放。默认是 "normal"。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-play-state</p></td>
+<td>规定动画是否正在运行或暂停。默认是 "running"。</td>
+<td>3</td>
+</tr>
+<tr>
+<td><p>animation-fill-mode</p></td>
+<td>规定对象动画时间之外的状态。</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt; </span><br><span class="line">div&#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    background:red;</span><br><span class="line">    position:relative;</span><br><span class="line">    animation:myfirst 5s linear 2s infinite alternate;</span><br><span class="line">    -moz-animation:myfirst 5s linear 2s infinite alternate;/* Firefox: */</span><br><span class="line">    -webkit-animation:myfirst 5s linear 2s infinite alternate;/* Safari and Chrome: */</span><br><span class="line">    -o-animation:myfirst 5s linear 2s infinite alternate;/* Opera: */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes myfirst&#123;</span><br><span class="line">    0%   &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">    25%  &#123;background:yellow; left:200px; top:0px;&#125;</span><br><span class="line">    50%  &#123;background:blue; left:200px; top:200px;&#125;</span><br><span class="line">    75%  &#123;background:green; left:0px; top:200px;&#125;</span><br><span class="line">    100% &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes myfirst /* Firefox */&#123;</span><br><span class="line">    0%   &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">    25%  &#123;background:yellow; left:200px; top:0px;&#125;</span><br><span class="line">    50%  &#123;background:blue; left:200px; top:200px;&#125;</span><br><span class="line">    75%  &#123;background:green; left:0px; top:200px;&#125;</span><br><span class="line">    100% &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes myfirst /* Safari and Chrome */&#123;</span><br><span class="line">    0%   &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">    25%  &#123;background:yellow; left:200px; top:0px;&#125;</span><br><span class="line">    50%  &#123;background:blue; left:200px; top:200px;&#125;</span><br><span class="line">    75%  &#123;background:green; left:0px; top:200px;&#125;</span><br><span class="line">    100% &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes myfirst /* Opera */&#123;</span><br><span class="line">    0%   &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">    25%  &#123;background:yellow; left:200px; top:0px;&#125;</span><br><span class="line">    50%  &#123;background:blue; left:200px; top:200px;&#125;</span><br><span class="line">    75%  &#123;background:green; left:0px; top:200px;&#125;</span><br><span class="line">    100% &#123;background:red; left:0px; top:0px;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;&lt;b&gt;注释：&lt;/b&gt;本例在 Internet Explorer 中无效。&lt;/p&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果如下：-1"><a href="#效果如下：-1" class="headerlink" title="效果如下："></a>效果如下：</h2><p><img src="/2019/09/02/css_transition_animation/08.gif" alt></p>
+<h1 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h1><p>在火狐和谷歌中可以很方便的调处过渡效果时间曲线的定时函数编辑器，只用点击下面的按钮就可以了。<br>谷歌中：<br><img src="/2019/09/02/css_transition_animation/09.png" alt><br>火狐中：<br><img src="/2019/09/02/css_transition_animation/10.png" alt></p>
+
     
 
     
@@ -286,7 +438,7 @@ animation才是css3正宗的动画，主要是用于实现某种持续的动画�
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://uaoie.top/2019/09/02/css_transition_animation/" title="css_transition_animation" target="_blank">http://uaoie.top/2019/09/02/css_transition_animation/</a>
+          <a href="http://uaoie.top/2019/09/02/css_transition_animation/" title="css_transition_animation（内含贝赛尔曲线详解）" target="_blank">http://uaoie.top/2019/09/02/css_transition_animation/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
