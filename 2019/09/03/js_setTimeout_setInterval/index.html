@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>Archives | 老虎の博客</title>
+  <title>用故事解析setTimeout和setInterval(内含js单线程和任务队列) | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="区别：setTimeout(fn,t)：延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。注意：取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。 setInterval(fn,t)：循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用故事解析setTimeout和setInterval(内含js单线程和任务队列)">
+<meta property="og:url" content="http://uaoie.top/2019/09/03/js_setTimeout_setInterval/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="区别：setTimeout(fn,t)：延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。注意：取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。 setInterval(fn,t)：循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2019/09/03/js_setTimeout_setInterval/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/09/03/js_setTimeout_setInterval/02.png">
+<meta property="og:updated_time" content="2019-09-03T06:50:48.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="用故事解析setTimeout和setInterval(内含js单线程和任务队列)">
+<meta name="twitter:description" content="区别：setTimeout(fn,t)：延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。注意：取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。 setInterval(fn,t)：循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。">
+<meta name="twitter:image" content="http://uaoie.top/2019/09/03/js_setTimeout_setInterval/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -212,150 +216,220 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js_setTimeout_setInterval" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      用故事解析setTimeout和setInterval(内含js单线程和任务队列)
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
         <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.6k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h1><h2 id="setTimeout-fn-t-："><a href="#setTimeout-fn-t-：" class="headerlink" title="setTimeout(fn,t)："></a>setTimeout(fn,t)：</h2><p>延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。<br>注意：<b style="color:red;">取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。</b></p>
+<h2 id="setInterval-fn-t-："><a href="#setInterval-fn-t-：" class="headerlink" title="setInterval(fn,t)："></a>setInterval(fn,t)：</h2><p>循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">console.log(<span class="string">'333333333333333333333'</span>)</span><br><span class="line">var aa =setTimeout(()=&gt;&#123;</span><br><span class="line">	console.log(<span class="string">"11111111111111"</span>)</span><br><span class="line">&#125;,6000)</span><br><span class="line">setTimeout(()=&gt;&#123;</span><br><span class="line">	clearTimeout(aa)</span><br><span class="line">	console.log(<span class="string">"2222222222"</span>)</span><br><span class="line">&#125;,3000)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="在学习这两种延迟函数之前要最好是先了解一下JS单线程和任务队列；"><a href="#在学习这两种延迟函数之前要最好是先了解一下JS单线程和任务队列；" class="headerlink" title="在学习这两种延迟函数之前要最好是先了解一下JS单线程和任务队列；"></a>在学习这两种延迟函数之前要最好是先了解一下JS单线程和任务队列；</h2><h3 id="举个栗子："><a href="#举个栗子：" class="headerlink" title="举个栗子："></a>举个栗子：</h3><b>
+在广场上，只有一家一点点奶茶店（<b style="color:red">cpu</b>），然后我（<b style="color:red">一个任务</b>）要去买奶茶(<b style="color:red">执行这个任务</b>)，只能排一条队（<b style="color:red">js的单线程机制</b>），虽说排队（<b style="color:red">主线程</b>）的人很多，但是一点点工作人员工作速度确实很快，一般的人付完现金就完了（<b style="color:red">synchronous同步任务</b>），但是到了我的时候，我想用支付宝支付，但是打开支付宝需要网络，需要等待支付宝软件打开（<b style="color:red">asynchronous异步任务，等待IO设备返回结果</b>），但是为了不影响队列后面的排队者的速度，所以一点点的工作人员让我去旁边的队列里（<b style="color:red">任务队列</b>）去等待，这个队列里面有加我一起有三个人在启动支付宝，我排在第三，然后一段时间过后，我的和第一个人支付宝打开了（<b style="color:red">IO设备返回结果了</b>），第二个人没打开，我和第一个人就把二维码展示出来（<b style="color:red">在任务队列中添加一个事件，表示相关异步任务可以进入主线程执行了</b>），但是这个时候主队列里面还有一些人在买奶茶，所以，现在工作人员顾不上我，然后我们就只能一直等待，直到主队列里面买奶茶的人都走光了，这个时候工作人员就把我和第一个人加入主队列中，然后我和第一个人就相继都买到奶茶了，主队列又没有人了，于是工作人员又去问第二个人二维码有没有出来，（<b style="color:red">这个过程叫Event Loop（事件循环）</b>），至此基本的单线程和任务队列就完了，下面再了解一下定时器的特殊原理。
+</b>
+
+<h1 id="setTimeout-fn-t"><a href="#setTimeout-fn-t" class="headerlink" title="setTimeout(fn,t)"></a>setTimeout(fn,t)</h1><b>
+同样的，又是我（<b style="color:red">setTimeout(fn,20)函数</b>）去买奶茶，我首先还是去排队，到我的时候我说我现在不想买，我要等到20（<b style="color:red">设置的时长</b>）毫秒之后再买，工作人员就说，好，那你去任务队列里面去等20毫秒吧，然后我就屁颠屁颠的去了，20毫秒后，还是老样子，工作人员要等到主队列里面人都走完了再把我拉到主队列里面去，所以我实际等待的时间=我设置的时间+设置时间到了之后主队列里面执行的时间，但是庆幸的是工作人员工作速度非常快，所以一般主队列里面是没有人的。
+</b><br>
+注意：<br>
+1、所以即使你设置超时时间为0，工作人员也不会立马执行你哦，还是会把你加到任务队列中的，谁叫你是asynchronous（异步任务）<br>
+2、你设置超时时间有用吗？时间上是没有生效的，因为html5标准规定了setTimeout设置超时时间最小值是4毫秒，如果低于这个值就会自动增加，老版本浏览器更将是把最短时间设为10毫秒，而最要命的是，如果涉及到DOM的变动的都是16毫秒一次。
+
+<h1 id="setInterval-fu-t"><a href="#setInterval-fu-t" class="headerlink" title="setInterval(fu,t)"></a>setInterval(fu,t)</h1><b>
+同样的，鸣人（<b style="color:red">setInterval(fn,1000)函数</b>）去买奶茶，首先还是去排队，到鸣人的时候，它不仅要在1秒钟之后买，还要影分身出很多鸣人相继在1、2、3、4...之后买，工作人员同样要他和他的影分身在任务队列后面排队等会，正常情况下，主队列没人了，鸣人和他的影分身们也会在规定的时间里面相继执行。
+</b><br>
+
+<h2 id="那么问题来了"><a href="#那么问题来了" class="headerlink" title="那么问题来了"></a>那么问题来了</h2><b>
+假如每个鸣人都很喜欢逼逼叨叨，那么就会发生这样子的情况：<br>
+当一秒钟后第一个鸣人从任务队列中到主队列中的时候，就一直跟工作人员逼逼叨叨（<b style="color:red">发生阻塞了，例如遇到循环不玩的for</b>），直到第四秒钟才说完（也就是b了3秒钟），这个时候第二个鸣人已经超过预定时间的两秒钟了，然后等到第二个鸣人和工作人员聊得时候又逼逼叨叨不停，又要b3秒钟，所以第二个鸣人会在第7秒b完，同理，第三个和第四个分别在第10秒和第13秒b完。
+</b>
+鸣人逼逼叨叨的过程如下：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;uaoie.top&lt;/title&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">console.log(<span class="string">'333333333333333333333'</span>)</span><br><span class="line">var y=0;</span><br><span class="line">var x = new Date().getTime();</span><br><span class="line">var d=setInterval(a,1000);</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123;</span><br><span class="line">    y++;</span><br><span class="line">   sleep(3000);</span><br><span class="line">    <span class="keyword">if</span>(y&gt;=4)&#123;</span><br><span class="line">        clearInterval(d)</span><br><span class="line">    &#125;</span><br><span class="line">console.log(new Date().getTime()-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> sleep(sleepTime)&#123;</span><br><span class="line">    var start=new Date().getTime();</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(new Date().getTime()-start&gt;sleepTime)&#123;</span><br><span class="line">            <span class="built_in">break</span>;    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>导致的情况如下：<br><img src="/2019/09/03/js_setTimeout_setInterval/01.png" alt></p>
+<h2 id="全剧终"><a href="#全剧终" class="headerlink" title="全剧终"></a>全剧终</h2><h1 id="八、彩蛋"><a href="#八、彩蛋" class="headerlink" title="八、彩蛋"></a>八、彩蛋</h1><p>现在我们可以很轻松的分析一下下面代码的原理（虽然我们都知道结果）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var aa=new Date().getTime()</span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; 4; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(new Date().getTime() -aa, i);</span><br><span class="line">    &#125;, 1000);</span><br><span class="line">&#125;</span><br><span class="line">console.log(new Date().getTime() -aa, i);</span><br></pre></td></tr></table></figure>
+
+<p>先执行第一行，完了后执行for，循环4次也就是执行4次setTimeout函数，这个4个函数同时放在任务队列中。<br>然后再执行最下面的config，所以会先打印0秒和4。<br>然后等到一秒后，setTimeout函数从任务队列中出来到主队列，输出的是1秒和4。<br>所以效果如下：<br><img src="/2019/09/03/js_setTimeout_setInterval/02.png" alt></p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2019/09/03/js_setTimeout_setInterval/" title="用故事解析setTimeout和setInterval(内含js单线程和任务队列)" target="_blank">http://uaoie.top/2019/09/03/js_setTimeout_setInterval/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/09/03/js_setTimeout_setInterval/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/02/css_transition_animation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css_transition_animation（内含贝赛尔曲线详解）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/31/css_media/" class="archive-article-date">
-        <time datetime="2019-08-31T15:23:26.390Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/08/31/css_media/">css3的@media</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
 
 
           </div>
@@ -408,8 +482,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
