@@ -6,27 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>【惊！】代码中出现“//保重，兄弟！” | 老虎の博客</title>
+  <title>px和dp（内含大量的像素单位详解） | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="前言 老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生    周琦传球？作为一名入行多年的程序员，哪有没有接过锅的道理？进公司没多久的小白接到前辈留下来的大项目，刚开始感觉无比的荣幸，直到打开代码的那一刻，wtf，周琦传球？more &amp;gt;&amp;gt;   久久伫立无法自拔，这样的项目是怎么进行下去这么久还不垮台的，难不成要葬送我手？然后再一番审视代码过后，最后在层层">
+  <meta name="description" content="1、前言：读完本文你会学到什么：  dp(device pixels) px(css pixels) pt(point) ppi(pixels per inch) dpi(dots per inch) dpr(device pixels ratio) dip(device independent pixel)  读本文你需要掌握哪些基本知识：  1in(英寸) == 2.5399999961392">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【惊！】代码中出现“&#x2F;&#x2F;保重，兄弟！”">
-<meta property="og:url" content="http://uaoie.top/2019/09/03/say1/index.html">
+<meta property="og:title" content="px和dp（内含大量的像素单位详解）">
+<meta property="og:url" content="http://uaoie.top/2019/09/04/css_px_pt/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="前言 老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生    周琦传球？作为一名入行多年的程序员，哪有没有接过锅的道理？进公司没多久的小白接到前辈留下来的大项目，刚开始感觉无比的荣幸，直到打开代码的那一刻，wtf，周琦传球？more &amp;gt;&amp;gt;   久久伫立无法自拔，这样的项目是怎么进行下去这么久还不垮台的，难不成要葬送我手？然后再一番审视代码过后，最后在层层">
+<meta property="og:description" content="1、前言：读完本文你会学到什么：  dp(device pixels) px(css pixels) pt(point) ppi(pixels per inch) dpi(dots per inch) dpr(device pixels ratio) dip(device independent pixel)  读本文你需要掌握哪些基本知识：  1in(英寸) == 2.5399999961392">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://uaoie.top/2019/09/03/say1/01.png">
-<meta property="og:image" content="http://uaoie.top/2019/09/03/say1/02.gif">
-<meta property="og:image" content="http://uaoie.top/2019/09/03/say1/03.png">
-<meta property="og:image" content="http://uaoie.top/2019/09/03/say1/04.gif">
-<meta property="og:image" content="http://uaoie.top/2019/09/03/say1/05.gif">
-<meta property="og:updated_time" content="2019-09-03T14:02:28.687Z">
+<meta property="og:updated_time" content="2019-09-04T14:03:31.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【惊！】代码中出现“&#x2F;&#x2F;保重，兄弟！”">
-<meta name="twitter:description" content="前言 老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生    周琦传球？作为一名入行多年的程序员，哪有没有接过锅的道理？进公司没多久的小白接到前辈留下来的大项目，刚开始感觉无比的荣幸，直到打开代码的那一刻，wtf，周琦传球？more &amp;gt;&amp;gt;   久久伫立无法自拔，这样的项目是怎么进行下去这么久还不垮台的，难不成要葬送我手？然后再一番审视代码过后，最后在层层">
-<meta name="twitter:image" content="http://uaoie.top/2019/09/03/say1/01.png">
+<meta name="twitter:title" content="px和dp（内含大量的像素单位详解）">
+<meta name="twitter:description" content="1、前言：读完本文你会学到什么：  dp(device pixels) px(css pixels) pt(point) ppi(pixels per inch) dpi(dots per inch) dpr(device pixels ratio) dip(device independent pixel)  读本文你需要掌握哪些基本知识：  1in(英寸) == 2.5399999961392">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -219,14 +213,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-say1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-css_px_pt" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      【惊！】代码中出现“//保重，兄弟！”
+      px和dp（内含大量的像素单位详解）
     </h1>
   
 
@@ -238,8 +232,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
+<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
+        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
 </a>
 
   
@@ -252,7 +246,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">434字</span>
+      <span class="post-count">1k字</span>
     </span>
   </span>
 
@@ -261,7 +255,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -272,25 +266,53 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
+    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
+<ul>
+<li>dp(device pixels)</li>
+<li>px(css pixels)</li>
+<li>pt(point)</li>
+<li>ppi(pixels per inch)</li>
+<li>dpi(dots per inch)</li>
+<li>dpr(device pixels ratio)</li>
+<li>dip(device independent pixel)</li>
+</ul>
+<p>读本文你需要掌握哪些基本知识：</p>
+<ul>
+<li>1in(英寸) == 2.5399999961392cm</li>
+<li>常常用1英寸等于2.54厘米</li>
+<li>1m == 3尺</li>
+<li>1尺 == 10寸</li>
+<li>1寸 == 3.33333333cm</li>
+<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
+<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
+</ul>
+<h2 id="2、dp-设备像素"><a href="#2、dp-设备像素" class="headerlink" title="2、dp(设备像素)"></a>2、dp(设备像素)</h2><h4 id="2-1、说明"><a href="#2-1、说明" class="headerlink" title="2.1、说明"></a>2.1、说明</h4><pre><code>dp是设备像素，也叫物理像素，顾名思义，他就是指一个物理发光点的单位。
+iphone6官方在产品说明书上写的屏幕分辨率为1334x750像素指的是物理分辨率。
+也就是高1334dp，宽750dp。</code></pre><h2 id="3、px-逻辑像素"><a href="#3、px-逻辑像素" class="headerlink" title="3、px(逻辑像素)"></a>3、px(逻辑像素)</h2><h4 id="3-1、说明："><a href="#3-1、说明：" class="headerlink" title="3.1、说明："></a>3.1、说明：</h4><pre><code>px是逻辑像素，逻辑像素是相对的单位。
+在每个设备上对应的dp是不一样的是不一样的，在相同设备上对应的dp也可以不同。
+这就是为什么我我们的图片可以放大缩小的原因。</code></pre><h2 id="4、pt-点"><a href="#4、pt-点" class="headerlink" title="4、pt(点)"></a>4、pt(点)</h2><h4 id="4-1、说明"><a href="#4-1、说明" class="headerlink" title="4.1、说明"></a>4.1、说明</h4><pre><code>pt是专用的印刷单位“点”，这个单位是绝对单位.
+1pt == 1/72in</code></pre><h2 id="5、ppi-每英寸的像素"><a href="#5、ppi-每英寸的像素" class="headerlink" title="5、ppi(每英寸的像素)"></a>5、ppi(每英寸的像素)</h2><h4 id="5-1、说明"><a href="#5-1、说明" class="headerlink" title="5.1、说明"></a>5.1、说明</h4><pre><code>ppi指的是单位英寸长度上的平均孔数
+iphone6官方在产品说明书上写像素密度为326ppi，指的就是在它的1in == 326dp</code></pre><h3 id="5-2、计算iphone6的像素密度"><a href="#5-2、计算iphone6的像素密度" class="headerlink" title="5.2、计算iphone6的像素密度"></a>5.2、计算iphone6的像素密度</h3><blockquote>
+<p>先通过iphone6的对角4.7in和高宽比可以算出高和宽：<br>iphone6_width = 2.304227826273027in = 2.3in<br>iphone6_height = 4.096405024485382in =4.1in</p>
 </blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/say1/01.png" align="center/"></div>
-
-<h2 id="周琦传球？"><a href="#周琦传球？" class="headerlink" title="周琦传球？"></a>周琦传球？</h2><p><em>作为一名入行多年的程序员，哪有没有接过锅的道理？</em><br>进公司没多久的小白接到前辈留下来的大项目，刚开始感觉无比的荣幸，直到打开代码的那一刻，wtf，周琦传球？more &gt;&gt;</p>
-<div align="center"><img width="50%" src="/2019/09/03/say1/02.gif"></div>
-
-<p>久久伫立无法自拔，这样的项目是怎么进行下去这么久还不垮台的，难不成要葬送我手？然后再一番审视代码过后，最后在层层嵌套下面找到这样一行注释：</p>
-<div align="center"><img width="50%" src="/2019/09/03/say1/03.png"></div>
-
-<p>虽然只有简单的四个字，确实多少前辈日日夜夜的结晶啊，我深刻感受到了前辈们对我这个晚辈的爱。</p>
-<div align="center"><img width="50%" src="/2019/09/03/say1/04.gif"></div>
-
-<p>老板说代码逻辑有点复杂，让我慢慢看（╥﹏╥…），也不知道从哪看起，好不容易想删除个没有用的代码块，然后…</p>
-<div align="center"><img width="50%" src="/2019/09/03/say1/05.gif"></div>
-
-<h2 id="人在江湖，身不由己"><a href="#人在江湖，身不由己" class="headerlink" title="人在江湖，身不由己"></a>人在江湖，身不由己</h2><p>挣扎也是没有用的，因为程序员这行，哪有没有接过锅的人，就说我从上家公司离职，总不是有甩锅给别人了，关键是竟然甩给同事了，他完全不是搞我方面的，但是人在江湖，都是身不由己。也不知道现在他过的怎么样，只知道为了让他能完美接住，我的我在离职后还有段时间一直配合他维护，毕竟基本的职业道德还是要有的。<br>只希望大家不管是多烂的锅，在甩手之前一定要把交接仪式做好。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>作为一名程序员，都有哪些奇葩的接锅案例呢？<br><br></p>
+<blockquote>
+<p>再然后通过这个宽高和屏幕物理分辨率可以算出ppi<br>iphone6_width_ppi = 750dp/2.3in = 326.0869565217391ppi<br>iphone6_height_ppi = 1334dp/4.1in = 325.3658536585366ppi</p>
+</blockquote>
+<blockquote>
+<p>可以得出宽和高都是非常近似的等于326dp的</p>
+</blockquote>
+<h2 id="6、dpi-每英寸的点数"><a href="#6、dpi-每英寸的点数" class="headerlink" title="6、dpi(每英寸的点数)"></a>6、dpi(每英寸的点数)</h2><h4 id="6-1、说明"><a href="#6-1、说明" class="headerlink" title="6.1、说明"></a>6.1、说明</h4><pre><code>dpi是输出设备的物理能力
+例如：300DPI的油墨打印机是指每英寸有300墨滴用于打印机，每英吋能印出的点的数目为300。
+“像素”（p）只存在于计算机显示领域，而“点”（d）只出现于打印或印刷领域。</code></pre><h3 id="6-2、注意"><a href="#6-2、注意" class="headerlink" title="6.2、注意"></a>6.2、注意</h3><pre><code>在显示器中ppi和dpi是同一概念</code></pre><h2 id="7、dpr-devicePixelRatio"><a href="#7、dpr-devicePixelRatio" class="headerlink" title="7、dpr(devicePixelRatio)"></a>7、dpr(devicePixelRatio)</h2><h3 id="7、1说明"><a href="#7、1说明" class="headerlink" title="7、1说明"></a>7、1说明</h3><pre><code>window.devicePixelRatio是设备上物理像素和逻辑像素的比例。
+dpr不是单位，是一个属性，在浏览器中通过 window.devicePixelRatio 获取屏幕的DPR。
+在用微信开发者工具开发小程序的时候，在切换模拟器的时候可以看到各个设备的dpr，iphone6的设备dpr为2</code></pre><h2 id="8、dip-设备独立像素"><a href="#8、dip-设备独立像素" class="headerlink" title="8、dip(设备独立像素)"></a>8、dip(设备独立像素)</h2><h3 id="8、1说明"><a href="#8、1说明" class="headerlink" title="8、1说明"></a>8、1说明</h3><pre><code>是由谷歌推出用来适配各个安卓屏幕差异的。
+在定义UI布局时，应该使用一个虚拟像素单元，以一种密度独立的方式表示布局维度或位置。
+密度无关的像素相当于一个物理像素在160 dpi屏幕上，这是系统为“中等”密度屏幕所假设的基线密度。
+在运行时，系统会根据实际的屏幕密度，透明地处理dp单元的任何扩展。将dp单元转换为屏幕像素很简单：px=dp（dpi/160）。
+例如，在240 dpi屏幕上，1 dp等于1。5物理像素。在定义应用程序的UI时，应该始终使用dp单元，以确保在具有不同密度的屏幕上正确显示UI。
+就是说在160dpi的屏幕上，1dip=1px。
+它跟屏幕密度有关，如果屏幕密度大，1dip代表的px就多，比如在320dpi的屏幕上，1dip=2px。</code></pre><h2 id="9、彩蛋"><a href="#9、彩蛋" class="headerlink" title="9、彩蛋"></a>9、彩蛋</h2><h3 id="9-1、viewport"><a href="#9-1、viewport" class="headerlink" title="9.1、viewport"></a>9.1、viewport</h3><pre><code>viewport是用户网页的可是窗口。
+手机浏览器是把页面放在一个虚拟的&quot;窗口&quot;（viewport）中，通常这个虚拟的&quot;窗口&quot;（viewport）比屏幕宽，这样就不用把每个网页挤到很小的窗口中（这样会破坏没有针对手机浏览器优化的网页的布局），用户可以通过平移和缩放来看网页的不同部分。</code></pre><h3 id="9-2、实例代码"><a href="#9-2、实例代码" class="headerlink" title="9.2、实例代码"></a>9.2、实例代码</h3><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code><br>    具体值含义可以参考我之前写的<a href="https://www.cnblogs.com/Juaoie/p/11443312.html" target="_blank" rel="noopener">你绝对不知道的head标签</a></p>
 
     
 
@@ -305,7 +327,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://uaoie.top/2019/09/03/say1/" title="【惊！】代码中出现“//保重，兄弟！”" target="_blank">http://uaoie.top/2019/09/03/say1/</a>
+          <a href="http://uaoie.top/2019/09/04/css_px_pt/" title="px和dp（内含大量的像素单位详解）" target="_blank">http://uaoie.top/2019/09/04/css_px_pt/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -369,7 +391,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/09/03/say1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/09/04/css_px_pt/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -384,18 +406,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/09/04/css_px_pt/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          px和dp（内含大量的像素单位详解）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/03/js_setTimeout_setInterval/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</div>
+    <a href="/2019/09/03/say1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【惊！】代码中出现“//保重，兄弟！”</div>
       <i class="icon-circle-right"></i>
     </a>
   
