@@ -6,23 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>老虎の博客</title>
+  <title>浏览器的同源策略和跨域详解 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="一个佛系の腐朽青年">
-  
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="前言去年这个时候有写过一篇文章叫《ajax中的json和jsonp详解》，写这个文章是因为我朋友学习前端刚好遇到了这个问题，但是就在昨天，他在学习java的时候又遇到同样的问题，看来我又要操作一波了。（实则我就他这一个朋友）(๑￫ܫ￩) ######提纲内容  重述一遍何为同源策略(因为之前讲过) 跨域的三种方式 剖析CORS方式跨域（重点） 故事解析（次重点）  何为同源策略同源策略就是协议相同">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器的同源策略和跨域详解">
+<meta property="og:url" content="http://uaoie.top/2019/10/17/js_consanguinity/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="前言去年这个时候有写过一篇文章叫《ajax中的json和jsonp详解》，写这个文章是因为我朋友学习前端刚好遇到了这个问题，但是就在昨天，他在学习java的时候又遇到同样的问题，看来我又要操作一波了。（实则我就他这一个朋友）(๑￫ܫ￩) ######提纲内容  重述一遍何为同源策略(因为之前讲过) 跨域的三种方式 剖析CORS方式跨域（重点） 故事解析（次重点）  何为同源策略同源策略就是协议相同">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2019/10/17/js_consanguinity/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/10/17/js_consanguinity/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/10/17/js_consanguinity/03.png">
+<meta property="og:image" content="http://uaoie.top/2019/10/17/js_consanguinity/04.png">
+<meta property="og:image" content="http://uaoie.top/2019/10/17/js_consanguinity/05.png">
+<meta property="og:updated_time" content="2019-10-17T08:20:48.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="浏览器的同源策略和跨域详解">
+<meta name="twitter:description" content="前言去年这个时候有写过一篇文章叫《ajax中的json和jsonp详解》，写这个文章是因为我朋友学习前端刚好遇到了这个问题，但是就在昨天，他在学习java的时候又遇到同样的问题，看来我又要操作一波了。（实则我就他这一个朋友）(๑￫ܫ￩) ######提纲内容  重述一遍何为同源策略(因为之前讲过) 跨域的三种方式 剖析CORS方式跨域（重点） 故事解析（次重点）  何为同源策略同源策略就是协议相同">
+<meta name="twitter:image" content="http://uaoie.top/2019/10/17/js_consanguinity/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -215,25 +219,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-js_consanguinity" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js_consanguinity" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/10/17/js_consanguinity/">浏览器的同源策略和跨域详解</a>
-	
+    <h1 class="article-title" itemprop="name">
+      浏览器的同源策略和跨域详解
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/10/17/js_consanguinity/" class="archive-article-date">
         <time datetime="2019-10-17T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
 </a>
@@ -287,230 +291,63 @@
 <p>CORS可以理解为后端配置一些东西，主动同意哪些不同域名可以请求我的接口，从而实现跨域请求的问题，（对了，提示一下，jsonp虽然简单好用，但是只能实现get请求，所以比较单一。但是jsonp可以适用于所有浏览器，CORS对ie只适用于ie10及以上，对其他浏览器都是支持的。）</p>
 <p>先上一张图（后面你会回来看的）</p>
 <p><img src="/2019/10/17/js_consanguinity/01.png" alt></p>
-    
-    <a class="article-more-a" href="/2019/10/17/js_consanguinity/#more">more >></a>
-    
-    
+<a id="more"></a>
 
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/10/17/js_consanguinity/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python_bokey" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/12/python_bokey/">python+scrapy分析博客园首页4000篇优质博客</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/12/python_bokey/" class="archive-article-date">
-        <time datetime="2019-09-12T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">805字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="1、侵删"><a href="#1、侵删" class="headerlink" title="1、侵删"></a>1、侵删</h4><blockquote>
-<p>本文数据是获取的博客园首页的4000条数据，为了不对博客园服务器造成压力，所以源码不会公开，在此，敬请博客园官方团队放心。<br>获取到的数据从2019-7-11到2019-9-12，此数据也不会公开。<br>由于会涉及到一些博主的数据，所以有博主不愿公开数据，联系我及时删除。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/09/12/python_bokey/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/12/python_bokey/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css_px_pt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
+<p>浏览器将cors请求分为两类，简单请求和非简单请求，阮一峰在<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享 CORS 详解</a>一文中作了很详细的区分，满足一下两大条件就是简单请求，否则就是非简单请求。如下：</p>
+<pre><code>1、请求方法是以下三种方法之一：
+* HEAD
+* GET
+* POST
+2、HTTP的头信息不超出以下几种字段：
+* Accept
+* Accept-Language
+* Content-Language
+* Last-Event-ID
+* Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain</code></pre><h4 id="简单请求按钮（我朋友写的就是简单请求，但是服务器并没有做cors配置），请求如下："><a href="#简单请求按钮（我朋友写的就是简单请求，但是服务器并没有做cors配置），请求如下：" class="headerlink" title="简单请求按钮（我朋友写的就是简单请求，但是服务器并没有做cors配置），请求如下："></a>简单请求按钮（我朋友写的就是简单请求，但是服务器并没有做cors配置），请求如下：</h4><p><img src="/2019/10/17/js_consanguinity/02.png" alt><br>如第一张图的执行流程，会在请求头增加Origin字段为”http ://localhost”到后端，后端去检测Origin信息，此时检查的请求头部有没有自定义的，那么问题来了。<br>1、为毛要再次检查请求头？因为你前端信息为不可信信息，别人可以伪造浏览器请求加入Origin信息，并且自定义请求头。<br>2、自定义请求头有哪些定义有哪些？</p>
 <ul>
-<li>dp(device pixels)</li>
-<li>px(css pixels)</li>
-<li>pt(point)</li>
-<li>ppi(pixels per inch)</li>
-<li>dpi(dots per inch)</li>
-<li>dpr(device pixels ratio)</li>
-<li>dip(device independent pixel)</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept" target="_blank" rel="noopener">Accept</a>:用来告知（服务器）客户端可以处理的内容类型</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language" target="_blank" rel="noopener">Accept-Language</a>:允许客户端声明它可以理解的自然语言，以及优先选择的区域方言</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Language" target="_blank" rel="noopener">Content-Language</a>:是一个 entity header （实体消息首部），用来说明访问者希望采用的语言或语言组合，这样的话用户就可以根据自己偏好的语言来定制不同的内容</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener">Content-Type</a>实体头部用于指示资源的MIME类型 media type（不属于简单请求的三个的任何一个）</li>
+<li>DPR</li>
+<li>Downlink</li>
+<li>Save-Data</li>
+<li>Viewport-Width</li>
+<li>Width</li>
 </ul>
-<p>读本文你需要掌握哪些基本知识：</p>
+<p>他调这个接口的时候并没有自定义头部，只有设置了Content-Type为application/x-www-form-urlencoded，但是这并不影响，所以现在到了判断是否符合要求的位置，什么符合要求呢？但是当然是跨源资源共享验证，但是他后台并没有配置任何的跨域访问，所以所有的跨域请求多会被拒绝门外，但是信息是正常返回的，只不过返回头里面没有加Access-Control-Allow-Origin这个字段，如图一所示。<br>这是时候会发生什么情况呢？截两张图就知道了。<br><img src="/2019/10/17/js_consanguinity/03.png" alt><br><img src="/2019/10/17/js_consanguinity/04.png" alt><br>what？<br>浏览器确实收到消息，但是他就是不给你，并且告诉你，你小子跨域了，并且服务器不同意你的跨域请求，所以就直接抛一个错误给你，你自己看着办吧！</p>
+<h4 id="非简单请求步骤就多了一步"><a href="#非简单请求步骤就多了一步" class="headerlink" title="非简单请求步骤就多了一步"></a>非简单请求步骤就多了一步</h4><p>在不满足简单请求的情况之下（就是非简单请求），此时，如图一所示，并不直接发送请求，而是发送一个OPTIONS预检请求（所以下次看到OPTIONS请求的时候就知道这其实是一个前菜，好戏在后头呢。嘻嘻），后台也是去做一个跨源资源共享验证，他这里没有配置，当然不成功，所以还是正常返回，这次返回头里不仅不给返回Access-Control-Allow-Origin，而且不会有任何响应主体（如果你不配置的话），这也就是为啥后来他胡乱配置一通后发现post请求竟然变成OPTIONS请求了，然后不传数据还不给返回数据的原因。请求视图如下：<br><img src="/2019/10/17/js_consanguinity/05.png" alt><br>(细心了小伙伴会发现多了两个字段，一看就明白，不用解释了。嘻嘻)</p>
+<h4 id="怕他看不懂，所以这里也用一个小故事稍微解析一下子"><a href="#怕他看不懂，所以这里也用一个小故事稍微解析一下子" class="headerlink" title="怕他看不懂，所以这里也用一个小故事稍微解析一下子"></a>怕他看不懂，所以这里也用一个小故事稍微解析一下子</h4><p>首先来建立三个角色，小明（请求代码，也可以说是开发者）、课代表（浏览器）、老师（服务器）</p>
 <ul>
-<li>1in(英寸) == 2.5399999961392cm</li>
-<li>常常用1英寸等于2.54厘米</li>
-<li>1m == 3尺</li>
-<li>1尺 == 10寸</li>
-<li>1寸 == 3.33333333cm</li>
-<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
-<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
+<li><p>简单请求：<br>小明（请求代码）做了一份试卷（请求包）交给课代表（浏览器），课代表分析得出，这是一份简单试卷（简单请求），然后写上这是这是一班的试卷（加上Origin字段），并且告诉老师这是一份简单试卷，老师（服务器）拿到试卷后，就开始阅读。<br>首先看这个题（请求头部），是不是简单的试卷，毕竟课代表说的话不可信。<br>如果不简单就直接丢了，如果是简单试卷就再看看课代表写的是几班的试卷。<br>老师说我只改一班和三班的试卷（跨源资源共享验证），刚好这是一班的试卷，所以就改完直接还给课代表了，课代表发现没有异样就直接给小明了。<br>如果这不巧是二班的试卷，老师还是把试卷给改出来（服务器返回正常的结果），但是同时在试卷上加上一句话，“我是一班和三班的老师，以后不要发二班的试卷给我了（返回头中没有Access-Control-Allow-Origin字段）”。<br>课代表大发雷霆，不仅不把试卷（服务器正常结果）给小明，还警告小明（抛出错误）。</p>
+</li>
+<li><p>非简答请求：<br>小明（请求代码）做了一份试卷（请求包）交给课代表（浏览器），课代表分析得出，这是一份很难的试卷（非简单请求），然后课代表写一封信（OPTIONS请求，里面写上这是一班的试卷）给老师。<br>老师收到这封信，老师改一班和三班的试卷，所以就批改这封信（后台设置返回的信息，不设置是没有返回主体的），ok，没问题，请把试卷给我（返回头中有Access-Control-Allow-Origin字段）。<br>然后课代表发现信没有异样，后面的流程就像批改简单试卷流程一样了。<br>如果，课代表发送的信里写这的是“这是二班的试卷”，那么，老师还是会批改这封信，然后正常返回这封信。关键是老师又加上那句话“我是一班和三班的老师，以后不要发二班的试卷给我了（返回头中没有Access-Control-Allow-Origin字段）”，所以，试卷根本就没有发给老师。</p>
+</li>
+<li><p>注意<br>简单请求是只有一次请求的，非简单请求是两次请求。然后一切都透彻了啊！</p>
+</li>
 </ul>
-    
-    <a class="article-more-a" href="/2019/09/04/css_px_pt/#more">more >></a>
-    
-    
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2019/10/17/js_consanguinity/" title="浏览器的同源策略和跨域详解" target="_blank">http://uaoie.top/2019/10/17/js_consanguinity/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -520,216 +357,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/04/css_px_pt/">展开全文 >></a>
-    </p>
-    
 
     
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-say1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
+      </div>
     </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
+  </div>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
-</blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/say1/01.png" align="center/"></div>
-    
-    <a class="article-more-a" href="/2019/09/03/say1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/say1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/10/17/js_consanguinity/" alt="微信分享二维码"> -->
     </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_setTimeout_setInterval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
-    </span>
-  </span>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h1><h2 id="setTimeout-fn-t-："><a href="#setTimeout-fn-t-：" class="headerlink" title="setTimeout(fn,t)："></a>setTimeout(fn,t)：</h2><p>延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。<br>注意：<b style="color:red;">取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。</b></p>
-<h2 id="setInterval-fn-t-："><a href="#setInterval-fn-t-：" class="headerlink" title="setInterval(fn,t)："></a>setInterval(fn,t)：</h2><p>循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。</p>
-    
-    <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/">展开全文 >></a>
-    </p>
-    
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/12/python_bokey/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python+scrapy分析博客园首页4000篇优质博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -750,315 +447,14 @@
 
 
 
-  
-    <article id="post-css_transition_animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <b style="color:red;">
-区别：<br>
-transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。<br>
-animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。
-</b>
-<br>
-    
-    <a class="article-more-a" href="/2019/09/02/css_transition_animation/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/02/css_transition_animation/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-html_head" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <font style="color:red">
-先来梳理一下本文的目录结构
-</font>
-
-<p><img src="/2019/09/01/html_head/naotu.png" alt></p>
-<b style="color:red;">
-现在我将详解head标签和它六个子标签的属性和作用，请耐心看完，会有很大的收获哦！
-</b>
-    
-    <a class="article-more-a" href="/2019/09/01/html_head/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/01/html_head/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-css_media" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/08/31/css_media/">css3的@media</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/08/31/css_media/" class="archive-article-date">
-        <time datetime="2019-08-31T15:23:26.390Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.9k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>都知道<a href="https://v3.bootcss.com/" target="_blank" rel="noopener">bootstrap</a>响应式布局很酷，但是是怎么实现的呢？其官网首页有提到这一切的功劳都是来自于CSS 媒体查询（Media Query）。</p>
-<p>使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。<br>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。<br>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
-    
-    <a class="article-more-a" href="/2019/08/31/css_media/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/08/31/css_media/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -1110,8 +506,8 @@ animation才是css3正宗的动画，主要是用于实现某种持续的动画�
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
