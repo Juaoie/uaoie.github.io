@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>Archives: 2019 | 老虎の博客</title>
+  <title>手写jwt验证，实现java和node无缝切换 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="前言前端时间和我朋友写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。 一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端， 开始考虑的是用python+django，但是还是在半途放弃了，因为总感">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/archives/2019/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手写jwt验证，实现java和node无缝切换">
+<meta property="og:url" content="http://uaoie.top/2019/11/13/js_node_jwt/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="前言前端时间和我朋友写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。 一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端， 开始考虑的是用python+django，但是还是在半途放弃了，因为总感">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2019/11/13/js_node_jwt/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/13/js_node_jwt/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/13/js_node_jwt/03.png">
+<meta property="og:updated_time" content="2019-11-13T09:00:02.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="手写jwt验证，实现java和node无缝切换">
+<meta name="twitter:description" content="前言前端时间和我朋友写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。 一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端， 开始考虑的是用python+django，但是还是在半途放弃了，因为总感">
+<meta name="twitter:image" content="http://uaoie.top/2019/11/13/js_node_jwt/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -212,310 +217,220 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js_node_jwt" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      手写jwt验证，实现java和node无缝切换
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/11/13/js_node_jwt/" class="archive-article-date">
         <time datetime="2019-11-13T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/11/13/js_node_jwt/">手写jwt验证，实现java和node无缝切换</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前端时间和我<a href="https://home.cnblogs.com/u/shaoyu/" target="_blank" rel="noopener">朋友</a>写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。</p>
+<p>一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端，</p>
+<p>开始考虑的是用python+django，但是还是在半途放弃了，因为总感觉Django不过灵活，使用起来非常别扭，也可能是用scrapy写爬虫写多了，难以理解django的框架设计，总是会把他想象成一个scrapy架构，也导致代码写的很乱，下面上一张scrapy架构图。<img src="/2019/11/13/js_node_jwt/01.png" alt="svrapy架构图"></p>
+<a id="more"></a>
+<p>所以最后考虑的用node，Express和Koa框架学习过node应该都知道，我以前也用过express（写过一个小demo），但是给我的感觉这到像是一个只能有5年以上node开发经验才能玩的转的，因为express是非常的精简的，安装它后，会发现它几乎不会为你提供任何编码规范，也没有约束你的框架应该怎么设计，以至于新手下载完成后完全不知道自己应该干嘛，甚至不知道直接的文件应该写在哪，没有框架本身的约定，标准的MVC模型有着千奇百怪的写法，所以我觉得没有一定的架构思想和经验是很难驾驭的。</p>
+<p>koa我并没有直接的使用过，只是听说是express的原班人马打造的，中间件是基于洋葱圈模型实现的。下面上一张图洋葱圈模型图。<img src="/2019/11/13/js_node_jwt/02.png" alt="中间件洋葱模型图"></p>
+<p>而是后来直接就接触的egg，egg标语是“为企业级框架和应用而生”，<a href="https://eggjs.org" target="_blank" rel="noopener">通道</a></p>
+<p>废话说的有点多了，重点是通一套前端代码，开发了两套后端代码，功能是完全一致的，后端都实现了相应的jwt验证功能，–&gt;<a href="https://jwt.io" target="_blank" rel="noopener">json web token</a>，密钥都是我们约定好的固定值，但是最后发现一样的密钥，相同的数据，使用的jwt包不同产生的结果也不同，这也就导致两端之间无法相互切换，每次切换必须从登陆重新开始，这不太符合逻辑，而且重要的是后面的安排有需要这样的功能，无法做到无缝切换就直接导致实现不了下面的功能。</p>
+<h3 id="提纲内容"><a href="#提纲内容" class="headerlink" title="提纲内容"></a>提纲内容</h3><ul>
+<li>jwt实现原理</li>
+<li>jwt未能解决的疑惑</li>
+<li>base64和base64url</li>
+</ul>
+<h4 id="jwt实现原理"><a href="#jwt实现原理" class="headerlink" title="jwt实现原理"></a>jwt实现原理</h4><p>其实作为一个前端开发人员，jwt实现原理我是没必要懂得的，但是如果你不限于此，这算是个必不可少的内容了吧。</p>
+<p>先上一张图。<img src="/2019/11/13/js_node_jwt/03.png" alt="jwt实例图"></p>
+<p>图中数字1是后端使用jwt工具包生成的token，通常是由三部分组成，也就是token中间的两个“.”将其分为三部分，第一部分对应的是右边的数字2部分，然后依次对应。</p>
+<p>这三部分分别是头部、有效载荷、签名。</p>
+<p>头部：alg是指说用到的算法，type当然是令牌类型</p>
+<p>有效荷载：sub所签发的用户，name是签发者的姓名，lat是这签发时间，exp是指到期时间，当然还有一些其他的，这些数据都是非必要数据，实则只有exp可能有用，因为有效数据实际都是在data里面，当然你也可以不这么做。</p>
+<p>签名：前两者都是通过base64url编码过的，而非是算法加密的，所以几乎是透明的。但是签名是默认是通过hsa256算法加密的 ，加密的规则是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">  base64UrlEncode(header) + <span class="string">"."</span> +</span><br><span class="line">  base64UrlEncode(payload),</span><br><span class="line">  your-256-bit-secret</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
+<p>如何验证token呢？那更加简单了，就是用前端传回来的token前两部分和服务器存的秘钥再次加密一次，然后做base64url处理和第三部分比较，一样代表这个token是自己签发的，不一样代表是伪造的，完了过后再将有效载荷部分进行base64url反编码，就得到exp，然后和当前时间比较是否过期。</p>
+<h4 id="jwt未能解决的疑惑"><a href="#jwt未能解决的疑惑" class="headerlink" title="jwt未能解决的疑惑"></a>jwt未能解决的疑惑</h4><p>经过测试，发现三个问题。</p>
+<p>1、 node和java使用对应的jwt工具包生成的token不相同，这里是指在一系列参数完全相同的情况下。</p>
+<p>2、 还发现用java生成的token在jwt官网解析时候输入秘钥结果的到的签名和自己的签名不一样，但是node是一样的，于是就产生了java工具包在输入签名的时候对密钥进行了其他处理的想法，但是他并没有找出做出来怎么样的处理，也就是说我们在生成签名的时候根本就连密钥都是不一样的。</p>
+<p>3、 不管是node还是java生成的token，我们用原来一模一样的数据和一样的算法公式都产生不了和工具包生成一样的签名，也就是可以怀疑在进行hsa256算法加密前确实对秘钥进行处理了。</p>
+<h4 id="base64和base64url"><a href="#base64和base64url" class="headerlink" title="base64和base64url"></a>base64和base64url</h4><p>base64就是一种二进制编码方式，原理很简单，先准备一个包含64个字符的数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,...<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,...<span class="string">'0'</span>,<span class="string">'1'</span>,<span class="string">'2'</span>,...<span class="string">'+'</span>,<span class="string">'/'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>然后对二进制数据进行处理，每三个字节一组，一共24bit，一个字节8bit嘛，然后再将24分为4组，每组正好6bit。6bit的话就刚好能表示64个字符。如果编码字符不是3的倍数，就会剩下一个字节或者两个字节，这个时候就在后面填充\x00，再在编码末尾加上一个或者两个=号。解码的时候制动力去掉就好了。</p>
+<p>base64url编码就是将字符编码成url能传递的参数，因为base64编码会出现+号和/号，然后就会在url中出现问题，所以base64url其实就是将+和/分别变成-和_</p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2019/11/13/js_node_jwt/" title="手写jwt验证，实现java和node无缝切换" target="_blank">http://uaoie.top/2019/11/13/js_node_jwt/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/11/13/js_node_jwt/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/10/17/js_consanguinity/" class="archive-article-date">
-        <time datetime="2019-10-17T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/17/js_consanguinity/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器的同源策略和跨域详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/17/js_consanguinity/">浏览器的同源策略和跨域详解</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/12/python_bokey/" class="archive-article-date">
-        <time datetime="2019-09-12T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/12/python_bokey/">python+scrapy分析博客园首页4000篇优质博客</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/08/31/css_media/" class="archive-article-date">
-        <time datetime="2019-08-31T15:23:26.390Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/08/31/css_media/">css3的@media</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -568,8 +483,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
