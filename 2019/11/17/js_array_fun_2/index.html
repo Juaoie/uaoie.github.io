@@ -6,23 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>老虎の博客</title>
+  <title>js数组方法大全（下） | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="一个佛系の腐朽青年">
-  
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组方法大全（下）">
+<meta property="og:url" content="http://uaoie.top/2019/11/17/js_array_fun_2/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/03.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/04.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/05.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/06.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/07.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/08.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/09.png">
+<meta property="og:updated_time" content="2019-11-17T10:36:43.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="js数组方法大全（下）">
+<meta name="twitter:description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
+<meta name="twitter:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -215,25 +223,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-js_array_fun_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js_array_fun_2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/17/js_array_fun_2/">js数组方法大全（下）</a>
-	
+    <h1 class="article-title" itemprop="name">
+      js数组方法大全（下）
     </h1>
   
 
 
   
   
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/11/17/js_array_fun_2/" class="archive-article-date">
         <time datetime="2019-11-17T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
 </a>
@@ -299,574 +307,321 @@
 <li>toLocaleString()</li>
 </ul>
 </blockquote>
-    
-    <a class="article-more-a" href="/2019/11/17/js_array_fun_2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/17/js_array_fun_2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_array_fun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/16/js_array_fun/">js数组方法大全（上）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/16/js_array_fun/" class="archive-article-date">
-        <time datetime="2019-11-16T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js数组方法大全（上）"><a href="#js数组方法大全（上）" class="headerlink" title="js数组方法大全（上）"></a>js数组方法大全（上）</h1><hr>
-<p>记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！</p>
-<h2 id="本期分享"><a href="#本期分享" class="headerlink" title="本期分享"></a>本期分享</h2><blockquote>
+<a id="more"></a>
+<h2 id="forEach-—-gt-遍历"><a href="#forEach-—-gt-遍历" class="headerlink" title="forEach() —&gt;遍历"></a>forEach() —&gt;遍历</h2><ul>
+<li>使用热度：经常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：无</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
+</tr>
+</tbody></table>
 <ul>
-<li>join()</li>
-<li>reverse()</li>
-<li>sort()</li>
-<li>concat()</li>
-<li>slice()</li>
-<li>splice()</li>
-<li>push()</li>
-<li>pop()</li>
-<li>unshift()</li>
-<li>shift()</li>
-<li>toString()</li>
-<li>toLocaleString()</li>
+<li>说明：该方法无法提前终止运行，如果要提前终止运行，只能使用try块中，然后抛出一个异常。</li>
+<li>小技巧：如果数组是个数组对象形式可以直接操作数组元素改变原始数组本身，因为对象是个引用数据类型嘛！</li>
+<li>实例如下：</li>
 </ul>
-</blockquote>
-<h2 id="下期分享"><a href="#下期分享" class="headerlink" title="下期分享"></a>下期分享</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var sum =0;</span><br><span class="line">data.forEach(value=&gt;&#123;</span><br><span class="line">  sum+=value;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(sum);</span><br><span class="line"></span><br><span class="line">data.forEach((v,i,a)=&gt;&#123;</span><br><span class="line">  a[i]=v+1;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data);</span><br><span class="line"></span><br><span class="line">var data_post=[&#123;a:1&#125;,&#123;a:2&#125;]</span><br><span class="line">data_post.forEach(value=&gt;&#123;</span><br><span class="line">  value.a++;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data_post)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/01.png" alt="forEach"></p>
+<h2 id="map-—-gt-映射"><a href="#map-—-gt-映射" class="headerlink" title="()map —&gt;映射"></a>()map —&gt;映射</h2><ul>
+<li>使用热度：经常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回一个新函数</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
+</tr>
+</tbody></table>
 <ul>
-<li>forEach()</li>
-<li>map()</li>
-<li>filer()</li>
-<li>every()</li>
-<li>some()</li>
-<li>reduce()</li>
-<li>reduceRight()</li>
-<li>indexOf()</li>
-<li>lastIndex()</li>
+<li>说明：传递给map函数应该有返回值，返回值是新数组的元素。</li>
+<li>实例如下：</li>
 </ul>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/11/16/js_array_fun/#more">more >></a>
-    
-    
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.map(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x*x;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br></pre></td></tr></table></figure>
 
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/16/js_array_fun/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_node_jwt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/13/js_node_jwt/">手写jwt验证，实现java和node无缝切换</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/13/js_node_jwt/" class="archive-article-date">
-        <time datetime="2019-11-13T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.5k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前端时间和我<a href="https://home.cnblogs.com/u/shaoyu/" target="_blank" rel="noopener">朋友</a>写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。</p>
-<p>一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端，</p>
-<p>开始考虑的是用python+django，但是还是在半途放弃了，因为总感觉Django不过灵活，使用起来非常别扭，也可能是用scrapy写爬虫写多了，难以理解django的框架设计，总是会把他想象成一个scrapy架构，也导致代码写的很乱，下面上一张scrapy架构图。<img src="/2019/11/13/js_node_jwt/01.png" alt="svrapy架构图"></p>
-    
-    <a class="article-more-a" href="/2019/11/13/js_node_jwt/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/13/js_node_jwt/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_consanguinity" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/10/17/js_consanguinity/">浏览器的同源策略和跨域详解</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/10/17/js_consanguinity/" class="archive-article-date">
-        <time datetime="2019-10-17T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>去年这个时候有写过一篇文章叫<a href="https://www.cnblogs.com/Juaoie/p/9786313.html" target="_blank" rel="noopener">《ajax中的json和jsonp详解》</a>，写这个文章是因为我朋友学习前端刚好遇到了这个问题，但是就在昨天，他在学习java的时候又遇到同样的问题，看来我又要操作一波了。（实则我就他这一个朋友）(๑￫ܫ￩)</p>
-<p>######提纲内容</p>
+<p><img src="/2019/11/17/js_array_fun_2/02.png" alt="map"></p>
+<h2 id="filter-—-gt-过滤"><a href="#filter-—-gt-过滤" class="headerlink" title="filter() —&gt;过滤"></a>filter() —&gt;过滤</h2><ul>
+<li>使用热度：常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回过滤后的数组</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
+</tr>
+</tbody></table>
 <ul>
-<li>重述一遍何为同源策略(因为之前讲过)</li>
-<li>跨域的三种方式</li>
-<li>剖析CORS方式跨域（重点）</li>
-<li>故事解析（次重点）</li>
+<li>说明：如果返回值是true或者可以转化为true的值，那么这个值就是新数组的元素。</li>
+<li>实例如下：</li>
 </ul>
-<h3 id="何为同源策略"><a href="#何为同源策略" class="headerlink" title="何为同源策略"></a>何为同源策略</h3><p>同源策略就是协议相同、域名相同、端口相同相同的网页才能资源互通。<br>简单的来说，分为三个，我访问淘宝网站，再访问京东网站，这两者资源肯定不能互通是吧。<br>1、也就是cookie和LocalStorage、IndexDB等无法互通。<br>2、DOM无法获取<br>3、AJAX 请求在浏览器端有跨域限制</p>
-<p>也就是说几乎所有的请求都会跨域，why？主要还不是因为很多公司为了解决web访问对后台造成压力，都会把web服务器和后台接口服务器分到不同的域中，前后端不分离除外，另一个原因是前端开发人员调用后台测试，测试服务器在后台，web却运行在自己电脑上。一个是localhost，一个是对应测试服务器的域名。</p>
-<h3 id="跨域的三种方式"><a href="#跨域的三种方式" class="headerlink" title="跨域的三种方式"></a>跨域的三种方式</h3><ul>
-<li><a href="https://www.cnblogs.com/Juaoie/p/9786313.html" target="_blank" rel="noopener">JSONP方式</a></li>
-<li>CORS方式</li>
-<li>代理请求方式</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.filter(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&lt;3;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/03.png" alt="filter"></p>
+<h2 id="every-—-gt-检测"><a href="#every-—-gt-检测" class="headerlink" title="every() —&gt;检测"></a>every() —&gt;检测</h2><ul>
+<li>使用热度：不常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：true或者false</li>
+<li>参数：</li>
 </ul>
-<h3 id="剖析CORS方式跨域"><a href="#剖析CORS方式跨域" class="headerlink" title="剖析CORS方式跨域"></a>剖析CORS方式跨域</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）</p>
-<p>CORS可以理解为后端配置一些东西，主动同意哪些不同域名可以请求我的接口，从而实现跨域请求的问题，（对了，提示一下，jsonp虽然简单好用，但是只能实现get请求，所以比较单一。但是jsonp可以适用于所有浏览器，CORS对ie只适用于ie10及以上，对其他浏览器都是支持的。）</p>
-<p>先上一张图（后面你会回来看的）</p>
-<p><img src="/2019/10/17/js_consanguinity/01.png" alt></p>
-    
-    <a class="article-more-a" href="/2019/10/17/js_consanguinity/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/10/17/js_consanguinity/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python_bokey" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/12/python_bokey/">python+scrapy分析博客园首页4000篇优质博客</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/12/python_bokey/" class="archive-article-date">
-        <time datetime="2019-09-12T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">805字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="1、侵删"><a href="#1、侵删" class="headerlink" title="1、侵删"></a>1、侵删</h4><blockquote>
-<p>本文数据是获取的博客园首页的4000条数据，为了不对博客园服务器造成压力，所以源码不会公开，在此，敬请博客园官方团队放心。<br>获取到的数据从2019-7-11到2019-9-12，此数据也不会公开。<br>由于会涉及到一些博主的数据，所以有博主不愿公开数据，联系我及时删除。</p>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/09/12/python_bokey/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/12/python_bokey/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css_px_pt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
+</tr>
+</tbody></table>
 <ul>
-<li>dp(device pixels)</li>
-<li>px(css pixels)</li>
-<li>pt(point)</li>
-<li>ppi(pixels per inch)</li>
-<li>dpi(dots per inch)</li>
-<li>dpr(device pixels ratio)</li>
-<li>dip(device independent pixel)</li>
+<li>说明：当且仅当针对数组中的所有元素调用绑定函数都返回true时，它才返回true。</li>
+<li>注意：一旦every或者some已经确定了改返回什么值得时候就不会遍历数组了。根据数学上的惯例，在空数组调用时，every返回true，some返回false。</li>
+<li>实例如下：</li>
 </ul>
-<p>读本文你需要掌握哪些基本知识：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.every(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&lt;10;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.every(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x%2===0;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/04.png" alt="every"></p>
+<h2 id="some-—-gt-检测"><a href="#some-—-gt-检测" class="headerlink" title="some() —&gt;检测"></a>some() —&gt;检测</h2><ul>
+<li>使用热度：不常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：true或者false</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
+</tr>
+</tbody></table>
 <ul>
-<li>1in(英寸) == 2.5399999961392cm</li>
-<li>常常用1英寸等于2.54厘米</li>
-<li>1m == 3尺</li>
-<li>1尺 == 10寸</li>
-<li>1寸 == 3.33333333cm</li>
-<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
-<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
+<li>说明：当数组中至少有一个元素调用绑定函数返回true时，它就返回true。</li>
+<li>注意：一旦every或者some已经确定了改返回什么值得时候就不会遍历数组了。根据数学上的惯例，在空数组调用时，every返回true，some返回false。</li>
+<li>实例如下：</li>
 </ul>
-    
-    <a class="article-more-a" href="/2019/09/04/css_px_pt/#more">more >></a>
-    
-    
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.some(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&gt;10;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.some(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x%2===0;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/05.png" alt="some"></p>
+<h2 id="reduce-—-gt-简化"><a href="#reduce-—-gt-简化" class="headerlink" title="reduce() —&gt;简化"></a>reduce() —&gt;简化</h2><ul>
+<li>使用热度：不常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回一个值</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>四个参数分别是：初始化值/数组元素、数组元素、元素的索引、数组本身</td>
+</tr>
+<tr>
+<td>2</td>
+<td>number</td>
+<td>否</td>
+<td>供计算的初始化值</td>
+</tr>
+</tbody></table>
+<ul>
+<li>说明：第一个参数是到目前为止的简化操作累计的结果</li>
+<li>注意：如果没有初始化值，第一次调用函数的第一个参数就是第一个数组元素，第二个参数则是第二个数组元素。如果有初始化值，第一次调用函数的第一个参数就是初始化值，二个参数则是第一个数组元素。</li>
+<li>实例如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;,0)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x*y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br><span class="line"></span><br><span class="line">var d= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&gt;y?x:y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(d)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/06.png" alt="reduce"></p>
+<h2 id="reduceRight-—-gt-在数组元素后面增加元素"><a href="#reduceRight-—-gt-在数组元素后面增加元素" class="headerlink" title="reduceRight() —&gt;在数组元素后面增加元素"></a>reduceRight() —&gt;在数组元素后面增加元素</h2><ul>
+<li>使用热度：不常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回一个值</li>
+<li>参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>function</td>
+<td>是</td>
+<td>四个参数分别是：初始化值/数组元素、数组元素、元素的索引、数组本身</td>
+</tr>
+<tr>
+<td>2</td>
+<td>number</td>
+<td>否</td>
+<td>供计算的初始化值</td>
+</tr>
+</tbody></table>
+<ul>
+<li>说明：第一个参数是到目前为止的简化操作累计的结果。不同于reduce这个仅仅是从右到左计算。</li>
+<li>注意：如果没有初始化值，第一次调用函数的第一个参数就是第一个数组元素，第二个参数则是第二个数组元素。如果有初始化值，第一次调用函数的第一个参数就是初始化值，二个参数则是第一个数组元素。</li>
+<li>实例如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">data.reduceRight((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">log</span>(y)</span><br><span class="line">  <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;,0)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/07.png" alt="reduceRight"></p>
+<h2 id="indexOf-—-gt-搜索"><a href="#indexOf-—-gt-搜索" class="headerlink" title="indexOf()  —&gt;搜索"></a>indexOf()  —&gt;搜索</h2><ul>
+<li>使用热度：经常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回数组索引或者-1</li>
+<li>参数:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>*</td>
+<td>是</td>
+<td>要搜索的数组元素</td>
+</tr>
+<tr>
+<td>2</td>
+<td>number</td>
+<td>否</td>
+<td>从数组哪个索引开始搜索</td>
+</tr>
+</tbody></table>
+<ul>
+<li>说明：如果能搜索到结果将返回第一个索引，如果搜索不到就返回-1</li>
+<li>注意：如果第二个参数是负数，指的是从数组元素末尾的偏移量位置开始向后搜索，而不是到偏移量位置就截止搜索了，这里是很容易和splice弄混的。</li>
+<li>实例如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b=data.indexOf(1,-5);</span><br><span class="line"><span class="built_in">log</span>(b);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/08.png" alt="indexOf"></p>
+<h2 id="lashIndexOf-—-gt-搜索"><a href="#lashIndexOf-—-gt-搜索" class="headerlink" title="lashIndexOf() —&gt;搜索"></a>lashIndexOf() —&gt;搜索</h2><ul>
+<li>使用热度：经常用</li>
+<li>是否改变原始数组：否</li>
+<li>返回：返回数组索引或者-1</li>
+<li>参数:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数位置</th>
+<th>参数类型</th>
+<th>是否必选</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>*</td>
+<td>是</td>
+<td>要搜索的数组元素</td>
+</tr>
+<tr>
+<td>2</td>
+<td>number</td>
+<td>否</td>
+<td>从数组哪个索引开始搜索</td>
+</tr>
+</tbody></table>
+<ul>
+<li>说明：和indexOf不同的是lashIndexOf是反向搜索</li>
+<li>注意：因为是反向搜索，当第二个参数是负数的时候，就是指从末尾偏移量的位置向前搜索</li>
+<li>实例如下：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,2,5];</span><br><span class="line">var b=data.lastIndexOf(2,-3)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c=data.lastIndexOf(1,-5)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/11/17/js_array_fun_2/09.png" alt="lashIndexOf"></p>
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2019/11/17/js_array_fun_2/" title="js数组方法大全（下）" target="_blank">http://uaoie.top/2019/11/17/js_array_fun_2/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -876,216 +631,76 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/04/css_px_pt/">展开全文 >></a>
-    </p>
-    
 
     
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-say1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
+      </div>
     </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
+  </div>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
-</blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/say1/01.png" align="center/"></div>
-    
-    <a class="article-more-a" href="/2019/09/03/say1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/say1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/11/17/js_array_fun_2/" alt="微信分享二维码"> -->
     </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_setTimeout_setInterval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
-    </span>
-  </span>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h1><h2 id="setTimeout-fn-t-："><a href="#setTimeout-fn-t-：" class="headerlink" title="setTimeout(fn,t)："></a>setTimeout(fn,t)：</h2><p>延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。<br>注意：<b style="color:red;">取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。</b></p>
-<h2 id="setInterval-fn-t-："><a href="#setInterval-fn-t-：" class="headerlink" title="setInterval(fn,t)："></a>setInterval(fn,t)：</h2><p>循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。</p>
-    
-    <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/">展开全文 >></a>
-    </p>
-    
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/16/js_array_fun/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js数组方法大全（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1106,220 +721,14 @@
 
 
 
-  
-    <article id="post-css_transition_animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <b style="color:red;">
-区别：<br>
-transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。<br>
-animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。
-</b>
-<br>
-    
-    <a class="article-more-a" href="/2019/09/02/css_transition_animation/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/02/css_transition_animation/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-    <article id="post-html_head" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <font style="color:red">
-先来梳理一下本文的目录结构
-</font>
-
-<p><img src="/2019/09/01/html_head/naotu.png" alt></p>
-<b style="color:red;">
-现在我将详解head标签和它六个子标签的属性和作用，请耐心看完，会有很大的收获哦！
-</b>
-    
-    <a class="article-more-a" href="/2019/09/01/html_head/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/01/html_head/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1371,8 +780,8 @@ animation才是css3正宗的动画，主要是用于实现某种持续的动画�
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
