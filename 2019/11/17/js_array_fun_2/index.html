@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/07.png">
 <meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/08.png">
 <meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/09.png">
-<meta property="og:updated_time" content="2019-11-17T10:36:43.154Z">
+<meta property="og:updated_time" content="2019-11-17T10:40:22.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组方法大全（下）">
 <meta name="twitter:description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
@@ -338,7 +338,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var sum =0;</span><br><span class="line">data.forEach(value=&gt;&#123;</span><br><span class="line">  sum+=value;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(sum);</span><br><span class="line"></span><br><span class="line">data.forEach((v,i,a)=&gt;&#123;</span><br><span class="line">  a[i]=v+1;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data);</span><br><span class="line"></span><br><span class="line">var data_post=[&#123;a:1&#125;,&#123;a:2&#125;]</span><br><span class="line">data_post.forEach(value=&gt;&#123;</span><br><span class="line">  value.a++;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data_post)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2019/11/17/js_array_fun_2/01.png" alt="forEach"></p>
-<h2 id="map-—-gt-映射"><a href="#map-—-gt-映射" class="headerlink" title="()map —&gt;映射"></a>()map —&gt;映射</h2><ul>
+<h2 id="map-—-gt-映射"><a href="#map-—-gt-映射" class="headerlink" title="map() —&gt;映射"></a>map() —&gt;映射</h2><ul>
 <li>使用热度：经常用</li>
 <li>是否改变原始数组：否</li>
 <li>返回：返回一个新函数</li>
@@ -492,7 +492,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;,0)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x*y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br><span class="line"></span><br><span class="line">var d= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&gt;y?x:y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(d)</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2019/11/17/js_array_fun_2/06.png" alt="reduce"></p>
-<h2 id="reduceRight-—-gt-在数组元素后面增加元素"><a href="#reduceRight-—-gt-在数组元素后面增加元素" class="headerlink" title="reduceRight() —&gt;在数组元素后面增加元素"></a>reduceRight() —&gt;在数组元素后面增加元素</h2><ul>
+<h2 id="reduceRight-—-gt-简化"><a href="#reduceRight-—-gt-简化" class="headerlink" title="reduceRight() —&gt;简化"></a>reduceRight() —&gt;简化</h2><ul>
 <li>使用热度：不常用</li>
 <li>是否改变原始数组：否</li>
 <li>返回：返回一个值</li>
