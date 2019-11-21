@@ -6,31 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>js数组方法大全（下） | 老虎の博客</title>
+  <title>vue拖拽组件开发 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
+  <meta name="description" content="vue拖拽组件开发">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js数组方法大全（下）">
-<meta property="og:url" content="http://uaoie.top/2019/11/17/js_array_fun_2/index.html">
+<meta property="og:title" content="vue拖拽组件开发">
+<meta property="og:url" content="http://uaoie.top/2019/11/20/js_drag/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
+<meta property="og:description" content="vue拖拽组件开发">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/01.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/02.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/03.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/04.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/05.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/06.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/07.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/08.png">
-<meta property="og:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/09.png">
-<meta property="og:updated_time" content="2019-11-17T10:40:22.621Z">
+<meta property="og:image" content="http://uaoie.top/2019/11/20/js_drag/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/20/js_drag/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/11/20/js_drag/03.gif">
+<meta property="og:updated_time" content="2019-11-21T09:16:34.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js数组方法大全（下）">
-<meta name="twitter:description" content="js数组方法大全（下） 记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！ 本期分享  forEach() map() filer() every() some() reduce() reduceRight() indexOf() lastIndex()   上期分享  join() reverse() sort() concat() slice() splice(">
-<meta name="twitter:image" content="http://uaoie.top/2019/11/17/js_array_fun_2/01.png">
+<meta name="twitter:title" content="vue拖拽组件开发">
+<meta name="twitter:description" content="vue拖拽组件开发">
+<meta name="twitter:image" content="http://uaoie.top/2019/11/20/js_drag/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -223,14 +217,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js_array_fun_2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js_drag" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      js数组方法大全（下）
+      vue拖拽组件开发
     </h1>
   
 
@@ -242,8 +236,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/11/17/js_array_fun_2/" class="archive-article-date">
-        <time datetime="2019-11-17T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-17</time>
+<a href="/2019/11/20/js_drag/" class="archive-article-date">
+        <time datetime="2019-11-20T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
 </a>
 
   
@@ -256,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.7k字</span>
+      <span class="post-count">817字</span>
     </span>
   </span>
 
@@ -265,7 +259,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -276,330 +270,24 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="js数组方法大全（下）"><a href="#js数组方法大全（下）" class="headerlink" title="js数组方法大全（下）"></a>js数组方法大全（下）</h1><hr>
-<p>记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！</p>
-<h2 id="本期分享"><a href="#本期分享" class="headerlink" title="本期分享"></a>本期分享</h2><blockquote>
-<ul>
-<li>forEach()</li>
-<li>map()</li>
-<li>filer()</li>
-<li>every()</li>
-<li>some()</li>
-<li>reduce()</li>
-<li>reduceRight()</li>
-<li>indexOf()</li>
-<li>lastIndex()</li>
-</ul>
-</blockquote>
-<h2 id="上期分享"><a href="#上期分享" class="headerlink" title="上期分享"></a>上期分享</h2><blockquote>
-<ul>
-<li>join()</li>
-<li>reverse()</li>
-<li>sort()</li>
-<li>concat()</li>
-<li>slice()</li>
-<li>splice()</li>
-<li>push()</li>
-<li>pop()</li>
-<li>unshift()</li>
-<li>shift()</li>
-<li>toString()</li>
-<li>toLocaleString()</li>
-</ul>
-</blockquote>
+    <h1 id="vue拖拽组件开发"><a href="#vue拖拽组件开发" class="headerlink" title="vue拖拽组件开发"></a>vue拖拽组件开发</h1><hr>
 <a id="more"></a>
-<h2 id="forEach-—-gt-遍历"><a href="#forEach-—-gt-遍历" class="headerlink" title="forEach() —&gt;遍历"></a>forEach() —&gt;遍历</h2><ul>
-<li>使用热度：经常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：无</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：该方法无法提前终止运行，如果要提前终止运行，只能使用try块中，然后抛出一个异常。</li>
-<li>小技巧：如果数组是个数组对象形式可以直接操作数组元素改变原始数组本身，因为对象是个引用数据类型嘛！</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var sum =0;</span><br><span class="line">data.forEach(value=&gt;&#123;</span><br><span class="line">  sum+=value;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(sum);</span><br><span class="line"></span><br><span class="line">data.forEach((v,i,a)=&gt;&#123;</span><br><span class="line">  a[i]=v+1;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data);</span><br><span class="line"></span><br><span class="line">var data_post=[&#123;a:1&#125;,&#123;a:2&#125;]</span><br><span class="line">data_post.forEach(value=&gt;&#123;</span><br><span class="line">  value.a++;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(data_post)</span><br></pre></td></tr></table></figure>
+<h2 id="创建临时vue项目"><a href="#创建临时vue项目" class="headerlink" title="创建临时vue项目"></a>创建临时vue项目</h2><h3 id="先查看node和npm版本，怎么安装就不多多bb了"><a href="#先查看node和npm版本，怎么安装就不多多bb了" class="headerlink" title="先查看node和npm版本，怎么安装就不多多bb了"></a>先查看node和npm版本，怎么安装就不多多bb了</h3><p><img src="/2019/11/20/js_drag/01.png" alt="node和npm版本"></p>
+<h3 id="再安装vue-cli"><a href="#再安装vue-cli" class="headerlink" title="再安装vue-cli"></a>再安装vue-cli</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g      //全局安装 vue-cli</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/17/js_array_fun_2/01.png" alt="forEach"></p>
-<h2 id="map-—-gt-映射"><a href="#map-—-gt-映射" class="headerlink" title="map() —&gt;映射"></a>map() —&gt;映射</h2><ul>
-<li>使用热度：经常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回一个新函数</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：传递给map函数应该有返回值，返回值是新数组的元素。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.map(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x*x;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br></pre></td></tr></table></figure>
+<h3 id="检测是否安装成功"><a href="#检测是否安装成功" class="headerlink" title="检测是否安装成功"></a>检测是否安装成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue list</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/17/js_array_fun_2/02.png" alt="map"></p>
-<h2 id="filter-—-gt-过滤"><a href="#filter-—-gt-过滤" class="headerlink" title="filter() —&gt;过滤"></a>filter() —&gt;过滤</h2><ul>
-<li>使用热度：常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回过滤后的数组</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：如果返回值是true或者可以转化为true的值，那么这个值就是新数组的元素。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.filter(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&lt;3;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br></pre></td></tr></table></figure>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack  <span class="string">"项目名称"</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/17/js_array_fun_2/03.png" alt="filter"></p>
-<h2 id="every-—-gt-检测"><a href="#every-—-gt-检测" class="headerlink" title="every() —&gt;检测"></a>every() —&gt;检测</h2><ul>
-<li>使用热度：不常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：true或者false</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
-</tr>
-</tbody></table>
 <ul>
-<li>说明：当且仅当针对数组中的所有元素调用绑定函数都返回true时，它才返回true。</li>
-<li>注意：一旦every或者some已经确定了改返回什么值得时候就不会遍历数组了。根据数学上的惯例，在空数组调用时，every返回true，some返回false。</li>
-<li>实例如下：</li>
+<li>下面懒得介绍了，直接用小姐姐一张图，通道=&gt;<a href="https://www.jianshu.com/p/02b12c600c7b" target="_blank" rel="noopener">程序员是粉色的</a></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.every(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&lt;10;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.every(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x%2===0;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/11/20/js_drag/02.png" alt="创建vue项目"></p>
+<h2 id="开始写拖拽组件"><a href="#开始写拖拽组件" class="headerlink" title="开始写拖拽组件"></a>开始写拖拽组件</h2><h3 id="组件就暂且命名为-JuDrag吧。然后再在index-vue里面引入，代码如下："><a href="#组件就暂且命名为-JuDrag吧。然后再在index-vue里面引入，代码如下：" class="headerlink" title="组件就暂且命名为 JuDrag吧。然后再在index.vue里面引入，代码如下："></a>组件就暂且命名为 JuDrag吧。然后再在index.vue里面引入，代码如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=<span class="string">"a"</span>&gt;</span><br><span class="line">    &lt;ju-drag :post_data=<span class="string">"post_data"</span>&gt;</span><br><span class="line">      &lt;div</span><br><span class="line">        v-for=<span class="string">"item in post_data"</span></span><br><span class="line">        :key=<span class="string">"item.id"</span></span><br><span class="line">        :id=<span class="string">"item.id"</span></span><br><span class="line">        class=<span class="string">"b"</span></span><br><span class="line">      &gt;&#123;&#123;item.name&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/ju-drag&gt;</span><br><span class="line">    &lt;div class=<span class="string">"b"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import JuDrag from <span class="string">"@/components/JuDrag"</span>;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">"index"</span>,</span><br><span class="line">  components: &#123;</span><br><span class="line">    JuDrag</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      post_data: [</span><br><span class="line">        &#123;</span><br><span class="line">          id: 11111,</span><br><span class="line">          name: <span class="string">"第一个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 22222,</span><br><span class="line">          name: <span class="string">"第二个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 33333,</span><br><span class="line">          name: <span class="string">"第三个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 44444,</span><br><span class="line">          name: <span class="string">"第四个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 555555,</span><br><span class="line">          name: <span class="string">"第五个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 66666,</span><br><span class="line">          name: <span class="string">"第六个块"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          id: 77777,</span><br><span class="line">          name: <span class="string">"第七个块"</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">mounted</span></span>() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to <span class="built_in">limit</span> CSS to this component only --&gt;</span><br><span class="line">&lt;style &gt;</span><br><span class="line">.a &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  border: 1px <span class="comment">#eee solid;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.b &#123;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">  height: 50px;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/17/js_array_fun_2/04.png" alt="every"></p>
-<h2 id="some-—-gt-检测"><a href="#some-—-gt-检测" class="headerlink" title="some() —&gt;检测"></a>some() —&gt;检测</h2><ul>
-<li>使用热度：不常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：true或者false</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>三个参数分别是：数组元素、元素的索引、数组本身</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：当数组中至少有一个元素调用绑定函数返回true时，它就返回true。</li>
-<li>注意：一旦every或者some已经确定了改返回什么值得时候就不会遍历数组了。根据数学上的惯例，在空数组调用时，every返回true，some返回false。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.some(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&gt;10;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.some(x=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x%2===0;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
+<h3 id="然后写JuDrag-vue代码"><a href="#然后写JuDrag-vue代码" class="headerlink" title="然后写JuDrag.vue代码"></a>然后写JuDrag.vue代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">"HelloWorld"</span>,</span><br><span class="line">  <span class="function"><span class="title">data</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      pitch_div_id: <span class="string">""</span>, //正在移动的id</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    post_data: Array</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">mounted</span></span>() &#123;</span><br><span class="line">    this.post_data.forEach(item =&gt; &#123;</span><br><span class="line">      <span class="built_in">let</span> element = document.getElementById(item.id);</span><br><span class="line">      element.setAttribute(<span class="string">"draggable"</span>, <span class="string">"true"</span>);</span><br><span class="line">      element.style =</span><br><span class="line">        <span class="string">"transition:all 0.5s cubic-bezier(0,0,1,1) 0s;"</span>;</span><br><span class="line">      this.addHandler(element);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    dragstart(event) &#123;</span><br><span class="line">      event.dataTransfer.setData(<span class="string">"Text"</span>, event.target.id);</span><br><span class="line">      event.target.style.opacity = <span class="string">"0.4"</span>;</span><br><span class="line">      this.pitch_div_id = event.target.id;</span><br><span class="line">    &#125;,</span><br><span class="line">    drag(event) &#123;&#125;,</span><br><span class="line">    dragend(event) &#123;</span><br><span class="line">      event.target.style.opacity = <span class="string">"1"</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    dragenter(event) &#123;</span><br><span class="line">      <span class="keyword">if</span> (event.target.id == <span class="string">""</span>) <span class="built_in">return</span>;</span><br><span class="line">      <span class="keyword">if</span> (event.target.id == this.pitch_div_id) <span class="built_in">return</span>;</span><br><span class="line">      <span class="built_in">let</span> x = <span class="string">""</span>,</span><br><span class="line">        y = <span class="string">""</span>;</span><br><span class="line">      this.post_data.forEach((item, index) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (item.id == this.pitch_div_id) x = index;</span><br><span class="line">        <span class="keyword">if</span> (item.id == event.target.id) y = index;</span><br><span class="line">      &#125;);</span><br><span class="line">      this.post_data = this.moveArray(this.post_data, x, y);</span><br><span class="line">      this.animation(x, y, this.pitch_div_id, event.target.id);</span><br><span class="line">    &#125;,</span><br><span class="line">    dragover(event) &#123;</span><br><span class="line">      //更改图标</span><br><span class="line">      this.preventDefault(event);</span><br><span class="line">    &#125;,</span><br><span class="line">    dragleave(event) &#123;&#125;,</span><br><span class="line">    drop(event) &#123;</span><br><span class="line">      //关闭火狐默认打开事件</span><br><span class="line">      this.preventDefault(event);</span><br><span class="line">      this.stopPropagation(event);</span><br><span class="line">    &#125;,</span><br><span class="line">    animation(x, y, x_id, y_id) &#123;</span><br><span class="line">      <span class="built_in">let</span> x_element = document.getElementById(x_id);</span><br><span class="line">      <span class="built_in">let</span> y_element = document.getElementById(y_id);</span><br><span class="line">    &#125;,</span><br><span class="line">    moveArray(array, x, y) &#123;</span><br><span class="line">      <span class="keyword">if</span> (x &lt; y) &#123;</span><br><span class="line">        array.splice(y + 1, 0, array[x]);</span><br><span class="line">        array.splice(x, 1);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        array.splice(y, 0, array[x]);</span><br><span class="line">        array.splice(x + 1, 1);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> array;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    addHandler(element) &#123;</span><br><span class="line">      <span class="built_in">let</span> arr = [</span><br><span class="line">        <span class="string">"dragstart"</span>,</span><br><span class="line">        <span class="string">"drag"</span>,</span><br><span class="line">        <span class="string">"dragend"</span>,</span><br><span class="line">        <span class="string">"dragenter"</span>,</span><br><span class="line">        <span class="string">"dragover"</span>,</span><br><span class="line">        <span class="string">"dragleave"</span>,</span><br><span class="line">        <span class="string">"drop"</span></span><br><span class="line">      ];</span><br><span class="line">      arr.forEach(item =&gt; &#123;</span><br><span class="line">        <span class="built_in">let</span> getEvent = event =&gt; &#123;</span><br><span class="line">          <span class="built_in">let</span> event_new = this.getEvent(event);</span><br><span class="line">          this[item](event_new);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">if</span> (element.addEventListener) &#123;</span><br><span class="line">          element.addEventListener(item, getEvent, <span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</span><br><span class="line">          element.attachEvent(<span class="string">"on"</span> + item, getEvent);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          element[<span class="string">"on"</span> + item] = getEvent;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    removeHandler(element, <span class="built_in">type</span>, handler) &#123;</span><br><span class="line">      <span class="keyword">if</span> (element.removeEventListener) &#123;</span><br><span class="line">        element.removeEventListener(<span class="built_in">type</span>, handler, <span class="literal">false</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</span><br><span class="line">        element.detachEvent(<span class="string">"on"</span> + <span class="built_in">type</span>, handler);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        element[<span class="string">"on"</span> + <span class="built_in">type</span>] = null;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getEvent(event) &#123;</span><br><span class="line">      <span class="built_in">return</span> event ? event : window.event;</span><br><span class="line">    &#125;,</span><br><span class="line">    getTarget(event) &#123;</span><br><span class="line">      <span class="built_in">return</span> event.target || event.srcElement;</span><br><span class="line">    &#125;,</span><br><span class="line">    //取消事件默认动作</span><br><span class="line">    preventDefault(event) &#123;</span><br><span class="line">      <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        event.returnValue = <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    stopPropagation(event) &#123;</span><br><span class="line">      <span class="keyword">if</span> (event.stopPropagation) &#123;</span><br><span class="line">        event.stopPropagation();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        event.cancelBubbles = <span class="literal">true</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //获取与目标节点事件相关的节点信息</span><br><span class="line">    getRelatedTarget(event) &#123;</span><br><span class="line">      <span class="keyword">if</span> (event.relatedTarger) &#123;</span><br><span class="line">        <span class="built_in">return</span> event.relatedTarget;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.toElement) &#123;</span><br><span class="line">        <span class="built_in">return</span> event.toElement;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (event.fromElement) &#123;</span><br><span class="line">        <span class="built_in">return</span> event.fromElement;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">return</span> null;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add <span class="string">"scoped"</span> attribute to <span class="built_in">limit</span> CSS to this component only --&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/11/17/js_array_fun_2/05.png" alt="some"></p>
-<h2 id="reduce-—-gt-简化"><a href="#reduce-—-gt-简化" class="headerlink" title="reduce() —&gt;简化"></a>reduce() —&gt;简化</h2><ul>
-<li>使用热度：不常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回一个值</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>四个参数分别是：初始化值/数组元素、数组元素、元素的索引、数组本身</td>
-</tr>
-<tr>
-<td>2</td>
-<td>number</td>
-<td>否</td>
-<td>供计算的初始化值</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：第一个参数是到目前为止的简化操作累计的结果</li>
-<li>注意：如果没有初始化值，第一次调用函数的第一个参数就是第一个数组元素，第二个参数则是第二个数组元素。如果有初始化值，第一次调用函数的第一个参数就是初始化值，二个参数则是第一个数组元素。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;,0)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x*y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br><span class="line"></span><br><span class="line">var d= data.reduce((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">return</span> x&gt;y?x:y;</span><br><span class="line">&#125;,1)</span><br><span class="line"><span class="built_in">log</span>(d)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/11/17/js_array_fun_2/06.png" alt="reduce"></p>
-<h2 id="reduceRight-—-gt-简化"><a href="#reduceRight-—-gt-简化" class="headerlink" title="reduceRight() —&gt;简化"></a>reduceRight() —&gt;简化</h2><ul>
-<li>使用热度：不常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回一个值</li>
-<li>参数：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>function</td>
-<td>是</td>
-<td>四个参数分别是：初始化值/数组元素、数组元素、元素的索引、数组本身</td>
-</tr>
-<tr>
-<td>2</td>
-<td>number</td>
-<td>否</td>
-<td>供计算的初始化值</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：第一个参数是到目前为止的简化操作累计的结果。不同于reduce这个仅仅是从右到左计算。</li>
-<li>注意：如果没有初始化值，第一次调用函数的第一个参数就是第一个数组元素，第二个参数则是第二个数组元素。如果有初始化值，第一次调用函数的第一个参数就是初始化值，二个参数则是第一个数组元素。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">data.reduceRight((x,y)=&gt;&#123;</span><br><span class="line">  <span class="built_in">log</span>(y)</span><br><span class="line">  <span class="built_in">return</span> x+y;</span><br><span class="line">&#125;,0)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/11/17/js_array_fun_2/07.png" alt="reduceRight"></p>
-<h2 id="indexOf-—-gt-搜索"><a href="#indexOf-—-gt-搜索" class="headerlink" title="indexOf()  —&gt;搜索"></a>indexOf()  —&gt;搜索</h2><ul>
-<li>使用热度：经常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回数组索引或者-1</li>
-<li>参数:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>*</td>
-<td>是</td>
-<td>要搜索的数组元素</td>
-</tr>
-<tr>
-<td>2</td>
-<td>number</td>
-<td>否</td>
-<td>从数组哪个索引开始搜索</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：如果能搜索到结果将返回第一个索引，如果搜索不到就返回-1</li>
-<li>注意：如果第二个参数是负数，指的是从数组元素末尾的偏移量位置开始向后搜索，而不是到偏移量位置就截止搜索了，这里是很容易和splice弄混的。</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,4,5];</span><br><span class="line">var b=data.indexOf(1,-5);</span><br><span class="line"><span class="built_in">log</span>(b);</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/11/17/js_array_fun_2/08.png" alt="indexOf"></p>
-<h2 id="lashIndexOf-—-gt-搜索"><a href="#lashIndexOf-—-gt-搜索" class="headerlink" title="lashIndexOf() —&gt;搜索"></a>lashIndexOf() —&gt;搜索</h2><ul>
-<li>使用热度：经常用</li>
-<li>是否改变原始数组：否</li>
-<li>返回：返回数组索引或者-1</li>
-<li>参数:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>参数位置</th>
-<th>参数类型</th>
-<th>是否必选</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>*</td>
-<td>是</td>
-<td>要搜索的数组元素</td>
-</tr>
-<tr>
-<td>2</td>
-<td>number</td>
-<td>否</td>
-<td>从数组哪个索引开始搜索</td>
-</tr>
-</tbody></table>
-<ul>
-<li>说明：和indexOf不同的是lashIndexOf是反向搜索</li>
-<li>注意：因为是反向搜索，当第二个参数是负数的时候，就是指从末尾偏移量的位置向前搜索</li>
-<li>实例如下：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">log</span>=console.log;</span><br><span class="line">var data=[1,2,3,2,5];</span><br><span class="line">var b=data.lastIndexOf(2,-3)</span><br><span class="line"><span class="built_in">log</span>(b)</span><br><span class="line"></span><br><span class="line">var c=data.lastIndexOf(1,-5)</span><br><span class="line"><span class="built_in">log</span>(c)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2019/11/17/js_array_fun_2/09.png" alt="lashIndexOf"></p>
+<p><img src="/2019/11/20/js_drag/03.gif" alt="案例演示"></p>
 
     
 
@@ -614,7 +302,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://uaoie.top/2019/11/17/js_array_fun_2/" title="js数组方法大全（下）" target="_blank">http://uaoie.top/2019/11/17/js_array_fun_2/</a>
+          <a href="http://uaoie.top/2019/11/20/js_drag/" title="vue拖拽组件开发" target="_blank">http://uaoie.top/2019/11/20/js_drag/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -678,7 +366,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/11/17/js_array_fun_2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/11/20/js_drag/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -693,18 +381,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/20/js_drag/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue拖拽组件开发
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/16/js_array_fun/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js数组方法大全（上）</div>
+    <a href="/2019/11/17/js_array_fun_2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js数组方法大全（下）</div>
       <i class="icon-circle-right"></i>
     </a>
   
