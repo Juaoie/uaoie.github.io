@@ -218,6 +218,138 @@
             
 
   
+    <article id="post-js_export_import" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/07/js_export_import/">js模块导入/导出大全</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/07/js_export_import/" class="archive-article-date">
+        <time datetime="2019-12-07T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">944字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<ul>
+<li>module.exports与exports是CommonJS的规范</li>
+<li>export与export default是es6规范</li>
+<li>require 是 AMD规范引入方式</li>
+<li>import是es6的一个语法标准</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="module-exports与exports"><a href="#module-exports与exports" class="headerlink" title="module.exports与exports"></a>module.exports与exports</h2><ul>
+<li>module变量代表当前模块。这个变量是一个对象，module对象会创建一个叫exports的属性，这个属性的默认值是一个空的对象；</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports.aa=<span class="string">"我是aa"</span>;</span><br><span class="line">module.exports.bb=<span class="string">"我是bb"</span>;</span><br><span class="line">//上边这段代码就相当于一个对象</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"aa"</span>:<span class="string">"我是aa"</span>,</span><br><span class="line">  <span class="string">"bb"</span>:<span class="string">"我是bb"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引用方法</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var req=require(<span class="string">"./app.js"</span>);</span><br><span class="line">req.aa      //这个值是 <span class="string">"我是aa"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>而exports只是module.exports的一个引用，可以理解为：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var exports = module.exports;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>但是这个两个还是有一定区别的，因为exports只是module.exports的一个引用，所以module.exports可以导出一个匿名函数，而exports不可以。因为这会切断和modeule.exports的联系。</li>
+<li>如果不是很理解的话，下面举例说明（需要先明白引用数据类型和基础数据类型）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var m=&#123;&#125;</span><br><span class="line">m.e1=&#123;&#125;</span><br><span class="line">var e2=m.e1;</span><br><span class="line">e2.aa=1</span><br><span class="line">console.log(m.e1.aa)//打印1</span><br><span class="line">e2=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  <span class="built_in">return</span> 123;</span><br><span class="line">&#125;</span><br><span class="line">console.log(m.e1)//打印&#123;aa:1&#125;</span><br><span class="line">console.log(e2)//打印 ƒ ()&#123;<span class="built_in">return</span> 123;&#125;</span><br><span class="line">//也就是说如果给exports导出匿名函数，就会重写exports引用地址指向</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>也就是说也不能这样写exports= { name,say }，它同样会改变exports地址指向</li>
+</ul>
+<hr>
+<p>！</p>
+    
+    <a class="article-more-a" href="/2019/12/07/js_export_import/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/07/js_export_import/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js_drag" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1176,109 +1308,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css_transition_animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <b style="color:red;">
-区别：<br>
-transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。<br>
-animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。
-</b>
-<br>
-    
-    <a class="article-more-a" href="/2019/09/02/css_transition_animation/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/02/css_transition_animation/">展开全文 >></a>
     </p>
     
 
