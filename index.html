@@ -218,6 +218,138 @@
             
 
   
+    <article id="post-js_class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/07/js_class/">js模块导入/导出大全</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/07/js_class/" class="archive-article-date">
+        <time datetime="2019-12-07T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">944字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><blockquote>
+<ul>
+<li>module.exports与exports是CommonJS的规范</li>
+<li>export与export default是es6规范</li>
+<li>require 是 AMD规范引入方式</li>
+<li>import是es6的一个语法标准</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="module-exports与exports"><a href="#module-exports与exports" class="headerlink" title="module.exports与exports"></a>module.exports与exports</h2><ul>
+<li>module变量代表当前模块。这个变量是一个对象，module对象会创建一个叫exports的属性，这个属性的默认值是一个空的对象；</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports.aa=<span class="string">"我是aa"</span>;</span><br><span class="line">module.exports.bb=<span class="string">"我是bb"</span>;</span><br><span class="line">//上边这段代码就相当于一个对象</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"aa"</span>:<span class="string">"我是aa"</span>,</span><br><span class="line">  <span class="string">"bb"</span>:<span class="string">"我是bb"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引用方法</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var req=require(<span class="string">"./app.js"</span>);</span><br><span class="line">req.aa      //这个值是 <span class="string">"我是aa"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>而exports只是module.exports的一个引用，可以理解为：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var exports = module.exports;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>但是这个两个还是有一定区别的，因为exports只是module.exports的一个引用，所以module.exports可以导出一个匿名函数，而exports不可以。因为这会切断和modeule.exports的联系。</li>
+<li>如果不是很理解的话，下面举例说明（需要先明白引用数据类型和基础数据类型）：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var m=&#123;&#125;</span><br><span class="line">m.e1=&#123;&#125;</span><br><span class="line">var e2=m.e1;</span><br><span class="line">e2.aa=1</span><br><span class="line">console.log(m.e1.aa)//打印1</span><br><span class="line">e2=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  <span class="built_in">return</span> 123;</span><br><span class="line">&#125;</span><br><span class="line">console.log(m.e1)//打印&#123;aa:1&#125;</span><br><span class="line">console.log(e2)//打印 ƒ ()&#123;<span class="built_in">return</span> 123;&#125;</span><br><span class="line">//也就是说如果给exports导出匿名函数，就会重写exports引用地址指向</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>也就是说也不能这样写exports= { name,say }，它同样会改变exports地址指向</li>
+</ul>
+<hr>
+<p>！</p>
+    
+    <a class="article-more-a" href="/2019/12/07/js_class/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/07/js_class/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js_export_import" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -321,6 +453,226 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/12/07/js_export_import/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js_object_fun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/07/js_object_fun/">js对象可扩展性和属性的四个特性（上）</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/07/js_object_fun/" class="archive-article-date">
+        <time datetime="2019-12-07T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.4k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="js对象可扩展性和属性的四个特性（上）"><a href="#js对象可扩展性和属性的四个特性（上）" class="headerlink" title="js对象可扩展性和属性的四个特性（上）"></a>js对象可扩展性和属性的四个特性（上）</h1><hr>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
+<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
+</li>
+<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
+</li>
+<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
+</li>
+<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
+</li>
+<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
+</li>
+</ul>
+<hr>
+<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
+<ul>
+<li>对象属性的四个特性</li>
+<li>对象的可扩展性</li>
+<li>删除属性</li>
+<li>检测属性</li>
+<li>枚举属性</li>
+<li>属性的getter和setter</li>
+</ul>
+</blockquote>
+    
+    <a class="article-more-a" href="/2019/12/07/js_object_fun/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/07/js_object_fun/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-css_media" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/04/css_media/">css3的@media</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/04/css_media/" class="archive-article-date">
+        <time datetime="2019-12-04T12:02:59.812Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.9k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>都知道<a href="https://v3.bootcss.com/" target="_blank" rel="noopener">bootstrap</a>响应式布局很酷，但是是怎么实现的呢？其官网首页有提到这一切的功劳都是来自于CSS 媒体查询（Media Query）。</p>
+<p>使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。<br>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。<br>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
+    
+    <a class="article-more-a" href="/2019/12/04/css_media/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/04/css_media/">展开全文 >></a>
     </p>
     
 
@@ -991,323 +1343,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/09/12/python_bokey/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css_px_pt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
-<ul>
-<li>dp(device pixels)</li>
-<li>px(css pixels)</li>
-<li>pt(point)</li>
-<li>ppi(pixels per inch)</li>
-<li>dpi(dots per inch)</li>
-<li>dpr(device pixels ratio)</li>
-<li>dip(device independent pixel)</li>
-</ul>
-<p>读本文你需要掌握哪些基本知识：</p>
-<ul>
-<li>1in(英寸) == 2.5399999961392cm</li>
-<li>常常用1英寸等于2.54厘米</li>
-<li>1m == 3尺</li>
-<li>1尺 == 10寸</li>
-<li>1寸 == 3.33333333cm</li>
-<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
-<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
-</ul>
-    
-    <a class="article-more-a" href="/2019/09/04/css_px_pt/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/04/css_px_pt/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-say1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
-</blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/say1/01.png" align="center/"></div>
-    
-    <a class="article-more-a" href="/2019/09/03/say1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/say1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_setTimeout_setInterval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h1><h2 id="setTimeout-fn-t-："><a href="#setTimeout-fn-t-：" class="headerlink" title="setTimeout(fn,t)："></a>setTimeout(fn,t)：</h2><p>延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。<br>注意：<b style="color:red;">取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。</b></p>
-<h2 id="setInterval-fn-t-："><a href="#setInterval-fn-t-：" class="headerlink" title="setInterval(fn,t)："></a>setInterval(fn,t)：</h2><p>循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。</p>
-    
-    <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/">展开全文 >></a>
     </p>
     
 

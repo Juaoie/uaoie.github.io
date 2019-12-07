@@ -6,23 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>老虎の博客</title>
+  <title>js对象可扩展性和属性的四个特性（上） | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="一个佛系の腐朽青年">
-  
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="js对象可扩展性和属性的四个特性（上） 一、前言 再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！  在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&amp;gt;通道    之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js对象可扩展性和属性的四个特性（上）">
+<meta property="og:url" content="http://uaoie.top/2019/12/07/js_object_fun/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="js对象可扩展性和属性的四个特性（上） 一、前言 再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！  在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&amp;gt;通道    之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/01.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/02.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/03.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/04.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/05.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/06.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/07.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/08.png">
+<meta property="og:image" content="http://uaoie.top/2019/12/07/js_object_fun/09.png">
+<meta property="og:updated_time" content="2019-12-07T16:43:00.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="js对象可扩展性和属性的四个特性（上）">
+<meta name="twitter:description" content="js对象可扩展性和属性的四个特性（上） 一、前言 再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！  在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&amp;gt;通道    之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+">
+<meta name="twitter:image" content="http://uaoie.top/2019/12/07/js_object_fun/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -215,27 +223,27 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-css_px_pt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js_object_fun" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
+    <h1 class="article-title" itemprop="name">
+      js对象可扩展性和属性的四个特性（上）
     </h1>
   
 
 
   
   
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/12/07/js_object_fun/" class="archive-article-date">
+        <time datetime="2019-12-07T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
 </a>
 
   
@@ -248,7 +256,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
+      <span class="post-count">1.4k字</span>
     </span>
   </span>
 
@@ -257,7 +265,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -268,134 +276,116 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
-<ul>
-<li>dp(device pixels)</li>
-<li>px(css pixels)</li>
-<li>pt(point)</li>
-<li>ppi(pixels per inch)</li>
-<li>dpi(dots per inch)</li>
-<li>dpr(device pixels ratio)</li>
-<li>dip(device independent pixel)</li>
+    <h1 id="js对象可扩展性和属性的四个特性（上）"><a href="#js对象可扩展性和属性的四个特性（上）" class="headerlink" title="js对象可扩展性和属性的四个特性（上）"></a>js对象可扩展性和属性的四个特性（上）</h1><hr>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
+<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
+</li>
+<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
+</li>
+<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
+</li>
+<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
+</li>
+<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
+</li>
 </ul>
-<p>读本文你需要掌握哪些基本知识：</p>
+<hr>
+<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
 <ul>
-<li>1in(英寸) == 2.5399999961392cm</li>
-<li>常常用1英寸等于2.54厘米</li>
-<li>1m == 3尺</li>
-<li>1尺 == 10寸</li>
-<li>1寸 == 3.33333333cm</li>
-<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
-<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
+<li>对象属性的四个特性</li>
+<li>对象的可扩展性</li>
+<li>删除属性</li>
+<li>检测属性</li>
+<li>枚举属性</li>
+<li>属性的getter和setter</li>
 </ul>
-    
-    <a class="article-more-a" href="/2019/09/04/css_px_pt/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/04/css_px_pt/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-say1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
 </blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/say1/01.png" align="center/"></div>
-    
-    <a class="article-more-a" href="/2019/09/03/say1/#more">more >></a>
-    
-    
+<a id="more"></a>
+
+<hr>
+<h2 id="三、对象属性的四个特性"><a href="#三、对象属性的四个特性" class="headerlink" title="三、对象属性的四个特性"></a>三、对象属性的四个特性</h2><h3 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h3><h4 id="1-1、什么是数据属性？"><a href="#1-1、什么是数据属性？" class="headerlink" title="1.1、什么是数据属性？"></a>1.1、什么是数据属性？</h4><pre><code>数据属性就是我们平常看到的对象普通属性。</code></pre><p>数据属性的特性为以下四种：</p>
+<pre><code>值（value）
+可写性（writable）
+可枚举性（enumerable）
+可配置性（configurable）</code></pre><h4 id="1-2、什么是存储器属性？"><a href="#1-2、什么是存储器属性？" class="headerlink" title="1.2、什么是存储器属性？"></a>1.2、什么是存储器属性？</h4><pre><code>存储器属性是由getter和setter定义的属性</code></pre><p>存储器属性特性为以下四种：</p>
+<pre><code>读取（get）
+写入（set）
+可枚举性（enumerable）
+可配置性（configurable）</code></pre><h3 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h3><h4 id="2-1、获取某个对象特定属性的属性描述"><a href="#2-1、获取某个对象特定属性的属性描述" class="headerlink" title="2.1、获取某个对象特定属性的属性描述"></a>2.1、获取某个对象特定属性的属性描述</h4><pre><code>Object.getOwnPropertyDescriptor()</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">//返回数据数据的描述</span><br><span class="line"><span class="built_in">let</span> aa = &#123;</span><br><span class="line">    x: 1</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(aa, <span class="string">'x'</span>))</span><br><span class="line">    //返回存储器属性的描述</span><br><span class="line"><span class="built_in">let</span> bb = &#123;</span><br><span class="line">    get <span class="function"><span class="title">y</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> 2;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(bb, <span class="string">'y'</span>))</span><br><span class="line">    //对于一个不存在的属性或者继承属性返回undefined</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(&#123;&#125;, <span class="string">'x'</span>))</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(&#123;&#125;, <span class="string">'toString'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/01.png" alt="getOwnPropertyDescriptor"></p>
+<h4 id="2-2、让新建属性具有某种特性"><a href="#2-2、让新建属性具有某种特性" class="headerlink" title="2.2、让新建属性具有某种特性"></a>2.2、让新建属性具有某种特性</h4><pre><code>Object.defineProperty()</code></pre><p>说明:</p>
+<ul>
+<li>defineProperty不能修改继承属性</li>
+<li>defineProperty不必包含所有四个属性，对于已有的属性来说，未指定的特性不做修改，只对指定特性进行修改。</li>
+<li>对于新创建的属性来说默认是false或者undefined。</li>
+<li>当configurable设置为false，就不能再设置为true了，因为不可配置也不能配置自己</li>
+<li>当configurable设置为true，writable设置为false时，是可以通过配置特性更改value值的</li>
+<li>当configurable设置为false时，writable可以从true设置为false，当时不能从false设置为true</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;</span><br><span class="line">    y: 22</span><br><span class="line">&#125;;</span><br><span class="line">//添加一个x属性为不可写、不可枚举、可配置</span><br><span class="line">Object.defineProperty(aa, <span class="string">'x'</span>, &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(aa.x);</span><br><span class="line">aa.x = 2; //尝试修改这个属性会失败，但是不会报错，在严格模式下会报错</span><br><span class="line"><span class="built_in">log</span>(aa.x)</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i <span class="keyword">in</span> aa) &#123;</span><br><span class="line">    //不可枚举数据属性x，但是y可以枚举</span><br><span class="line">    console.log(i)</span><br><span class="line">&#125;</span><br><span class="line">//因为这个x属性依然是可以配置的，所以可以通过配置的方式对值进行修改</span><br><span class="line">Object.defineProperty(aa, <span class="string">'x'</span>, &#123;</span><br><span class="line">    value: 3,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(aa.x);</span><br><span class="line">//将数据属性设置为存储器属性</span><br><span class="line">Object.defineProperty(aa, <span class="string">'x'</span>, &#123;</span><br><span class="line">    get: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> 4;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(aa.x)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/02.png" alt="defineProperty"></p>
+<h4 id="2-3、同时修改多个属性的特性"><a href="#2-3、同时修改多个属性的特性" class="headerlink" title="2.3、同时修改多个属性的特性"></a>2.3、同时修改多个属性的特性</h4><pre><code>Object.defineProperties()</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;&#125;;</span><br><span class="line">Object.defineProperties(aa, &#123;</span><br><span class="line">    x: &#123;value: 1,writable: <span class="literal">false</span>,enumerable: <span class="literal">true</span>,configurable: <span class="literal">false</span>&#125;,</span><br><span class="line">    y: &#123;value: 2,writable: <span class="literal">false</span>,enumerable: <span class="literal">true</span>,configurable: <span class="literal">false</span>&#125;,</span><br><span class="line">    z: &#123;</span><br><span class="line">        get:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">            <span class="built_in">return</span> 3</span><br><span class="line">        &#125;,</span><br><span class="line">        enumerable: <span class="literal">false</span>,</span><br><span class="line">        configurable: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">let</span> i <span class="keyword">in</span> aa)&#123;</span><br><span class="line">    <span class="built_in">log</span>(i,<span class="string">'---'</span>,aa[i])</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">log</span>(<span class="string">'z'</span>,<span class="string">'---'</span>,aa.z)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/03.png" alt="defineProperties"></p>
+<hr>
+<h2 id="四、对象的可扩展性"><a href="#四、对象的可扩展性" class="headerlink" title="四、对象的可扩展性"></a>四、对象的可扩展性</h2><h3 id="1、定义-1"><a href="#1、定义-1" class="headerlink" title="1、定义"></a>1、定义</h3><h4 id="1-1、什么是可扩展性？"><a href="#1-1、什么是可扩展性？" class="headerlink" title="1.1、什么是可扩展性？"></a>1.1、什么是可扩展性？</h4><pre><code>对象可扩展性是指是否可以给该对象添加新的属性</code></pre><h3 id="2、方法-1"><a href="#2、方法-1" class="headerlink" title="2、方法"></a>2、方法</h3><h4 id="2-1、将对象设置为不可扩展"><a href="#2-1、将对象设置为不可扩展" class="headerlink" title="2.1、将对象设置为不可扩展"></a>2.1、将对象设置为不可扩展</h4><pre><code>Object.preventExtensions()</code></pre><p>说明：</p>
+<ul>
+<li>对象一旦设置不为不可扩展就不能转换为可扩展了</li>
+<li>Object.preventExtensions只会影响对象本身的可扩展性，所以依然还是可以给对象原型添加属性。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;&#125;;</span><br><span class="line">Object.preventExtensions(aa);</span><br><span class="line">aa.x = 1;</span><br><span class="line"><span class="built_in">log</span>(aa.x)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/04.png" alt="preventExtensions"></p>
+<h4 id="2-2、检测对象是否是可扩展的"><a href="#2-2、检测对象是否是可扩展的" class="headerlink" title="2.2、检测对象是否是可扩展的"></a>2.2、检测对象是否是可扩展的</h4><pre><code>Object.isExtensible()</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//在《javascript权威指南》第六版中6.8.3节介绍可扩展性的时候，将isExtensible写为esExtensible了。</span><br><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;&#125;;</span><br><span class="line">var bb = &#123;&#125;;</span><br><span class="line">Object.preventExtensions(aa);</span><br><span class="line"><span class="built_in">log</span>(Object.isExtensible(aa))</span><br><span class="line"><span class="built_in">log</span>(Object.isExtensible(bb))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/05.png" alt="isExtensible"></p>
+<h4 id="2-3、将对象封闭（sealed）"><a href="#2-3、将对象封闭（sealed）" class="headerlink" title="2.3、将对象封闭（sealed）"></a>2.3、将对象封闭（sealed）</h4><pre><code>Object.seal()</code></pre><p>说明：</p>
+<ul>
+<li>Object.seal不仅可以设置对象的可扩展性，还可以设置对象的所有自有属性的可配置性</li>
+<li>将对象设置为不可扩展并且不可配置，也就是说不能给这个对象添加新属性，而且已有的属性不能删除或者配置。</li>
+<li>不过这些属性可写特性依然是可以配置的</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;</span><br><span class="line">    y: 2</span><br><span class="line">&#125;;</span><br><span class="line">Object.seal(aa);</span><br><span class="line">aa.x = 1;</span><br><span class="line"><span class="built_in">log</span>(aa.x);</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(aa, <span class="string">'y'</span>))</span><br><span class="line">Object.defineProperty(aa, <span class="string">'y'</span>, &#123;</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(aa, <span class="string">'y'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/06.png" alt="seal"></p>
+<h4 id="2-4、检测对象是否被封闭"><a href="#2-4、检测对象是否被封闭" class="headerlink" title="2.4、检测对象是否被封闭"></a>2.4、检测对象是否被封闭</h4><pre><code>Object.isSealed()</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;&#125;;</span><br><span class="line">var bb = &#123;&#125;;</span><br><span class="line">Object.seal(aa);</span><br><span class="line"><span class="built_in">log</span>(Object.isSealed(aa));</span><br><span class="line"><span class="built_in">log</span>(Object.isSealed(bb))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/07.png" alt="isSealed"></p>
+<h4 id="2-5、将对象冻结（freeze）"><a href="#2-5、将对象冻结（freeze）" class="headerlink" title="2.5、将对象冻结（freeze）"></a>2.5、将对象冻结（freeze）</h4><pre><code>Object.freeze()</code></pre><p>说明：</p>
+<ul>
+<li>freeze不仅仅可以将对象设置为不可扩展和所有属性为不可配置，并且会将所有对象属性设置为只读。</li>
+<li>如果存取器属性具有setter方法，则不会受到影响，仍然可以通过此方法给属性赋值。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;</span><br><span class="line">    x: 1</span><br><span class="line">&#125;;</span><br><span class="line">Object.freeze(aa);</span><br><span class="line"><span class="built_in">log</span>(Object.getOwnPropertyDescriptor(aa, <span class="string">'x'</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/08.png" alt="freeze"></p>
+<h4 id="2-6、检测对象是否配冻结"><a href="#2-6、检测对象是否配冻结" class="headerlink" title="2.6、检测对象是否配冻结"></a>2.6、检测对象是否配冻结</h4><pre><code>Object.isFreeze()</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const <span class="built_in">log</span> = console.log;</span><br><span class="line">var aa = &#123;&#125;;</span><br><span class="line">var bb = &#123;&#125;;</span><br><span class="line">Object.freeze(aa);</span><br><span class="line"><span class="built_in">log</span>(Object.isFrozen(aa));</span><br><span class="line"><span class="built_in">log</span>(Object.isFrozen(bb));</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2019/12/07/js_object_fun/09.png" alt="isFreeze"></p>
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2019/12/07/js_object_fun/" title="js对象可扩展性和属性的四个特性（上）" target="_blank">http://uaoie.top/2019/12/07/js_object_fun/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -405,218 +395,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/say1/">展开全文 >></a>
-    </p>
-    
 
     
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_setTimeout_setInterval" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
+      </div>
     </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
-    </span>
-  </span>
+  </div>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h1><h2 id="setTimeout-fn-t-："><a href="#setTimeout-fn-t-：" class="headerlink" title="setTimeout(fn,t)："></a>setTimeout(fn,t)：</h2><p>延迟调用，超过了时间就调用回调函数，返回一个id，使用clearTimeout(id)取消执行。<br>注意：<b style="color:red;">取消了里面的回调函数就不执行了哦，而不是取消的时候就立即执行，下面有源码可以自己cv试一下。</b></p>
-<h2 id="setInterval-fn-t-："><a href="#setInterval-fn-t-：" class="headerlink" title="setInterval(fn,t)："></a>setInterval(fn,t)：</h2><p>循环调用，有周期性的调用回调函数，返回一个id，使用clearInterval(id)取消执行。</p>
-    
-    <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/js_setTimeout_setInterval/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2019/12/07/js_object_fun/" alt="微信分享二维码"> -->
     </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css_transition_animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
-    </span>
-  </span>
 </div>
 
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <b style="color:red;">
-区别：<br>
-transition也叫过渡动画，主要是用于让一个元素从一种状态过渡到另一种状态效果，常用于主动触发的效果。例如移动端的页面切换（很常用）、button点击效果（也很常见）。<br>
-animation才是css3正宗的动画，主要是用于实现某种持续的动画效果（当然简单的过渡动画也可以实现），常用于自动触发的效果。例如加载中的持续动画效果等等。
-</b>
-<br>
-    
-    <a class="article-more-a" href="/2019/09/02/css_transition_animation/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/02/css_transition_animation/">展开全文 >></a>
-    </p>
-    
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/12/07/js_export_import/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js模块导入/导出大全
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/04/css_media/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css3的@media</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -637,117 +494,14 @@ animation才是css3正宗的动画，主要是用于实现某种持续的动画�
 
 
 
-  
-    <article id="post-html_head" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <font style="color:red">
-先来梳理一下本文的目录结构
-</font>
-
-<p><img src="/2019/09/01/html_head/naotu.png" alt></p>
-<b style="color:red;">
-现在我将详解head标签和它六个子标签的属性和作用，请耐心看完，会有很大的收获哦！
-</b>
-    
-    <a class="article-more-a" href="/2019/09/01/html_head/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/01/html_head/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
+
+
+
 
 
           </div>
@@ -799,8 +553,8 @@ animation才是css3正宗的动画，主要是用于实现某种持续的动画�
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
