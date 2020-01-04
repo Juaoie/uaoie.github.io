@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>Archives: 2020/1 | 老虎の博客</title>
+  <title>js的class基础 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="基本写法123456789let log = console.log;class people &amp;#123;    constructor(name, age) &amp;#123;        this.name = name;        this.age = age;    &amp;#125;&amp;#125;let aa = new people(&apos;张三&apos;, &apos;22&apos;);log(aa);">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/archives/2020/01/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js的class基础">
+<meta property="og:url" content="http://uaoie.top/2020/01/05/js_class/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="基本写法123456789let log = console.log;class people &amp;#123;    constructor(name, age) &amp;#123;        this.name = name;        this.age = age;    &amp;#125;&amp;#125;let aa = new people(&apos;张三&apos;, &apos;22&apos;);log(aa);">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2020/01/05/js_class/01.png">
+<meta property="og:image" content="http://uaoie.top/2020/01/05/js_class/02.png">
+<meta property="og:image" content="http://uaoie.top/2020/01/05/js_class/03.png">
+<meta property="og:image" content="http://uaoie.top/2020/01/05/js_class/04.png">
+<meta property="og:image" content="http://uaoie.top/2020/01/05/js_class/05.png">
+<meta property="og:updated_time" content="2020-01-04T16:14:03.199Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="js的class基础">
+<meta name="twitter:description" content="基本写法123456789let log = console.log;class people &amp;#123;    constructor(name, age) &amp;#123;        this.name = name;        this.age = age;    &amp;#125;&amp;#125;let aa = new people(&apos;张三&apos;, &apos;22&apos;);log(aa);">
+<meta name="twitter:image" content="http://uaoie.top/2020/01/05/js_class/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -212,86 +219,231 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-js_class" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      js的class基础
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/01/05/js_class/" class="archive-article-date">
         <time datetime="2020-01-04T16:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/05/js_class/">js的class基础</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">448字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> people(<span class="string">'张三'</span>, <span class="string">'22'</span>);</span><br><span class="line">log(aa);</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+<p><img src="/2020/01/05/js_class/01.png" alt="01"></p>
+<ul>
+<li>类的数据类型是函数</li>
+<li>类本身就是指向构造函数的</li>
+<li>类的方法之前不需要逗号分隔</li>
+<li>类中所有的方法都是不可枚举的  </li>
+</ul>
+<h1 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h1><ul>
+<li>每个类都会有一个constructor方法，该方法属于构造方法。</li>
+<li>在new这个对象的时候会执行该方法</li>
+<li>该构造方法默认返回实例对象（this）</li>
+</ul>
+<h1 id="class表达式"><a href="#class表达式" class="headerlink" title="class表达式"></a>class表达式</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="keyword">let</span> PeopleClass= <span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    getName()&#123;</span><br><span class="line">        <span class="keyword">return</span> people.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> PeopleClass();</span><br><span class="line">log(aa.getName());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>此处的class类名是people，而不是PeopleClass</li>
+<li>如果内部没有用到类名，也可以省略类名</li>
+</ul>
+<p><img src="/2020/01/05/js_class/02.png" alt="02"></p>
+<h1 id="类的getter和setter"><a href="#类的getter和setter" class="headerlink" title="类的getter和setter"></a>类的getter和setter</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">get</span> name() &#123;</span><br><span class="line">        log(<span class="string">"小明"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> name(res) &#123;</span><br><span class="line">        log(<span class="string">"设置名字叫："</span> + res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> people();</span><br><span class="line">aa.name = <span class="number">123</span>;</span><br><span class="line">aa.name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/01/05/js_class/03.png" alt="03"></p>
+<h1 id="class的静态方法和静态属性"><a href="#class的静态方法和静态属性" class="headerlink" title="class的静态方法和静态属性"></a>class的静态方法和静态属性</h1><ul>
+<li>静态属性就是不会被实例继承的属性，同理，还会有一种叫实例属性</li>
+<li>目前es6只有静态方法，没有静态属性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> sayName() &#123;</span><br><span class="line">        log(<span class="string">"小明"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    sayAge()&#123;</span><br><span class="line">        log(<span class="string">"22"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> people();</span><br><span class="line">log(aa);</span><br><span class="line">aa.sayAge()</span><br><span class="line">people.sayName();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/01/05/js_class/04.png" alt="04"></p>
+<h1 id="new-target属性"><a href="#new-target属性" class="headerlink" title="new.target属性"></a>new.target属性</h1><ul>
+<li>该属性用来获取当前构造函数是通过什么方式调用的</li>
+<li>子类继承父类时，调用子类的构造函数时，在父类中的new.target属性会返回子类的类名</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        log(<span class="keyword">new</span>.target)</span><br><span class="line">        log(<span class="keyword">new</span>.target === people)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Speople</span> <span class="keyword">extends</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">super</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> Speople();</span><br><span class="line"><span class="keyword">let</span> bb = <span class="keyword">new</span> people();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/01/05/js_class/05.png" alt="05"></p>
+<ul>
+<li>利用此特点，可以写出只能用new命令调用的class</li>
+<li>还可以写出不能独立使用，必须要被继承才能用的class，反之同理。</li>
+</ul>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2020/01/05/js_class/" title="js的class基础" target="_blank">http://uaoie.top/2020/01/05/js_class/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/01/05/js_class/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/04/js_bind_call_apply/" class="archive-article-date">
-        <time datetime="2020-01-04T05:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/04/js_bind_call_apply/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">详解js的bind、call、apply</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/04/js_bind_call_apply/">详解js的bind、call、apply</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -344,8 +496,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
