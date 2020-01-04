@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>Archives: 2019/9 | 老虎の博客</title>
+  <title>老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="详解js的bind、call、apply说明 虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。  由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。  于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。  但是，随着业务的增加，代">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/archives/2019/09/index.html">
+<meta property="og:url" content="http://uaoie.top/2020/01/04/js_bind_call_apply/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="详解js的bind、call、apply说明 虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。  由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。  于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。  但是，随着业务的增加，代">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2020/01/04/js_bind_call_apply/01.png">
+<meta property="og:image" content="http://uaoie.top/2020/01/04/js_bind_call_apply/02.png">
+<meta property="og:updated_time" content="2020-01-04T05:32:45.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:description" content="详解js的bind、call、apply说明 虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。  由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。  于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。  但是，随着业务的增加，代">
+<meta name="twitter:image" content="http://uaoie.top/2020/01/04/js_bind_call_apply/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -212,246 +216,188 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js_bind_call_apply" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="详解js的bind、call、apply"><a href="#详解js的bind、call、apply" class="headerlink" title="详解js的bind、call、apply"></a>详解js的bind、call、apply</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><p>虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。</p>
+</li>
+<li><p>由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。</p>
+</li>
+<li><p>于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。</p>
+</li>
+<li><p>但是，随着业务的增加，代码出现强耦合现象，到最后薄弱的中间层已经撑不住了，连代码的审视都变得很麻烦。</p>
+</li>
+<li><p>最后不得以重新设计这套api方法，幸好之前考虑周全留了个心眼，所以今天只花了一天时间就基本完成了。</p>
+</li>
+<li><p>最后的设计思路是不在api中间层使用restful风格的接口（当然后端接口还是不变），但是又为了api不重名，就选择让程序只加载当前页面api方法，也就是说如果用户如果当前操作的是A页面，那B页面的api方法是不会被载入的，这样也避免了首次加载程序的时候加载过多的api方法。</p>
+</li>
+<li><p>然后我在为每个api方法提供公共的数据处理方法的时候需要改变api方法的this指向，于是用到了call方法，所以有了此文。</p>
+</li>
+<li><p>后台=&gt;<a href="http://uaoie.top/cv">通道</a></p>
+</li>
+<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
+</li>
+<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="关于this指向"><a href="#关于this指向" class="headerlink" title="关于this指向"></a>关于this指向</h2><ul>
+<li>它指向什么完全取决于函数在哪里被调用，也就是说，谁调用，谁负责;</li>
+<li>this指向我在前年6月份写过一篇文章说的很清楚了，所以这里不多说了，<a href="https://www.cnblogs.com/Juaoie/p/9154556.html" target="_blank" rel="noopener">通道</a></li>
+<li>另外mdn上面对this指向描述可能会更好。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener">通道</a></li>
+</ul>
+<h2 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h2><blockquote>
+<p>bind用来创建一个新的函数，与普通函数不同，这个函数创建的时候可以指定运行环境。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log=<span class="built_in">console</span>.log;</span><br><span class="line"><span class="keyword">let</span> people = &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> getNameTo = <span class="function"><span class="keyword">function</span>(<span class="params">hello</span>) </span>&#123;</span><br><span class="line">    log(<span class="keyword">this</span>.getName());</span><br><span class="line">    log(<span class="keyword">this</span>.name+hello);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> logName = getNameTo.bind(people);</span><br><span class="line">logName(<span class="string">'你好啊！'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/01/04/js_bind_call_apply/01.png" alt="01"></p>
+<blockquote>
+<p>所谓的指定运行环境，就是指定运行时候的上下文<br>上面的代码如同以下：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log=<span class="built_in">console</span>.log;</span><br><span class="line"><span class="keyword">let</span> people = &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">    getNameTo:<span class="function"><span class="keyword">function</span>(<span class="params">hello</span>) </span>&#123;</span><br><span class="line">        log(<span class="keyword">this</span>.getName());</span><br><span class="line">        log(<span class="keyword">this</span>.name+hello);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">people.getNameTo(<span class="string">'你好啊！'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h2><blockquote>
+<ul>
+<li>call和apply会立即执行调用它的函数</li>
+<li>call接受的参数是单个单个传递的，apply接受的参数则需要一个数组</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log=<span class="built_in">console</span>.log;</span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">    name: <span class="string">'张三'</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> getNameTo = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.getName() + a+ b);</span><br><span class="line">&#125;;</span><br><span class="line">getNameTo.call(people,<span class="string">'aa'</span>, <span class="string">'bb'</span>);</span><br><span class="line">getNameTo.apply(people,[<span class="string">'11'</span>, <span class="string">'22'</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/01/04/js_bind_call_apply/02.png" alt="01"></p>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2020/01/04/js_bind_call_apply/" title="" target="_blank">http://uaoie.top/2020/01/04/js_bind_call_apply/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/12/python_bokey/" class="archive-article-date">
-        <time datetime="2019-09-12T06:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
-</a>
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/12/python_bokey/">python+scrapy分析博客园首页4000篇优质博客</a>
-	
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/01/04/js_bind_call_apply/" alt="微信分享二维码"> -->
+    </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="mask js-mask"></div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/04/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/08/js_object_fun_2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js对象可扩展性和属性的四个特性（下）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/04/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/03/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/03/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/03/js_setTimeout_setInterval/" class="archive-article-date">
-        <time datetime="2019-09-03T02:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/03/js_setTimeout_setInterval/">用故事解析setTimeout和setInterval(内含js单线程和任务队列)</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/02/css_transition_animation/" class="archive-article-date">
-        <time datetime="2019-09-02T06:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/02/css_transition_animation/">css_transition_animation（内含贝赛尔曲线详解）</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/01/html_head/" class="archive-article-date">
-        <time datetime="2019-09-01T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/01/html_head/">你绝对不知道的head标签</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/01/css_media/" class="archive-article-date">
-        <time datetime="2019-09-01T06:32:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/01/css_media/">css3的@media</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -504,8 +450,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
