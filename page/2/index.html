@@ -218,6 +218,222 @@
             
 
   
+    <article id="post-js_node_jwt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/11/13/js_node_jwt/">手写jwt验证，实现java和node无缝切换</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/11/13/js_node_jwt/" class="archive-article-date">
+        <time datetime="2019-11-13T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前端时间和我<a href="https://home.cnblogs.com/u/shaoyu/" target="_blank" rel="noopener">朋友</a>写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。</p>
+<p>一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端，</p>
+<p>开始考虑的是用python+django，但是还是在半途放弃了，因为总感觉Django不过灵活，使用起来非常别扭，也可能是用scrapy写爬虫写多了，难以理解django的框架设计，总是会把他想象成一个scrapy架构，也导致代码写的很乱，下面上一张scrapy架构图。<img src="/2019/11/13/js_node_jwt/01.png" alt="svrapy架构图"></p>
+    
+    <a class="article-more-a" href="/2019/11/13/js_node_jwt/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/11/13/js_node_jwt/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js_consanguinity" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/10/17/js_consanguinity/">浏览器的同源策略和跨域详解</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/10/17/js_consanguinity/" class="archive-article-date">
+        <time datetime="2019-10-17T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-17</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">2.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>去年这个时候有写过一篇文章叫<a href="https://www.cnblogs.com/Juaoie/p/9786313.html" target="_blank" rel="noopener">《ajax中的json和jsonp详解》</a>，写这个文章是因为我朋友学习前端刚好遇到了这个问题，但是就在昨天，他在学习java的时候又遇到同样的问题，看来我又要操作一波了。（实则我就他这一个朋友）(๑￫ܫ￩)</p>
+<p>######提纲内容</p>
+<ul>
+<li>重述一遍何为同源策略(因为之前讲过)</li>
+<li>跨域的三种方式</li>
+<li>剖析CORS方式跨域（重点）</li>
+<li>故事解析（次重点）</li>
+</ul>
+<h3 id="何为同源策略"><a href="#何为同源策略" class="headerlink" title="何为同源策略"></a>何为同源策略</h3><p>同源策略就是协议相同、域名相同、端口相同相同的网页才能资源互通。<br>简单的来说，分为三个，我访问淘宝网站，再访问京东网站，这两者资源肯定不能互通是吧。<br>1、也就是cookie和LocalStorage、IndexDB等无法互通。<br>2、DOM无法获取<br>3、AJAX 请求在浏览器端有跨域限制</p>
+<p>也就是说几乎所有的请求都会跨域，why？主要还不是因为很多公司为了解决web访问对后台造成压力，都会把web服务器和后台接口服务器分到不同的域中，前后端不分离除外，另一个原因是前端开发人员调用后台测试，测试服务器在后台，web却运行在自己电脑上。一个是localhost，一个是对应测试服务器的域名。</p>
+<h3 id="跨域的三种方式"><a href="#跨域的三种方式" class="headerlink" title="跨域的三种方式"></a>跨域的三种方式</h3><ul>
+<li><a href="https://www.cnblogs.com/Juaoie/p/9786313.html" target="_blank" rel="noopener">JSONP方式</a></li>
+<li>CORS方式</li>
+<li>代理请求方式</li>
+</ul>
+<h3 id="剖析CORS方式跨域"><a href="#剖析CORS方式跨域" class="headerlink" title="剖析CORS方式跨域"></a>剖析CORS方式跨域</h3><p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）</p>
+<p>CORS可以理解为后端配置一些东西，主动同意哪些不同域名可以请求我的接口，从而实现跨域请求的问题，（对了，提示一下，jsonp虽然简单好用，但是只能实现get请求，所以比较单一。但是jsonp可以适用于所有浏览器，CORS对ie只适用于ie10及以上，对其他浏览器都是支持的。）</p>
+<p>先上一张图（后面你会回来看的）</p>
+<p><img src="/2019/10/17/js_consanguinity/01.png" alt></p>
+    
+    <a class="article-more-a" href="/2019/10/17/js_consanguinity/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/10/17/js_consanguinity/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python_bokey" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
