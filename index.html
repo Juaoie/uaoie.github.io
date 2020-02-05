@@ -282,99 +282,9 @@
 <li>int size()</li>
 <li>remove(E obj) </li>
 </ul>
-<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a><employee>泛型</employee></h2><blockquote>
-<ul>
-<li>泛型即所操作的数据类型在定义时被指定为一个参数。当我们使用的时候给这个参数指定不同的对象类型，就可以处理不同的对象。</li>
-</ul>
-</blockquote>
-<h2 id="包装类型的自动装箱和自动拆箱"><a href="#包装类型的自动装箱和自动拆箱" class="headerlink" title="包装类型的自动装箱和自动拆箱"></a>包装类型的自动装箱和自动拆箱</h2><blockquote>
-<p>ArrayList集合只能存储引用数据类型，如果要使用基本数据类型，就需要使用基本数据类型的包装类</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">基本数据类型</th>
-<th align="left">对应的包装类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">byte</td>
-<td align="left">Byte</td>
-</tr>
-<tr>
-<td align="left">short</td>
-<td align="left">Short</td>
-</tr>
-<tr>
-<td align="left">int</td>
-<td align="left">Integer</td>
-</tr>
-<tr>
-<td align="left">long</td>
-<td align="left">Long</td>
-</tr>
-<tr>
-<td align="left">double</td>
-<td align="left">Double</td>
-</tr>
-<tr>
-<td align="left">char</td>
-<td align="left">Character</td>
-</tr>
-<tr>
-<td align="left">boolean</td>
-<td align="left">Boolean</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="number">1</span>);</span><br><span class="line">        list.add(<span class="number">2</span>);</span><br><span class="line">        list.add(<span class="number">3</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        <span class="keyword">int</span> two=list.get(<span class="number">1</span>);</span><br><span class="line">        System.out.println(two);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/08.png" alt="08"></p>
-<blockquote>
-<p>从jdk 1.5+开始，支持自动装箱，自动拆箱<br>自动装箱：基本类型 –&gt; 包装类型<br>自动拆箱：包装类型 –&gt; 基本类型</p>
-</blockquote>
-<h2 id="boolean-add-E-obj"><a href="#boolean-add-E-obj" class="headerlink" title="boolean add(E obj)"></a>boolean add(E obj)</h2><blockquote>
-<p>将指定的元素追加到此列表的末尾。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">boolean</span> isTrue=list.add(<span class="string">"张三"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        System.out.println(<span class="string">"是否添加成功："</span>+isTrue);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/01.png" alt="01"></p>
-<h2 id="E-add-int-index-E-obj"><a href="#E-add-int-index-E-obj" class="headerlink" title="E add(int index,E obj)"></a>E add(int index,E obj)</h2><blockquote>
-<p>在此列表中的指定位置插入指定的元素。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="number">1</span>,<span class="string">"赵六"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/02.png" alt="02"></p>
-<h2 id="E-get-int-index"><a href="#E-get-int-index" class="headerlink" title="E get(int index)"></a>E get(int index)</h2><blockquote>
-<p>返回此列表中指定位置的元素。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="string">"赵六"</span>);</span><br><span class="line">        String name=list.get(<span class="number">1</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/03.png" alt="03"></p>
-<h2 id="void-set-int-index-E-obj"><a href="#void-set-int-index-E-obj" class="headerlink" title="void set(int index,E obj)"></a>void set(int index,E obj)</h2><blockquote>
-<p>用指定的元素替换此列表中指定位置的元素。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        list.set(<span class="number">1</span>,<span class="string">"赵六"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/04.png" alt="04"></p>
-<h2 id="E-remove-int-index"><a href="#E-remove-int-index" class="headerlink" title="E remove(int index)"></a>E remove(int index)</h2><blockquote>
-<p>删除该列表中指定位置的元素。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="string">"赵六"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        list.remove(<span class="number">1</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/05.png" alt="05"></p>
-<h2 id="int-size"><a href="#int-size" class="headerlink" title="int size()"></a>int size()</h2><blockquote>
-<p>返回此列表中的元素数。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="string">"赵六"</span>);</span><br><span class="line">        System.out.println(list.size());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/06.png" alt="06"></p>
-<h2 id="remove-E-obj"><a href="#remove-E-obj" class="headerlink" title="remove(E obj)"></a>remove(E obj)</h2><blockquote>
-<p>从列表中删除指定元素的第一个出现（如果存在）。 </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03.demo01;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoArrayList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; list =<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        list.add(<span class="string">"张三"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="string">"王五"</span>);</span><br><span class="line">        list.add(<span class="string">"赵六"</span>);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">        <span class="keyword">boolean</span> isTrue01 =list.remove(<span class="string">"王五"</span>);</span><br><span class="line">        <span class="keyword">boolean</span> isTrue02 =list.remove(<span class="string">"不存在的人"</span>);</span><br><span class="line">        System.out.println(<span class="string">"是否删除王五成功"</span>+isTrue01);</span><br><span class="line">        System.out.println(<span class="string">"是否删除不存在的人成功"</span>+isTrue02);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/05/java_ArrayList/07.png" alt="07"></p>
-
+    
+    <a class="article-more-a" href="/2020/02/05/java_ArrayList/#more">more >></a>
+    
     
 
     
@@ -390,113 +300,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/02/05/java_ArrayList/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_set_map_1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/03/js_set_map_1/">js的set和map（上）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/03/js_set_map_1/" class="archive-article-date">
-        <time datetime="2020-02-03T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">17字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js的set和map（上）"><a href="#js的set和map（上）" class="headerlink" title="js的set和map（上）"></a>js的set和map（上）</h1><h2 id="本期分享"><a href="#本期分享" class="headerlink" title="本期分享"></a>本期分享</h2><blockquote>
-<ul>
-<li>set</li>
-<li>WeakSet</li>
-</ul>
-</blockquote>
-<h2 id="下期分享"><a href="#下期分享" class="headerlink" title="下期分享"></a>下期分享</h2><blockquote>
-<ul>
-<li>map</li>
-<li>WeakMap</li>
-</ul>
-</blockquote>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2>
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/03/js_set_map_1/">展开全文 >></a>
     </p>
     
 
@@ -1446,6 +1249,106 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/11/16/js_array_fun/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js_node_jwt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/11/13/js_node_jwt/">手写jwt验证，实现java和node无缝切换</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/11/13/js_node_jwt/" class="archive-article-date">
+        <time datetime="2019-11-13T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前端时间和我<a href="https://home.cnblogs.com/u/shaoyu/" target="_blank" rel="noopener">朋友</a>写了一个简易用户管理后台,功能其实很简单，涉及到的技术栈有：vue+elementUI，java+spring MVC以及node+egg，数据库用的mysql，简单方便。</p>
+<p>一开始是我是只负责前端，但是前端开发的的速度太快，老是没事，加上他小子并没有接触过实战的项目，又怕他出乱子，所以考虑我也写一个后端，</p>
+<p>开始考虑的是用python+django，但是还是在半途放弃了，因为总感觉Django不过灵活，使用起来非常别扭，也可能是用scrapy写爬虫写多了，难以理解django的框架设计，总是会把他想象成一个scrapy架构，也导致代码写的很乱，下面上一张scrapy架构图。<img src="/2019/11/13/js_node_jwt/01.png" alt="svrapy架构图"></p>
+    
+    <a class="article-more-a" href="/2019/11/13/js_node_jwt/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/11/13/js_node_jwt/">展开全文 >></a>
     </p>
     
 
