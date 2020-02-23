@@ -218,6 +218,124 @@
             
 
   
+    <article id="post-java_反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/02/23/java_反射/">java_反射</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/02/23/java_反射/" class="archive-article-date">
+        <time datetime="2020-02-23T13:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="java-反射"><a href="#java-反射" class="headerlink" title="java_反射"></a>java_反射</h1><h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>放射：将类的各个部分封装为其他对象，这就是反射机制。</li>
+</ul>
+<h3 id="java代码在内存中经历的三个阶段"><a href="#java代码在内存中经历的三个阶段" class="headerlink" title="java代码在内存中经历的三个阶段"></a>java代码在内存中经历的三个阶段</h3><p>1、 Source 源代码阶段</p>
+<ul>
+<li>执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。</li>
+</ul>
+<p>2、 Class 类对象阶段</p>
+<ul>
+<li>通过ClassLoader（类加载器）将字节码文件加载到内存中。</li>
+<li>通过Class类对象来描述进入内存中的字节码文件的特征和行为。将成员变量、成员方法、构造方法等封装成单独的对象放入Class类对象中。</li>
+<li>最后我们可以通过Class对象的一些行为创建具体的某个对象。</li>
+</ul>
+<p>3、 runtime 运行时阶段</p>
+<ul>
+<li>new 类();</li>
+</ul>
+<h3 id="反射的好处"><a href="#反射的好处" class="headerlink" title="反射的好处"></a>反射的好处</h3><ul>
+<li>在程序的运行期间操作这些对象。</li>
+<li>降低程序的耦合性，提高程序的可扩展性。</li>
+</ul>
+    
+    <a class="article-more-a" href="/2020/02/23/java_反射/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/02/23/java_反射/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-java_修饰符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,41 +425,9 @@
 <td>NO</td>
 </tr>
 </tbody></table>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote>
-<ul>
-<li>并不是每个修饰符都可以修饰类(指外部类),只有public和default可以。</li>
-<li>所有修饰符都可以修饰数据成员,方法成员,构造方法。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="两种状态修饰符"><a href="#两种状态修饰符" class="headerlink" title="两种状态修饰符"></a>两种状态修饰符</h2><ul>
-<li>static</li>
-</ul>
-<blockquote>
-<ul>
-<li>静态的意思,可以修饰成员变量,成员方法,不能修饰类,不能修饰构造方法 </li>
-<li>被static修饰的变量或者方法是独立于该类的任何对象，也就是说，这些变量和方法不属于任何一个实例对象，而是被类的实例对象所共享。</li>
-</ul>
-</blockquote>
-<ul>
-<li>final</li>
-</ul>
-<blockquote>
-<ul>
-<li>最终的意思,可以修饰类,成员变量,成员方法,不能修饰构造方法</li>
-<li>修饰的类不能被继承，被修饰的变量是常量，被修饰的方法不能被继承</li>
-</ul>
-</blockquote>
-<h2 id="抽象修饰符"><a href="#抽象修饰符" class="headerlink" title="抽象修饰符"></a>抽象修饰符</h2><ul>
-<li>abstract </li>
-</ul>
-<blockquote>
-<ul>
-<li>抽象的意思，不能修饰构造方法,不能修饰成员变量,可以修饰类,成员方法</li>
-<li>被修饰的类不能被实例化，只能被继承，被修饰的成员方法在子类中必须被重写</li>
-</ul>
-</blockquote>
-
+    
+    <a class="article-more-a" href="/2020/02/21/java_修饰符/#more">more >></a>
+    
     
 
     
@@ -1289,134 +1375,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/11/17/js_array_fun_2/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js_array_fun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/16/js_array_fun/">js数组方法大全（上）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/16/js_array_fun/" class="archive-article-date">
-        <time datetime="2019-11-16T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js数组方法大全（上）"><a href="#js数组方法大全（上）" class="headerlink" title="js数组方法大全（上）"></a>js数组方法大全（上）</h1><hr>
-<p>记录一下整理的js数组方法，免得每次要找方法都找不到。图片有点多，注意流量，嘻嘻！</p>
-<h2 id="本期分享"><a href="#本期分享" class="headerlink" title="本期分享"></a>本期分享</h2><blockquote>
-<ul>
-<li>join()</li>
-<li>reverse()</li>
-<li>sort()</li>
-<li>concat()</li>
-<li>slice()</li>
-<li>splice()</li>
-<li>push()</li>
-<li>pop()</li>
-<li>unshift()</li>
-<li>shift()</li>
-<li>toString()</li>
-<li>toLocaleString()</li>
-</ul>
-</blockquote>
-<h2 id="下期分享"><a href="#下期分享" class="headerlink" title="下期分享"></a>下期分享</h2><blockquote>
-<ul>
-<li>forEach()</li>
-<li>map()</li>
-<li>filer()</li>
-<li>every()</li>
-<li>some()</li>
-<li>reduce()</li>
-<li>reduceRight()</li>
-<li>indexOf()</li>
-<li>lastIndex()</li>
-</ul>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/11/16/js_array_fun/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/16/js_array_fun/">展开全文 >></a>
     </p>
     
 
