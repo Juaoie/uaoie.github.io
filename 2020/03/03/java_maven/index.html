@@ -6,24 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>java_反射 | 老虎の博客</title>
+  <title>maven基础知识 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="java_反射什么是反射概念 放射：将类的各个部分封装为其他对象，这就是反射机制。  java代码在内存中经历的三个阶段1、 Source 源代码阶段  执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。  2、 Class 类对象阶段  通过ClassLoader（类加载器">
+  <meta name="description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java_反射">
-<meta property="og:url" content="http://uaoie.top/2020/02/23/java_反射/index.html">
+<meta property="og:title" content="maven基础知识">
+<meta property="og:url" content="http://uaoie.top/2020/03/03/java_maven/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="java_反射什么是反射概念 放射：将类的各个部分封装为其他对象，这就是反射机制。  java代码在内存中经历的三个阶段1、 Source 源代码阶段  执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。  2、 Class 类对象阶段  通过ClassLoader（类加载器">
+<meta property="og:description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://uaoie.top/2020/02/23/java_反射/01.png">
-<meta property="og:image" content="http://uaoie.top/2020/02/23/java_反射/02.png">
-<meta property="og:updated_time" content="2020-02-23T16:57:40.438Z">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/java_maven/01.png">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/java_maven/02.png">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/java_maven/03.png">
+<meta property="og:updated_time" content="2020-03-03T07:12:36.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java_反射">
-<meta name="twitter:description" content="java_反射什么是反射概念 放射：将类的各个部分封装为其他对象，这就是反射机制。  java代码在内存中经历的三个阶段1、 Source 源代码阶段  执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。  2、 Class 类对象阶段  通过ClassLoader（类加载器">
-<meta name="twitter:image" content="http://uaoie.top/2020/02/23/java_反射/01.png">
+<meta name="twitter:title" content="maven基础知识">
+<meta name="twitter:description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
+<meta name="twitter:image" content="http://uaoie.top/2020/03/03/java_maven/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -216,14 +217,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java_反射" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java_maven" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      java_反射
+      maven基础知识
     </h1>
   
 
@@ -235,8 +236,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/02/23/java_反射/" class="archive-article-date">
-        <time datetime="2020-02-23T13:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+<a href="/2020/03/03/java_maven/" class="archive-article-date">
+        <time datetime="2020-03-03T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
 </a>
 
   
@@ -249,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
+      <span class="post-count">981字</span>
     </span>
   </span>
 
@@ -258,7 +259,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -269,132 +270,79 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="java-反射"><a href="#java-反射" class="headerlink" title="java_反射"></a>java_反射</h1><h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>放射：将类的各个部分封装为其他对象，这就是反射机制。</li>
-</ul>
-<h3 id="java代码在内存中经历的三个阶段"><a href="#java代码在内存中经历的三个阶段" class="headerlink" title="java代码在内存中经历的三个阶段"></a>java代码在内存中经历的三个阶段</h3><p>1、 Source 源代码阶段</p>
-<ul>
-<li>执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。</li>
-</ul>
-<p>2、 Class 类对象阶段</p>
-<ul>
-<li>通过ClassLoader（类加载器）将字节码文件加载到内存中。</li>
-<li>通过Class类对象来描述进入内存中的字节码文件的特征和行为。将成员变量、成员方法、构造方法等封装成单独的对象放入Class类对象中。</li>
-<li>最后我们可以通过Class对象的一些行为创建具体的某个对象。</li>
-</ul>
-<p>3、 runtime 运行时阶段</p>
-<ul>
-<li>new 类();</li>
-</ul>
-<h3 id="反射的好处"><a href="#反射的好处" class="headerlink" title="反射的好处"></a>反射的好处</h3><ul>
-<li>在程序的运行期间操作这些对象。</li>
-<li>降低程序的耦合性，提高程序的可扩展性。</li>
+    <h1 id="maven基础知识"><a href="#maven基础知识" class="headerlink" title="maven基础知识"></a>maven基础知识</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>Maven简介</li>
+<li>Manven安装配置</li>
+<li>Maven本地配置</li>
+<li>Maven中央仓库</li>
+<li>Maven依赖机制</li>
+<li>Maven 常用命令</li>
 </ul>
 <a id="more"></a>
 
+<h2 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h2><p>Maven是一个项目管理和综合工具，Maven为开发人员提供了构建一个完整的生命周期框架。开发团队可以自动完成项目的基础工具建设 ，Maven使用标准的目录结构和默认的构建生命周期。</p>
+<p>在多个开发团队环境时，Maven可以设置按标准在非常短的时间完成配置工作。由于大部分羡慕的设置都非常简单，并且可以重复使用，Maven让开发人员的工作更轻松，同时创建报表，检查，构建和测试自动化设置。</p>
+<p>Maven提供了开发人员的方式管理：</p>
+<ul>
+<li>Builds</li>
+<li>Documentation</li>
+<li>Reporting</li>
+<li>Dependencies</li>
+<li>SCMs</li>
+<li>Releases</li>
+<li>Distribution</li>
+<li>mailing list</li>
+</ul>
+<p>概括的说，Maven简化和标准化项目建设过程，处理编译分配，文档，团队协作和其他任务的无缝连接。Maven增加可重用性并负责建立相关的任务。</p>
 <hr>
-<h2 id="获取Class类对象的方法"><a href="#获取Class类对象的方法" class="headerlink" title="获取Class类对象的方法"></a>获取Class类对象的方法</h2><ul>
-<li>获取class类对象的方式有三种，分别对应的java代码经历的三个阶段</li>
-</ul>
-<p>1、 Class.forName(“全类名”);</p>
-<ul>
-<li>将字节码文件加载进内存，返回class对象</li>
-<li>多用于配置文件，将类名定义在配置文件中</li>
-</ul>
-<p>2、 类名.class;</p>
-<ul>
-<li>通过类名的属性class获取</li>
-<li>多用于参数传递</li>
-</ul>
-<p>3、 对象.getClass();</p>
-<ul>
-<li>getClass()方法是定义在Object类中的</li>
-<li>多用于对象获取字节码</li>
-</ul>
-<ul>
-<li>同一个字节码文件（*.class）在一次程序运行过程中，只会被加载一次。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.day03;</span><br><span class="line"><span class="keyword">import</span> top.uaoie.domain.Person;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectDome01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//1. Class.forName("全类名");</span></span><br><span class="line">        Class clazz1 = Class.forName(<span class="string">"top.uaoie.domain.Person"</span>);</span><br><span class="line">        <span class="comment">//2. 类名.class;</span></span><br><span class="line">        Class clazz2 = Person.class;</span><br><span class="line">        <span class="comment">//3. 对象.getClass();</span></span><br><span class="line">        Person p = <span class="keyword">new</span> Person();</span><br><span class="line">        Class clazz3 = p.getClass();</span><br><span class="line"></span><br><span class="line">        System.out.println(clazz1);</span><br><span class="line">        System.out.println(clazz2);</span><br><span class="line">        System.out.println(clazz3);</span><br><span class="line">        <span class="comment">//比较三个对象</span></span><br><span class="line">        System.out.println(clazz1 == clazz2);</span><br><span class="line">        System.out.println(clazz1 == clazz3);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/23/java_反射/01.png" alt="01"></p>
+<h2 id="Maven的安装配置"><a href="#Maven的安装配置" class="headerlink" title="Maven的安装配置"></a>Maven的安装配置</h2><h3 id="Maven下载安装"><a href="#Maven下载安装" class="headerlink" title="Maven下载安装"></a>Maven下载安装</h3><p>先去<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven官网</a>下载Windows的zip文件，然后解压缩到安装目录，并配置Windows环境变量</p>
+<p>注意：请尽量使用jdk1.8以上的版本</p>
+<h3 id="JDK和JAVA-HOME"><a href="#JDK和JAVA-HOME" class="headerlink" title="JDK和JAVA_HOME"></a>JDK和JAVA_HOME</h3><p>确保已安装JDK，并设置JAVA_HOME环境变量到Windows环境变量中，然后再系统环境变量path中配置上maven路径</p>
+<p><img src="/2020/03/03/java_maven/01.png" alt="01"></p>
+<p><img src="/2020/03/03/java_maven/02.png" alt="02"></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>在cmd中使用命令：<code>mvn -version</code></p>
+<p>输出：</p>
+<p><img src="/2020/03/03/java_maven/03.png" alt="03"></p>
 <hr>
-<h2 id="反射的应用"><a href="#反射的应用" class="headerlink" title="反射的应用"></a>反射的应用</h2><p>1、 获取所有的成员变量</p>
-<ul>
-<li>Field[] getFields()</li>
-<li>Field getFied(String name)</li>
-<li>Field[] getDeclaredFields()</li>
-<li>Field getDeclaredFied(String name)</li>
-</ul>
-<p>2、 获取所有的构造方法</p>
-<ul>
-<li>Constructor&lt;?&gt;[] getConstructors()</li>
-<li>Constructor<t> getConstructors(类&lt;?&gt;… parameterTypes)</t></li>
-<li>Constructor&lt;?&gt;[] getDeclaredConstructors()</li>
-<li>Constructor<t> getDeclaredConstructors(类&lt;?&gt;… parameterTypes)</t></li>
-</ul>
-<p>3、 获取所有的成员方法</p>
-<ul>
-<li>Method[] getMethods()</li>
-<li>Menthod getMethod(String name,类&lt;?&gt;…parameterTypes)</li>
-<li>Method[] getDeclaredMethods()</li>
-<li>Menthod getDeclaredMethod(String name,类&lt;?&gt;…parameterTypes)</li>
-</ul>
-<p>4、 获取类名</p>
-<ul>
-<li>String getName()</li>
-</ul>
-<h3 id="以下为演示通过反射获取所有的成员变量"><a href="#以下为演示通过反射获取所有的成员变量" class="headerlink" title="以下为演示通过反射获取所有的成员变量"></a>以下为演示通过反射获取所有的成员变量</h3><ul>
-<li>创建一个名为Person的类，里面的代码如下：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.uaoie.domain;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String a;</span><br><span class="line">    <span class="keyword">protected</span> String b;</span><br><span class="line">    String c;</span><br><span class="line">    <span class="keyword">private</span> String d;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"a='"</span> + a + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", b='"</span> + b + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", c='"</span> + c + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", d='"</span> + d + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p>在安装目录下的conf文件夹中有个setting.xml文件，该文件用来配置maven信息，在大概56行的位置写入以下代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\maven\jar_home<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>再新建一个名为ReflectDome02的类，里面的代码如下：</li>
-</ul>
-<pre><code class="java"><span class="keyword">package</span> top.uaoie.day03;
-<span class="keyword">import</span> top.uaoie.domain.Person;
-<span class="keyword">import</span> java.lang.reflect.Field;
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReflectDome02</span> </span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>{
-        <span class="comment">//获取Person的Class对象，此处是在阶段二部分获取的</span>
-        <span class="comment">//也可在第一阶段获取，如：Class.forName("top.uaoie.domain.Person");</span>
-        Class p = Person.class;
-        <span class="comment">//获取成员变量</span>
-        Field[] fields = p.getFields();
-        <span class="keyword">for</span> (Field field : fields) {
-            System.out.println(field);
-        }
-        System.out.println(<span class="string">"---------------------"</span>);
-        Field a = p.getField(<span class="string">"a"</span>);
-        System.out.println(a);
-        <span class="comment">//创建一个对象</span>
-        Person person = <span class="keyword">new</span> Person();
-        <span class="comment">//获取成员变量a的值</span>
-        Object value = a.get(person);
-        System.out.println(value);
-        <span class="comment">//设置成员变量a的值</span>
-        a.set(person, <span class="string">"这是a的值"</span>);
-        System.out.println(person);
-        System.out.println(<span class="string">"================="</span>);
-        Field[] declaredFields = p.getDeclaredFields();
-        <span class="keyword">for</span> (Field declaredField : declaredFields) {
-            System.out.println(declaredField);
-        }
-        Field d = p.getDeclaredField(<span class="string">"d"</span>);
-        <span class="comment">//忽略访问权限修饰符</span>
-        d.setAccessible(<span class="keyword">true</span>);<span class="comment">//暴力反射</span>
-        Object value2 = d.get(person);
-        System.out.println(value2);
+<p>这行代码表示本地仓库的位置，可以自己随意设置本地仓库地址。在这行上面还有几行注释的代码，表示默认本地仓库地址，默认地址为当前用户的home目录下的.m2/repository文件夹下，代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- localRepository</span></span><br><span class="line"><span class="comment">  | The path to the local repository maven will use to store artifacts.</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">  | Default: $&#123;user.home&#125;/.m2/repository</span></span><br><span class="line"><span class="comment"> &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br></pre></td></tr></table></figure>
 
-    }
-}</code></pre>
-<p><img src="/2020/02/23/java_反射/02.png" alt="02"></p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
-<li>获取类的class对象有多种方法，其中使用Class.forName可以通过读取配置文件获取全类名</li>
-<li>Class.forName和getField等类是代码会报错是因为传入的是字符串，所有可能不存在这个类获或者方法，所以需要处理异常</li>
-<li>通过反射可以直接访问到任何成员变量名，不受访问修饰符的限制</li>
-<li>可以setAccessible设置为true来暴力反射获取或者更改成员变量的值</li>
+<hr>
+<h2 id="Maven中央仓库"><a href="#Maven中央仓库" class="headerlink" title="Maven中央仓库"></a>Maven中央仓库</h2><p>当我们建立一个Maven的项目。Maven会检测你的<code>pom.xml</code>文件，以确定哪些依赖下载，首先，Maven将从本地资源库获取依赖资源，如果没有找到，然后会将从中央仓库<a href="http://repol.maven.org/maven2下载依赖到本地仓库，我们也可以进入http://mvnrepository.com进行搜索我们所需的依赖，由于从外网下载依赖很慢，所有我们需要配置阿里镜像，这和npm配置cnpm的阿里镜像的原理是一样的，setting.xml文件第149行左右插入以下代码：" target="_blank" rel="noopener">http://repol.maven.org/maven2下载依赖到本地仓库，我们也可以进入http://mvnrepository.com进行搜索我们所需的依赖，由于从外网下载依赖很慢，所有我们需要配置阿里镜像，这和npm配置cnpm的阿里镜像的原理是一样的，setting.xml文件第149行左右插入以下代码：</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Maven依赖机制"><a href="#Maven依赖机制" class="headerlink" title="Maven依赖机制"></a>Maven依赖机制</h2><h3 id="Maven依赖机制概念"><a href="#Maven依赖机制概念" class="headerlink" title="Maven依赖机制概念"></a>Maven依赖机制概念</h3><p>在Maven依赖机制的帮助下自动下载所有必须的依赖库，并保持版本升级。</p>
+<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3><ul>
+<li>访问<a href="http://logging.apache.org/log4j/" target="_blank" rel="noopener">http://logging.apache.org/log4j/</a></li>
+<li>下载Log4j的jar库</li>
+<li>复制jar到项目类路径</li>
+<li>手动将其包含到项目的依赖</li>
+<li>所有的管理需要一切自己做</li>
 </ul>
+<p>如果有Log4j版本升级，则需要重复上述步骤</p>
+<h3 id="Maven的方式"><a href="#Maven的方式" class="headerlink" title="Maven的方式"></a>Maven的方式</h3><ul>
+<li>仅仅需要知道log4j的Maven的坐标，例如：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果有Log4j版本升级，只要更新pom.xml中的这个版本号更新就可以了</p>
+<hr>
+<h2 id="Maven-常用命令"><a href="#Maven-常用命令" class="headerlink" title="Maven 常用命令"></a>Maven 常用命令</h2><h3 id="清除产生的项目"><a href="#清除产生的项目" class="headerlink" title="清除产生的项目"></a>清除产生的项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译源代码"><a href="#编译源代码" class="headerlink" title="编译源代码"></a>编译源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compils</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<h3 id="只打包不测试（跳过测试）"><a href="#只打包不测试（跳过测试）" class="headerlink" title="只打包不测试（跳过测试）"></a>只打包不测试（跳过测试）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装到本地仓库"><a href="#安装到本地仓库" class="headerlink" title="安装到本地仓库"></a>安装到本地仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn instail</span><br></pre></td></tr></table></figure>
+
+<h3 id="源码打包"><a href="#源码打包" class="headerlink" title="源码打包"></a>源码打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mvn source:jar</span><br><span class="line">或</span><br><span class="line">mvn source:jar-no-fork</span><br></pre></td></tr></table></figure>
+
 
     
 
@@ -409,7 +357,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://uaoie.top/2020/02/23/java_反射/" title="java_反射" target="_blank">http://uaoie.top/2020/02/23/java_反射/</a>
+          <a href="http://uaoie.top/2020/03/03/java_maven/" title="maven基础知识" target="_blank">http://uaoie.top/2020/03/03/java_maven/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -473,7 +421,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/02/23/java_反射/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/03/03/java_maven/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -488,18 +436,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/03/java_maven/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          maven基础知识
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/21/java_修饰符/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java_修饰符</div>
+    <a href="/2020/02/23/java_反射/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java_反射</div>
       <i class="icon-circle-right"></i>
     </a>
   
