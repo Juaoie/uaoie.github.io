@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>老虎の博客</title>
+  <title>maven基础知识 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="一个佛系の腐朽青年">
-  
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven基础知识">
+<meta property="og:url" content="http://uaoie.top/2020/03/03/工具/java_maven/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/工具/java_maven/01.png">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/工具/java_maven/02.png">
+<meta property="og:image" content="http://uaoie.top/2020/03/03/工具/java_maven/03.png">
+<meta property="og:updated_time" content="2020-03-03T07:12:36.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="maven基础知识">
+<meta name="twitter:description" content="maven基础知识目录 Maven简介 Manven安装配置 Maven本地配置 Maven中央仓库 Maven依赖机制 Maven 常用命令">
+<meta name="twitter:image" content="http://uaoie.top/2020/03/03/工具/java_maven/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -215,259 +217,25 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-工具/git笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-工具/java_maven" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/15/工具/git笔记/">git命令大全</a>
-	
+    <h1 class="article-title" itemprop="name">
+      maven基础知识
     </h1>
   
 
 
   
   
-<a href="/2020/03/15/工具/git笔记/" class="archive-article-date">
-        <time datetime="2020-03-15T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.4k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <!-- ## 一些格式说明
-
-**为了能快速看懂命令的意识，先科普一下命令行中的格式说明**
-
-* `[]` 代表可选项，可选一个或多个
-* `{}` 代表必选一个，包含此处允许选着的参数
-* `<>` 代表必选，表示使用时要替换的参数
-* `()` 指明参数的默认值，只用于{}中
-* ` |` 表示‘或’的意识，使用时只能用一个
-* `...` 表示任意多个参数 -->
-
-<h2 id="一、基本的linux命令"><a href="#一、基本的linux命令" class="headerlink" title="一、基本的linux命令"></a>一、基本的linux命令</h2><p><code>cd</code> 进入某个目录</p>
-<p><code>pwd</code> 显示当前目录路径</p>
-<p><code>ls(ll)</code> 列出当前目录的文件 <code>ll</code>就是<code>ls -l</code>，列出详细信息</p>
-<p><code>touch</code> 新建一个文件</p>
-<p><code>rm</code> 删除要给文件，加上<code>-rf</code>，就是强制删除目录</p>
-<p><code>mkdir</code> 新建一个目录</p>
-<p><code>mv</code> 移动文件，或者是更改文件名称，<code>mv index.html ./aa</code>，这就是将<code>index.html</code>移动到<code>./aa</code>目录下。<code>mv index.html ./aa/bb.html</code>，这是就是将<code>index.html</code>移动到<code>./aa</code>目录下并改名为<code>bb.html</code></p>
-<p><code>reset</code> 重新初始化终端/清屏</p>
-<p><code>clear</code> 清屏</p>
-<p><code>history</code> 查看命令历史</p>
-<p><code>help</code> 帮助</p>
-<p><code>#</code> 代表注释</p>
-<p><code>cat</code> 显示文件内容</p>
-    
-    <a class="article-more-a" href="/2020/03/15/工具/git笔记/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/15/工具/git笔记/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-
-
-
-  
-    <article id="post-javaScript/js_java_set_map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/04/javaScript/js_java_set_map/">js的Set和Map集合</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/03/04/javaScript/js_java_set_map/" class="archive-article-date">
-        <time datetime="2020-03-04T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a><font color="#0099ff">目录</font></h1><ul>
-<li><a href="#1">1、js的Set介绍</a><ul>
-<li><a href="#1-1">1-1、Set基础用法</a></li>
-<li><a href="#1-2">1-2、Set对象的操作方法</a></li>
-<li><a href="#1-3">1-3、Set对象的遍历方法</a></li>
-</ul>
-</li>
-<li><a href="#2">2、js的Set扩展WeakSet篇</a></li>
-<li><a href="#3">3、js的Map介绍</a><ul>
-<li><a href="#3-1">3-1、Map基础用法</a></li>
-<li><a href="#3-2">3-2、Map对象的操作方法</a></li>
-<li><a href="#3-3">3-3、Map对象的遍历方法</a></li>
-</ul>
-</li>
-<li><a href="#4">4、js的Map扩展WeakMap篇</a></li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/03/04/javaScript/js_java_set_map/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/04/javaScript/js_java_set_map/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-工具/java_maven" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/03/03/工具/java_maven/">maven基础知识</a>
-	
-    </h1>
-  
-
-
-  
-  
 <a href="/2020/03/03/工具/java_maven/" class="archive-article-date">
         <time datetime="2020-03-03T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
 </a>
@@ -510,716 +278,93 @@
 <li>Maven依赖机制</li>
 <li>Maven 常用命令</li>
 </ul>
-    
-    <a class="article-more-a" href="/2020/03/03/工具/java_maven/#more">more >></a>
-    
-    
+<a id="more"></a>
 
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/03/03/工具/java_maven/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java/java_反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/23/java/java_反射/">java_反射</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/23/java/java_反射/" class="archive-article-date">
-        <time datetime="2020-02-23T13:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="java-反射"><a href="#java-反射" class="headerlink" title="java_反射"></a>java_反射</h1><h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>放射：将类的各个部分封装为其他对象，这就是反射机制。</li>
-</ul>
-<h3 id="java代码在内存中经历的三个阶段"><a href="#java代码在内存中经历的三个阶段" class="headerlink" title="java代码在内存中经历的三个阶段"></a>java代码在内存中经历的三个阶段</h3><p>1、 Source 源代码阶段</p>
+<h2 id="Maven简介"><a href="#Maven简介" class="headerlink" title="Maven简介"></a>Maven简介</h2><p>Maven是一个项目管理和综合工具，Maven为开发人员提供了构建一个完整的生命周期框架。开发团队可以自动完成项目的基础工具建设 ，Maven使用标准的目录结构和默认的构建生命周期。</p>
+<p>在多个开发团队环境时，Maven可以设置按标准在非常短的时间完成配置工作。由于大部分羡慕的设置都非常简单，并且可以重复使用，Maven让开发人员的工作更轻松，同时创建报表，检查，构建和测试自动化设置。</p>
+<p>Maven提供了开发人员的方式管理：</p>
 <ul>
-<li>执行javac编译命令从.java文件到.class文件的过程都是在源代码阶段，.class字节码文件会将类分为多个部分，其中分为成员变量部分，成员方法部分，构造方法部分等。</li>
+<li>Builds</li>
+<li>Documentation</li>
+<li>Reporting</li>
+<li>Dependencies</li>
+<li>SCMs</li>
+<li>Releases</li>
+<li>Distribution</li>
+<li>mailing list</li>
 </ul>
-<p>2、 Class 类对象阶段</p>
-<ul>
-<li>通过ClassLoader（类加载器）将字节码文件加载到内存中。</li>
-<li>通过Class类对象来描述进入内存中的字节码文件的特征和行为。将成员变量、成员方法、构造方法等封装成单独的对象放入Class类对象中。</li>
-<li>最后我们可以通过Class对象的一些行为创建具体的某个对象。</li>
-</ul>
-<p>3、 runtime 运行时阶段</p>
-<ul>
-<li>new 类();</li>
-</ul>
-<h3 id="反射的好处"><a href="#反射的好处" class="headerlink" title="反射的好处"></a>反射的好处</h3><ul>
-<li>在程序的运行期间操作这些对象。</li>
-<li>降低程序的耦合性，提高程序的可扩展性。</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/02/23/java/java_反射/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/23/java/java_反射/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java/java_修饰符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/21/java/java_修饰符/">java_修饰符</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/21/java/java_修饰符/" class="archive-article-date">
-        <time datetime="2020-02-21T06:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">318字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="java-修饰符"><a href="#java-修饰符" class="headerlink" title="java_修饰符"></a>java_修饰符</h1><h2 id="四种权限修饰符"><a href="#四种权限修饰符" class="headerlink" title="四种权限修饰符"></a>四种权限修饰符</h2><table>
-<thead>
-<tr>
-<th>/</th>
-<th>public</th>
-<th>protected</th>
-<th>(default)</th>
-<th>private</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>同一个类</td>
-<td>YES</td>
-<td>YES</td>
-<td>YES</td>
-<td>YES</td>
-</tr>
-<tr>
-<td>同一个包</td>
-<td>YES</td>
-<td>YES</td>
-<td>YES</td>
-<td>NO</td>
-</tr>
-<tr>
-<td>不同包的子类</td>
-<td>YES</td>
-<td>YES</td>
-<td>NO</td>
-<td>NO</td>
-</tr>
-<tr>
-<td>不同包非子类</td>
-<td>YES</td>
-<td>NO</td>
-<td>NO</td>
-<td>NO</td>
-</tr>
-</tbody></table>
-    
-    <a class="article-more-a" href="/2020/02/21/java/java_修饰符/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/21/java/java_修饰符/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java/java_ArrayList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/02/05/java/java_ArrayList/">简述java的ArrayList</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/02/05/java/java_ArrayList/" class="archive-article-date">
-        <time datetime="2020-02-05T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">839字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="java的ArrayList"><a href="#java的ArrayList" class="headerlink" title="java的ArrayList"></a>java的ArrayList</h1><h2 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h2><ul>
-<li>ArrayList集合长度可以发生改变</li>
-<li><employee>泛型</employee></li>
-<li>自动装箱和自动拆箱</li>
-</ul>
-<h2 id="部分常用的接口方法"><a href="#部分常用的接口方法" class="headerlink" title="部分常用的接口方法"></a>部分常用的接口方法</h2><ul>
-<li>boolean add(E obj)</li>
-<li>E add(int index,E obj)</li>
-<li>E get(int index)</li>
-<li>void set(int index,E obj)</li>
-<li>E remove(int index)</li>
-<li>int size()</li>
-<li>remove(E obj) </li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/02/05/java/java_ArrayList/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/02/05/java/java_ArrayList/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/05/javaScript/js_class/">js的class基础</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/05/javaScript/js_class/" class="archive-article-date">
-        <time datetime="2020-01-04T16:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">448字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> log = <span class="built_in">console</span>.log;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">people</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> aa = <span class="keyword">new</span> people(<span class="string">'张三'</span>, <span class="string">'22'</span>);</span><br><span class="line">log(aa);</span><br></pre></td></tr></table></figure>
-    
-    <a class="article-more-a" href="/2020/01/05/javaScript/js_class/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/05/javaScript/js_class/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_bind_call_apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/04/javaScript/js_bind_call_apply/">详解js的bind、call、apply</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/04/javaScript/js_bind_call_apply/" class="archive-article-date">
-        <time datetime="2020-01-04T05:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">724字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="详解js的bind、call、apply"><a href="#详解js的bind、call、apply" class="headerlink" title="详解js的bind、call、apply"></a>详解js的bind、call、apply</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li><p>虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。</p>
-</li>
-<li><p>由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。</p>
-</li>
-<li><p>于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。</p>
-</li>
-<li><p>但是，随着业务的增加，代码出现强耦合现象，到最后薄弱的中间层已经撑不住了，连代码的审视都变得很麻烦。</p>
-</li>
-<li><p>最后不得以重新设计这套api方法，幸好之前考虑周全留了个心眼，所以今天只花了一天时间就基本完成了。</p>
-</li>
-<li><p>最后的设计思路是不在api中间层使用restful风格的接口（当然后端接口还是不变），但是又为了api不重名，就选择让程序只加载当前页面api方法，也就是说如果用户如果当前操作的是A页面，那B页面的api方法是不会被载入的，这样也避免了首次加载程序的时候加载过多的api方法。</p>
-</li>
-<li><p>然后我在为每个api方法提供公共的数据处理方法的时候需要改变api方法的this指向，于是用到了call方法，所以有了此文。</p>
-</li>
-<li><p>后台=&gt;<a href="http://uaoie.top/cv">通道</a></p>
-</li>
-<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
-</li>
-<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_object_fun_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/08/javaScript/js_object_fun_2/">js对象可扩展性和属性的四个特性（下）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/08/javaScript/js_object_fun_2/" class="archive-article-date">
-        <time datetime="2019-12-08T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">830字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js对象可扩展性和属性的四个特性（下）"><a href="#js对象可扩展性和属性的四个特性（下）" class="headerlink" title="js对象可扩展性和属性的四个特性（下）"></a>js对象可扩展性和属性的四个特性（下）</h1><hr>
-<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
-<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
-</li>
-<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
-</li>
-<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
-</li>
-<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
-</li>
-<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
-</li>
-</ul>
+<p>概括的说，Maven简化和标准化项目建设过程，处理编译分配，文档，团队协作和其他任务的无缝连接。Maven增加可重用性并负责建立相关的任务。</p>
 <hr>
-<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
-<ul>
-<li>对象属性的四个特性</li>
-<li>对象的可扩展性</li>
-<li>删除属性</li>
-<li>检测属性</li>
-<li>枚举属性</li>
-<li>属性的getter和setter</li>
+<h2 id="Maven的安装配置"><a href="#Maven的安装配置" class="headerlink" title="Maven的安装配置"></a>Maven的安装配置</h2><h3 id="Maven下载安装"><a href="#Maven下载安装" class="headerlink" title="Maven下载安装"></a>Maven下载安装</h3><p>先去<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven官网</a>下载Windows的zip文件，然后解压缩到安装目录，并配置Windows环境变量</p>
+<p>注意：请尽量使用jdk1.8以上的版本</p>
+<h3 id="JDK和JAVA-HOME"><a href="#JDK和JAVA-HOME" class="headerlink" title="JDK和JAVA_HOME"></a>JDK和JAVA_HOME</h3><p>确保已安装JDK，并设置JAVA_HOME环境变量到Windows环境变量中，然后再系统环境变量path中配置上maven路径</p>
+<p><img src="/2020/03/03/工具/java_maven/01.png" alt="01"></p>
+<p><img src="/2020/03/03/工具/java_maven/02.png" alt="02"></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>在cmd中使用命令：<code>mvn -version</code></p>
+<p>输出：</p>
+<p><img src="/2020/03/03/工具/java_maven/03.png" alt="03"></p>
+<hr>
+<h2 id="本地仓库"><a href="#本地仓库" class="headerlink" title="本地仓库"></a>本地仓库</h2><p>在安装目录下的conf文件夹中有个setting.xml文件，该文件用来配置maven信息，在大概56行的位置写入以下代码：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\maven\jar_home<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这行代码表示本地仓库的位置，可以自己随意设置本地仓库地址。在这行上面还有几行注释的代码，表示默认本地仓库地址，默认地址为当前用户的home目录下的.m2/repository文件夹下，代码如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- localRepository</span></span><br><span class="line"><span class="comment">  | The path to the local repository maven will use to store artifacts.</span></span><br><span class="line"><span class="comment">  |</span></span><br><span class="line"><span class="comment">  | Default: $&#123;user.home&#125;/.m2/repository</span></span><br><span class="line"><span class="comment"> &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Maven中央仓库"><a href="#Maven中央仓库" class="headerlink" title="Maven中央仓库"></a>Maven中央仓库</h2><p>当我们建立一个Maven的项目。Maven会检测你的<code>pom.xml</code>文件，以确定哪些依赖下载，首先，Maven将从本地资源库获取依赖资源，如果没有找到，然后会将从中央仓库<a href="http://repol.maven.org/maven2下载依赖到本地仓库，我们也可以进入http://mvnrepository.com进行搜索我们所需的依赖，由于从外网下载依赖很慢，所有我们需要配置阿里镜像，这和npm配置cnpm的阿里镜像的原理是一样的，setting.xml文件第149行左右插入以下代码：" target="_blank" rel="noopener">http://repol.maven.org/maven2下载依赖到本地仓库，我们也可以进入http://mvnrepository.com进行搜索我们所需的依赖，由于从外网下载依赖很慢，所有我们需要配置阿里镜像，这和npm配置cnpm的阿里镜像的原理是一样的，setting.xml文件第149行左右插入以下代码：</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Maven依赖机制"><a href="#Maven依赖机制" class="headerlink" title="Maven依赖机制"></a>Maven依赖机制</h2><h3 id="Maven依赖机制概念"><a href="#Maven依赖机制概念" class="headerlink" title="Maven依赖机制概念"></a>Maven依赖机制概念</h3><p>在Maven依赖机制的帮助下自动下载所有必须的依赖库，并保持版本升级。</p>
+<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3><ul>
+<li>访问<a href="http://logging.apache.org/log4j/" target="_blank" rel="noopener">http://logging.apache.org/log4j/</a></li>
+<li>下载Log4j的jar库</li>
+<li>复制jar到项目类路径</li>
+<li>手动将其包含到项目的依赖</li>
+<li>所有的管理需要一切自己做</li>
 </ul>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/#more">more >></a>
-    
-    
+<p>如果有Log4j版本升级，则需要重复上述步骤</p>
+<h3 id="Maven的方式"><a href="#Maven的方式" class="headerlink" title="Maven的方式"></a>Maven的方式</h3><ul>
+<li>仅仅需要知道log4j的Maven的坐标，例如：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.17<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果有Log4j版本升级，只要更新pom.xml中的这个版本号更新就可以了</p>
+<hr>
+<h2 id="Maven-常用命令"><a href="#Maven-常用命令" class="headerlink" title="Maven 常用命令"></a>Maven 常用命令</h2><h3 id="清除产生的项目"><a href="#清除产生的项目" class="headerlink" title="清除产生的项目"></a>清除产生的项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="编译源代码"><a href="#编译源代码" class="headerlink" title="编译源代码"></a>编译源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compils</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<h3 id="只打包不测试（跳过测试）"><a href="#只打包不测试（跳过测试）" class="headerlink" title="只打包不测试（跳过测试）"></a>只打包不测试（跳过测试）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装到本地仓库"><a href="#安装到本地仓库" class="headerlink" title="安装到本地仓库"></a>安装到本地仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn instail</span><br></pre></td></tr></table></figure>
+
+<h3 id="源码打包"><a href="#源码打包" class="headerlink" title="源码打包"></a>源码打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mvn source:jar</span><br><span class="line">或</span><br><span class="line">mvn source:jar-no-fork</span><br></pre></td></tr></table></figure>
+
 
     
 
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2020/03/03/工具/java_maven/" title="maven基础知识" target="_blank">http://uaoie.top/2020/03/03/工具/java_maven/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -1229,137 +374,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/">展开全文 >></a>
-    </p>
-    
 
     
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_object_fun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/07/javaScript/js_object_fun/">js对象可扩展性和属性的四个特性（上）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/07/javaScript/js_object_fun/" class="archive-article-date">
-        <time datetime="2019-12-07T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-07</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.4k字</span>
+      </div>
     </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
-    </span>
-  </span>
+  </div>
 </div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/03/03/工具/java_maven/" alt="微信分享二维码"> -->
+    </div>
+</div>
 
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js对象可扩展性和属性的四个特性（上）"><a href="#js对象可扩展性和属性的四个特性（上）" class="headerlink" title="js对象可扩展性和属性的四个特性（上）"></a>js对象可扩展性和属性的四个特性（上）</h1><hr>
-<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
-<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
-</li>
-<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
-</li>
-<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
-</li>
-<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
-</li>
-<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
-</li>
-</ul>
-<hr>
-<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
-<ul>
-<li>对象属性的四个特性</li>
-<li>对象的可扩展性</li>
-<li>删除属性</li>
-<li>检测属性</li>
-<li>枚举属性</li>
-<li>属性的getter和setter</li>
-</ul>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/12/07/javaScript/js_object_fun/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/07/javaScript/js_object_fun/">展开全文 >></a>
-    </p>
-    
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2020/03/04/javaScript/js_java_set_map/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js的Set和Map集合
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/23/java/java_反射/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java_反射</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1380,12 +473,14 @@
 
 
 
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -1437,8 +532,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
