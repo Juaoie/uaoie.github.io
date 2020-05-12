@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://uaoie.top">
-  <title>Archives: 2020 | 老虎の博客</title>
+  <title>值得收藏的js原型详解 | 老虎の博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="一个佛系の腐朽青年">
+  <meta name="description" content="从虚无到Object起初，地是空虚混沌，渊面黑暗；这时候一切还是null">
 <meta name="keywords" content="博客，个人，生活，技术，电脑，js，微信小程序，小程序，Java，python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老虎の博客">
-<meta property="og:url" content="http://uaoie.top/archives/2020/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="值得收藏的js原型详解">
+<meta property="og:url" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/index.html">
 <meta property="og:site_name" content="老虎の博客">
-<meta property="og:description" content="一个佛系の腐朽青年">
+<meta property="og:description" content="从虚无到Object起初，地是空虚混沌，渊面黑暗；这时候一切还是null">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/01.png">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/02.png">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/03.gif">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/04.png">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/05.png">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/06.png">
+<meta property="og:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/07.png">
+<meta property="og:updated_time" content="2020-05-12T14:57:58.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老虎の博客">
-<meta name="twitter:description" content="一个佛系の腐朽青年">
+<meta name="twitter:title" content="值得收藏的js原型详解">
+<meta name="twitter:description" content="从虚无到Object起初，地是空虚混沌，渊面黑暗；这时候一切还是null">
+<meta name="twitter:image" content="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/01.png">
   
     <link rel="alternative" href="/atom.xml" title="老虎の博客" type="application/atom+xml">
   
@@ -212,310 +221,243 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-javaScript/js原型漫画版" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      值得收藏的js原型详解
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/05/12/javaScript/js原型漫画版/" class="archive-article-date">
         <time datetime="2020-05-12T07:20:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/12/javaScript/js原型漫画版/">值得收藏的js原型详解</a>
-	
-    </h1>
   
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">840字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
-          
-          
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="从虚无到Object"><a href="#从虚无到Object" class="headerlink" title="从虚无到Object"></a>从虚无到Object</h1><p><strong>起初，地是空虚混沌，渊面黑暗；这时候一切还是null</strong></p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/01.png" width="500" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
 
+<a id="more"></a>
+
+<p><strong>神说，要有原型，于是就有了prototype</strong></p>
+<p>原型从凭空产生，于是需要一个指向于null的特征，人们把这种特征叫做<code>隐式原型</code>，即<strong>proto</strong>，其实也就一种指向，表达的是自己从何而来，也就是：<code>Object.prototype.__proto__ === null</code></p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/02.png" width="500" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<p><strong>“妖孽还不现出原型”</strong></p>
+<p>对，原型一般不显露，显露的一般都是一个对象，所以才会有“对象的原型”一说，就好像每个妖精都有自己的原型一样。</p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/03.gif" width="500" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<p><strong>Object与原型的关系</strong></p>
+<p>Object通过prototype找到原型，原型通过constructor找到Object，也就是：<code>Object.prototype.constructor === Object</code></p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/04.png" width="100%" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<h1 id="构造函数的由来"><a href="#构造函数的由来" class="headerlink" title="构造函数的由来"></a>构造函数的由来</h1><p><strong>函数共有的特点</strong></p>
+<p>constructor的意思是<code>构造器</code>，而此时的Object还不能构造任何东西，因此Object需要变成能构造对象的函数，这样的函数我们称之为<code>构造函数</code>；而这样的函数不会凭空产生，它首先得要是个函数，才能进行构造，也就是说会有条<code>隐式原型</code>指向Function.prototype，表示它是个函数；</p>
+<p>同样说明：只要是<code>函数</code>，就有一条<strong>proto</strong>指向Function.prototype，包括Function自己；也就是：<code>Function.__proto__===Function.prototype</code></p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/05.png" width="100%" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<p><strong>一切的起源Object.prototype</strong></p>
+<p>除了Object.prototype是从null衍生而来，那其他原型呢?要知道，在Object世界中没有人是凭空产生的，Object.prototype除开；</p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/06.png" width="100%" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<p>可以看到所有<code>构造函数</code>的原型都是直接或间接来着Object.prototype，而所有系统<code>构造函数</code>的原型都直接来着于Object.prototype；</p>
+<p>众所周知，js在找一个对象里面的属性的时候，如果在该对象找不到，就会去该对象的<strong>proto</strong>里面找，如果<strong>proto</strong>里面找不到，就会去对象的<strong>proto</strong>.<strong>proto</strong>里面找，直到找到null为止；</p>
+<p>所以，换句话说，这里的构造函数都直接或间接的继承了Object.prototype的属性和方法，在类中，这些都相当于Object.prototype的子孙类，所以，Object.prototype才是一切的起源；</p>
+<h1 id="实例化"><a href="#实例化" class="headerlink" title="实例化"></a>实例化</h1><p><strong>new做了啥？</strong></p>
+<p><code>实例化</code>通常是指用类创建对象的过程，而在js中实例化有三种常见方法：</p>
+<p><strong><code>工厂模式</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createObj</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> obj= <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    obj.name= <span class="string">"小米"</span>;</span><br><span class="line">    obj.age= <span class="number">22</span>;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = createObj();</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>构造函数</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateObj</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name= name;</span><br><span class="line">    <span class="keyword">this</span>.age= age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> CreateObj(<span class="string">"小米"</span>, <span class="number">22</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>原型模式</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateObj</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">CreateObj.prototype= &#123;</span><br><span class="line">    name: <span class="string">"小米"</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> CreateObj();</span><br></pre></td></tr></table></figure>
+
+<p>这些实例化的方法无疑都用到了new，那new究竟在做了什么呢?</p>
+<p>其实new只做了三件很简单的事</p>
+<ol>
+<li>创建一个空对象<code>var obj = Object.create(null);</code></li>
+<li>让这个对象继承类的原型<code>obj.__proto__ = CreateObj.prototype;</code></li>
+<li>CreateObj构造函数的this指针替换成obj，然后再调用CreateObj函数<code>CreateObj.call(obj);</code></li>
+</ol>
+<p>现在第一步和第二是可以合并在一起的；<code>var obj = Object.create(CreateObj);</code></p>
+<p>如果第三步不是很清楚了，可以去我的另外一篇博客回顾回顾哦！通道===&gt;&gt;&gt;<a href="https://www.cnblogs.com/Juaoie/p/12147206.html" target="_blank" rel="noopener">详解js的bind、call、apply</a></p>
+<div align="center"> <img src="/2020/05/12/javaScript/js原型漫画版/07.png" width="100%" style="border-radius:1em;border:.3em #f9e46f solid"> </div>
+
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ol>
+<li>只要是<code>函数</code>，就有一条<strong>proto</strong>指向Function.prototype，包括Function构造函数;</li>
+<li>除了Object.prototype从null而来，就没有其他对象凭空产生了，绝对会有一条<strong>proto</strong>表明该对象的起源；</li>
+</ol>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Juaoie
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://uaoie.top/2020/05/12/javaScript/js原型漫画版/" title="值得收藏的js原型详解" target="_blank">http://uaoie.top/2020/05/12/javaScript/js原型漫画版/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://uaoie.top/2020/05/12/javaScript/js原型漫画版/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/15/工具/git笔记/" class="archive-article-date">
-        <time datetime="2020-03-15T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-15</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/15/工具/git笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git命令大全</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/03/15/工具/git笔记/">git命令大全</a>
-	
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/04/javaScript/js_java_set_map/" class="archive-article-date">
-        <time datetime="2020-03-04T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/03/04/javaScript/js_java_set_map/">js的Set和Map集合</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/03/工具/java_maven/" class="archive-article-date">
-        <time datetime="2020-03-03T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/03/03/工具/java_maven/">maven基础知识</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/23/java/java_反射/" class="archive-article-date">
-        <time datetime="2020-02-23T13:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/23/java/java_反射/">java_反射</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/java/java_修饰符/" class="archive-article-date">
-        <time datetime="2020-02-21T06:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/21/java/java_修饰符/">java_修饰符</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/05/java/java_ArrayList/" class="archive-article-date">
-        <time datetime="2020-02-05T07:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/02/05/java/java_ArrayList/">简述java的ArrayList</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/05/javaScript/js_class/" class="archive-article-date">
-        <time datetime="2020-01-04T16:13:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/05/javaScript/js_class/">js的class基础</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/04/javaScript/js_bind_call_apply/" class="archive-article-date">
-        <time datetime="2020-01-04T05:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/01/04/javaScript/js_bind_call_apply/">详解js的bind、call、apply</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -568,8 +510,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
