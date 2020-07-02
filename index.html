@@ -218,6 +218,147 @@
             
 
   
+    <article id="post-java/HashMap的简易解读" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/07/02/java/HashMap的简易解读/">HashMap的简易解读</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/07/02/java/HashMap的简易解读/" class="archive-article-date">
+        <time datetime="2020-07-02T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-02</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">736字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
+<li>HashMap是存储key-value形式的集合对象</li>
+<li>HashMap初始容量为16，且容量必须是2的幂。</li>
+<li>HashMap存储的key不能重复，可以存储null为key或者value，也不能重复</li>
+<li>HashMap由数组+链表组成，jdk1.8后链表长度大于8用红黑树增加查询数据</li>
+<li>HashMap是线程不安全的，Hashtable的函数都是同步的，这意味着它是线程安全的。</li>
+<li>虽然使用Entry组成数组是有序的，当时由于加入了链表和红黑树，所以HashMap是无序的</li>
+</ol>
+<h2 id="HashMap的四个构造方法"><a href="#HashMap的四个构造方法" class="headerlink" title="HashMap的四个构造方法"></a>HashMap的四个构造方法</h2><p><strong>空参构造</strong></p>
+<ul>
+<li>负载因子是指当存储容量到达实际容量的多少了开始扩容，默认为0.75，也就是说初始容量为16，达到16*0.75的容量时候就开始扩容</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = DEFAULT_LOAD_FACTOR; <span class="comment">// 负载因子</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>自定义初始容量的构造</strong></p>
+<ul>
+<li>这个调用了下面一个构造</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(initialCapacity, DEFAULT_LOAD_FACTOR);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>自定义初始容量和负载因子的构造</strong></p>
+<ul>
+<li><code>&gt;&gt;&gt;</code>是移位运算符，和<code>&gt;&gt;</code>、<code>&lt;&lt;</code>不同的是，在使用该运算符的时候高位用0填充，而其他两个用的是符号填充</li>
+<li><code>|=</code>是指or运算符，并赋值，和<code>+=</code>、<code>*=</code>表示行业相同，<code>|</code>表示在二进制中运算</li>
+<li>原码：数字原本的二进制字节码，最高位的标识符号位，0标识正数，1表示负数</li>
+<li>反码：正数的反码是其本身，负数的反码是符号位不变，其他位取反</li>
+<li>补码：正数的补码是其本身，负数的补码是在反码的基础上+1</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//判断初始容量不能小于0</span></span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal initial capacity: "</span> +</span><br><span class="line">                                            initialCapacity);</span><br><span class="line">    <span class="comment">//初始容量不能大于最大值，否则就等于最大值                                        </span></span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)</span><br><span class="line">        initialCapacity = MAXIMUM_CAPACITY;</span><br><span class="line">    <span class="comment">//负载因子不能小于0，并且不能为null</span></span><br><span class="line">    <span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal load factor: "</span> +</span><br><span class="line">                                            loadFactor);</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = loadFactor;</span><br><span class="line">    <span class="comment">//由于HashMap容量必须大于16且为2的n次方，所以需要对传入的容量大小进行格式化，例如传入10，这需要设置为16</span></span><br><span class="line">    <span class="keyword">this</span>.threshold = tableSizeFor(initialCapacity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">tableSizeFor</span><span class="params">(<span class="keyword">int</span> cap)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = cap - <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">2</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">4</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">8</span>;</span><br><span class="line">    n |= n &gt;&gt;&gt; <span class="number">16</span>;</span><br><span class="line">    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>初始数据的构造</strong></p>
+<ul>
+<li>泛型标识介绍：<ul>
+<li>E - Element (在集合中使用，因为集合中存放的是元素)</li>
+<li>T - Type（Java 类）</li>
+<li>K - Key（键）</li>
+<li>V - Value（值）</li>
+<li>N - Number（数值类型）</li>
+<li>？-  表示不确定的java类型</li>
+</ul>
+</li>
+<li>&lt;? extends K&gt; 表示传入的类型上限为K的类型，也就是说必须为K的子类</li>
+<li>&lt;? super K&gt; 表示传入的类型下限为K的类型，也就是说必须为K的父类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(Map&lt;? extends K, ? extends V&gt; m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = DEFAULT_LOAD_FACTOR;</span><br><span class="line">    putMapEntries(m, <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/07/02/java/HashMap的简易解读/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-javaScript/js原型漫画版" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -409,6 +550,293 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/03/15/工具/git笔记/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java/spring定时任务和反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/03/04/java/spring定时任务和反射/">定时任务、反射、注解</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/03/04/java/spring定时任务和反射/" class="archive-article-date">
+        <time datetime="2020-03-04T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">936字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><h3 id="开启定时任务"><a href="#开启定时任务" class="headerlink" title="开启定时任务"></a>开启定时任务</h3><p><code>@EnableScheduling</code> 在spring boot启动类加上，表示开启定时任务</p>
+<h3 id="设置定时任务"><a href="#设置定时任务" class="headerlink" title="设置定时任务"></a>设置定时任务</h3><p><code>@Scheduled</code> 设置需要定时执行的方法</p>
+<h4 id="参数cron"><a href="#参数cron" class="headerlink" title="参数cron"></a>参数cron</h4><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>允许值</th>
+<th>允许的特殊字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>second</td>
+<td>0-59</td>
+<td>,-*/</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>0-59</td>
+<td>,-*/</td>
+</tr>
+<tr>
+<td>hour</td>
+<td>0-23</td>
+<td>,-*/</td>
+</tr>
+<tr>
+<td>day of month</td>
+<td>1-31</td>
+<td>,-*/?LWC</td>
+</tr>
+<tr>
+<td>month</td>
+<td>1-12</td>
+<td>,-*/</td>
+</tr>
+<tr>
+<td>day of week</td>
+<td>0-7(0和7都是星期天)</td>
+<td>,-*/?LW#</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>表示含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>,</td>
+<td>枚举</td>
+</tr>
+<tr>
+<td>-</td>
+<td>区间</td>
+</tr>
+<tr>
+<td>*</td>
+<td>任意</td>
+</tr>
+<tr>
+<td>/</td>
+<td>步长</td>
+</tr>
+<tr>
+<td>？</td>
+<td>日/星期冲突匹配</td>
+</tr>
+<tr>
+<td>L</td>
+<td>最后</td>
+</tr>
+<tr>
+<td>W</td>
+<td>工作日</td>
+</tr>
+<tr>
+<td>C</td>
+<td>和calendar联系后计算的值</td>
+</tr>
+<tr>
+<td>#</td>
+<td>星期，4#2表示的是第二个星期四</td>
+</tr>
+</tbody></table>
+<p><strong>例子1</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//周五的每分钟第0，第1，第2，第3秒都运行一次</span></span><br><span class="line"><span class="meta">@Scheduled</span>(cron = <span class="string">"0,1,2,3 * * * * 5"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aa</span><span class="params">()</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子2</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//周五的每分钟，从零秒启动，每四秒都运行一次</span></span><br><span class="line"><span class="meta">@Scheduled</span>(cron = <span class="string">"0/4 * * * * 5"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aa</span><span class="params">()</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p><strong>反射机制：将类的各个组成部分封装成对象</strong></p>
+<p>java文件在计算机中的三个阶段</p>
+<table>
+<thead>
+<tr>
+<th>Source 源代码阶段</th>
+<th>Class 类对象阶段</th>
+<th>Runtime 运行阶段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>将java文件通过javac编译成class文件，通过ClassLoader(类加载器)将class字节码文件加载进内存，</td>
+<td>通过Class类对象对该类的成员变量、构造方法、成员方法进行分类，分别加载进fields、constructors、methods进行分类</td>
+<td>创建对象</td>
+</tr>
+</tbody></table>
+<ol>
+<li>获取成员变量<ol>
+<li>Field[] getFields() 获取public修饰的成员变量 </li>
+<li>Field getField(String name) 获取指定名称的public修饰的成员变量 </li>
+<li>Field[] getDeclaredFields() 获取所有的成员变量</li>
+<li>Field[] getDeclaredField(String name) 获取指定名称的成员变量</li>
+</ol>
+</li>
+<li>获取成员方法<ol>
+<li>Constructor&lt;?&gt;[] getConstructors()</li>
+<li>Constructor<t> getConstructor(类&lt;?&gt;… parameterTypes)</t></li>
+<li>Constructor<t> getDeclaredConstructor(类&lt;?&gt;… parameterTypes)</t></li>
+<li>Constructor&lt;?&gt;[] getDeclaredConstructors()</li>
+</ol>
+</li>
+<li>获取成员方法<ol>
+<li>Method[] getMethods()</li>
+<li>Method getMethod(String name,类&lt;?&gt;… parameterTypes)</li>
+<li>Method[] getDeclaredMethods()</li>
+<li>Method getDeclaredMethod(String name,类&lt;?&gt;… parameterTypes)</li>
+</ol>
+</li>
+<li>获取类名<ol>
+<li>String getName()</li>
+</ol>
+</li>
+</ol>
+<p><strong>例子1</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取字节码文件的class类对象</span></span><br><span class="line">Class&lt;Person&gt; personClass = Person.class;</span><br><span class="line"><span class="comment">//获取public修饰的成员变量</span></span><br><span class="line">Field field = personClass.getField(<span class="string">"a"</span>);</span><br><span class="line">Person person = <span class="keyword">new</span> Person();</span><br><span class="line">Object o = field.get(person);</span><br><span class="line">System.out.println(o);</span><br></pre></td></tr></table></figure>
+
+<p><strong>例子2</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取字节码文件的class类对象</span></span><br><span class="line">Class&lt;Person&gt; personClass = Person.class;</span><br><span class="line"><span class="comment">//获取protected的成员变量</span></span><br><span class="line">Field d = personClass.getDeclaredField(<span class="string">"d"</span>);</span><br><span class="line">Person person = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//忽略访问权限修饰符安全检查，</span></span><br><span class="line">d.setAccessible(<span class="keyword">true</span>);<span class="comment">//暴力反射</span></span><br><span class="line">Object o = d.get(person);</span><br><span class="line">System.out.println(o);</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取Class对象的方式</strong></p>
+<ol>
+<li><p>Class.forName(“全类名”)；将字节码文件加载进内存，返回Class对象</p>
+</li>
+<li><p>类名.class；通过类名的属性class获取</p>
+</li>
+<li><p>对象.getClass()；getClass()方式在Object类中定义着。</p>
+<p> 同一个字节码文件(*.class)在一次程序运行过程中，只会被加载一次，不论通过哪一种方式获取class对象都是同一个。</p>
+</li>
+</ol>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>注解的分类：</p>
+<ol>
+<li>编写文档：通过代码里标识的元数据生成文档</li>
+<li>代码分析：通过代码里标识的元数据对代码进行分析</li>
+<li>编译检查：通过代码里标识的元数据让编译器能够实现基本的编译检查</li>
+</ol>
+<p>jdk内置注解：</p>
+<ol>
+<li>@Override：检查该数据标识的方法是否是继承自父类（接口）</li>
+<li>@Deprecated：将该注解标注的内容，已过时</li>
+<li>SuppresWarnings：压制警告</li>
+</ol>
+<p>自定义注解：</p>
+<ul>
+<li><p>格式：<br>   元注解<br>   public @interface 注解名称{}</p>
+<ul>
+<li>本质：注解本质就是一个接口，该接口默认继承Annotation接口</li>
+<li>属性： 接口中可以定义的成员方法<ul>
+<li>要求：<ul>
+<li>数据返回值类型<ul>
+<li>基本数据类型</li>
+<li>String</li>
+<li>枚举</li>
+<li>注解</li>
+<li>以上类型的数组</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>元注解：用于描述注解的注解</p>
+<ul>
+<li>@Target: 描述注解能够作用的位置</li>
+<li>@Retention: 描述注解能保留的阶段</li>
+<li>@Documented: 描述注解是否被抽取到api文档中</li>
+<li>@Inherited：描述注解是否被子类继承</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/03/04/java/spring定时任务和反射/">展开全文 >></a>
     </p>
     
 
@@ -707,7 +1135,7 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="java-反射"><a href="#java-反射" class="headerlink" title="java_反射"></a>java_反射</h1><h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>放射：将类的各个部分封装为其他对象，这就是反射机制。</li>
+<li>反射：将类的各个部分封装为其他对象，这就是反射机制。</li>
 </ul>
 <h3 id="java代码在内存中经历的三个阶段"><a href="#java代码在内存中经历的三个阶段" class="headerlink" title="java代码在内存中经历的三个阶段"></a>java代码在内存中经历的三个阶段</h3><p>1、 Source 源代码阶段</p>
 <ul>
@@ -1090,246 +1518,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2020/01/05/javaScript/js_class/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_bind_call_apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/01/04/javaScript/js_bind_call_apply/">详解js的bind、call、apply</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/01/04/javaScript/js_bind_call_apply/" class="archive-article-date">
-        <time datetime="2020-01-04T05:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">724字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="详解js的bind、call、apply"><a href="#详解js的bind、call、apply" class="headerlink" title="详解js的bind、call、apply"></a>详解js的bind、call、apply</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li><p>虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。</p>
-</li>
-<li><p>由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。</p>
-</li>
-<li><p>于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。</p>
-</li>
-<li><p>但是，随着业务的增加，代码出现强耦合现象，到最后薄弱的中间层已经撑不住了，连代码的审视都变得很麻烦。</p>
-</li>
-<li><p>最后不得以重新设计这套api方法，幸好之前考虑周全留了个心眼，所以今天只花了一天时间就基本完成了。</p>
-</li>
-<li><p>最后的设计思路是不在api中间层使用restful风格的接口（当然后端接口还是不变），但是又为了api不重名，就选择让程序只加载当前页面api方法，也就是说如果用户如果当前操作的是A页面，那B页面的api方法是不会被载入的，这样也避免了首次加载程序的时候加载过多的api方法。</p>
-</li>
-<li><p>然后我在为每个api方法提供公共的数据处理方法的时候需要改变api方法的this指向，于是用到了call方法，所以有了此文。</p>
-</li>
-<li><p>后台=&gt;<a href="http://uaoie.top/cv">通道</a></p>
-</li>
-<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
-</li>
-<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
-</li>
-</ul>
-    
-    <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javaScript/js_object_fun_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/08/javaScript/js_object_fun_2/">js对象可扩展性和属性的四个特性（下）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/12/08/javaScript/js_object_fun_2/" class="archive-article-date">
-        <time datetime="2019-12-08T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">830字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="js对象可扩展性和属性的四个特性（下）"><a href="#js对象可扩展性和属性的四个特性（下）" class="headerlink" title="js对象可扩展性和属性的四个特性（下）"></a>js对象可扩展性和属性的四个特性（下）</h1><hr>
-<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
-<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
-</li>
-<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
-</li>
-<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
-</li>
-<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
-</li>
-<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
-</li>
-</ul>
-<hr>
-<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
-<ul>
-<li>对象属性的四个特性</li>
-<li>对象的可扩展性</li>
-<li>删除属性</li>
-<li>检测属性</li>
-<li>枚举属性</li>
-<li>属性的getter和setter</li>
-</ul>
-</blockquote>
-    
-    <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/">展开全文 >></a>
     </p>
     
 

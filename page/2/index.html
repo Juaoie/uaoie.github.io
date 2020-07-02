@@ -218,6 +218,246 @@
             
 
   
+    <article id="post-javaScript/js_bind_call_apply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/01/04/javaScript/js_bind_call_apply/">详解js的bind、call、apply</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/01/04/javaScript/js_bind_call_apply/" class="archive-article-date">
+        <time datetime="2020-01-04T05:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-04</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">724字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="详解js的bind、call、apply"><a href="#详解js的bind、call、apply" class="headerlink" title="详解js的bind、call、apply"></a>详解js的bind、call、apply</h1><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li><p>虽然bind、call、apply都是js很基础的一块知识，但是我从未认真总结过这三者的区别。</p>
+</li>
+<li><p>由于公司后端是用的微服务架构，又没有中间层对接，导致前端这边非常难于处理接口数据。</p>
+</li>
+<li><p>于是我在项目初期封装了一套薄弱的api方法充当中间层的作用，还有为了让后端接口字段命名统一，也单独封装了一套方法用来统一每个微服务字段返回名。</p>
+</li>
+<li><p>但是，随着业务的增加，代码出现强耦合现象，到最后薄弱的中间层已经撑不住了，连代码的审视都变得很麻烦。</p>
+</li>
+<li><p>最后不得以重新设计这套api方法，幸好之前考虑周全留了个心眼，所以今天只花了一天时间就基本完成了。</p>
+</li>
+<li><p>最后的设计思路是不在api中间层使用restful风格的接口（当然后端接口还是不变），但是又为了api不重名，就选择让程序只加载当前页面api方法，也就是说如果用户如果当前操作的是A页面，那B页面的api方法是不会被载入的，这样也避免了首次加载程序的时候加载过多的api方法。</p>
+</li>
+<li><p>然后我在为每个api方法提供公共的数据处理方法的时候需要改变api方法的this指向，于是用到了call方法，所以有了此文。</p>
+</li>
+<li><p>后台=&gt;<a href="http://uaoie.top/cv">通道</a></p>
+</li>
+<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
+</li>
+<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
+</li>
+</ul>
+    
+    <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/01/04/javaScript/js_bind_call_apply/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaScript/js_object_fun_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2019/12/08/javaScript/js_object_fun_2/">js对象可扩展性和属性的四个特性（下）</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2019/12/08/javaScript/js_object_fun_2/" class="archive-article-date">
+        <time datetime="2019-12-08T06:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">830字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="js对象可扩展性和属性的四个特性（下）"><a href="#js对象可扩展性和属性的四个特性（下）" class="headerlink" title="js对象可扩展性和属性的四个特性（下）"></a>js对象可扩展性和属性的四个特性（下）</h1><hr>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><ul>
+<li><p>再次花时间回顾一下基础，毕竟要想楼建的好，地基就要牢固，嘻嘻！</p>
+</li>
+<li><p>在开始之前需要具备对prototype、__proto__、constructor有一定得了解，可以看看我之前写的一篇文章=&gt;<a href="https://www.cnblogs.com/Juaoie/p/9217466.html" target="_blank" rel="noopener">通道</a>  </p>
+</li>
+<li><p>之前的用户管理系统已经差不多了，顺便加了个socket聊天的，但是由于做java后台的哪个朋友节奏跟不上来，所以即时聊天的后台就是node+socket-io写的，由于用户列表也涉及比较多的用户隐私问题，所以我设置了页面权限和接口权限，然后下面开放的几个账号就只能看到几个页面而已，哈哈。=&gt;<a href="http://uaoie.top/cv">通道</a></p>
+</li>
+<li><p>体验账号1：账号：“123456”。密码：“123456”</p>
+</li>
+<li><p>体验账号2：账号：“123123”。密码：“123123”</p>
+</li>
+</ul>
+<hr>
+<h2 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h2><blockquote>
+<ul>
+<li>对象属性的四个特性</li>
+<li>对象的可扩展性</li>
+<li>删除属性</li>
+<li>检测属性</li>
+<li>枚举属性</li>
+<li>属性的getter和setter</li>
+</ul>
+</blockquote>
+    
+    <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/12/08/javaScript/js_object_fun_2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-javaScript/js_object_fun" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1116,224 +1356,6 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/2019/09/12/python/python_bokey/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-css/css_px_pt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/04/css/css_px_pt/">px和dp（内含大量的像素单位详解）</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/04/css/css_px_pt/" class="archive-article-date">
-        <time datetime="2019-09-04T05:26:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="1、前言："><a href="#1、前言：" class="headerlink" title="1、前言："></a>1、前言：</h2><p>读完本文你会学到什么：</p>
-<ul>
-<li>dp(device pixels)</li>
-<li>px(css pixels)</li>
-<li>pt(point)</li>
-<li>ppi(pixels per inch)</li>
-<li>dpi(dots per inch)</li>
-<li>dpr(device pixels ratio)</li>
-<li>dip(device independent pixel)</li>
-</ul>
-<p>读本文你需要掌握哪些基本知识：</p>
-<ul>
-<li>1in(英寸) == 2.5399999961392cm</li>
-<li>常常用1英寸等于2.54厘米</li>
-<li>1m == 3尺</li>
-<li>1尺 == 10寸</li>
-<li>1寸 == 3.33333333cm</li>
-<li>iphone6屏幕4.7寸是指屏幕对角长度为4.7英寸</li>
-<li>iphone6的高宽比为 iphone6_height : iphone6_width = 16 : 9</li>
-</ul>
-    
-    <a class="article-more-a" href="/2019/09/04/css/css_px_pt/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/04/css/css_px_pt/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-程序人生/say1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/09/03/程序人生/say1/">【惊！】代码中出现“//保重，兄弟！”</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/09/03/程序人生/say1/" class="archive-article-date">
-        <time datetime="2019-09-03T09:30:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">432字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>老板：“上次锅落我这了，务必接好” 我：“好的，老板”    - - -程序人生</p>
-</blockquote>
-<div align="center"><img width="50%" src="/2019/09/03/程序人生/say1/01.png" align="center/"></div>
-    
-    <a class="article-more-a" href="/2019/09/03/程序人生/say1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/09/03/程序人生/say1/">展开全文 >></a>
     </p>
     
 
